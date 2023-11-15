@@ -1,0 +1,27 @@
+{
+    "key": "cika",
+    "category": "wood",
+    "primary": "2",
+    "secondary": "1.5",
+    "tertiary": "6",
+    "durability": "50",
+    "integrityCost": "1",
+    "integrityGain": "3",
+    "magicCapacity": "108",
+    "toolLevel": "1",
+    "toolEfficiency": "3",
+    "tints": {
+        "glyph": "936331",
+        "texture": "936331"
+    },
+    "textures": [
+        "crude",
+        "wooden"
+    ],
+    "material": {
+        "item": "byg:cika_planks"
+    },
+    "requiredTools": {
+        "axe": 1
+    }
+}

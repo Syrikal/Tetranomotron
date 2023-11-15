@@ -1,0 +1,5 @@
+Name,Adjective,Mod ID,Versions,Category,Prim,Sec,Tert,Dur,iCost,iGain,magic,tlevel,teff,tint,textures,item,effects,improvements,reqTools
+Gold,Golden,minecraft,"16, 18, 19, 20",metal,3,4.6,1,32,2,3,132,1,12,gold,"shiny, metal, default",gold_ingot,"stabilizing 15, fierySelf 1 0.05, armorPenetration 2","arrested 0, enderite_void_floating_innate 3","hammer 1, axe 3, cut 7"
+GoldA,GoldenA,aa,"16, 20",metal,3,4.6,1,32,2,3,132,1,12,gold,"shiny, metal, default",gold_ingot,,"arrested 0, enderite_void_floating_innate 3","hammer 1, axe 3, cut 7"
+GoldB,GoldenB,bb,"16, 19",metal,3,4.6,1,32,2,3,132,1,12,gold,"shiny, metal, default",gold_ingot,"stabilizing 15, fierySelf 1 0.05, armorPenetration 2",,"hammer 1, axe 3, cut 7"
+Hold,Holden,aa,"16, 18, 20",metal,3,4.6,1,32,2,3,132,1,12,gold,"shiny, metal, default",gold_ingot,,,"hammer 1, axe 3, cut 7"

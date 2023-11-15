@@ -1,0 +1,35 @@
+{
+    "key": "bb_goldb",
+    "category": "metal",
+    "primary": 3.0,
+    "secondary": 4.6,
+    "tertiary": 1.0,
+    "durability": 32,
+    "integrityCost": 2,
+    "integrityGain": 3,
+    "magicCapacity": 132,
+    "toolLevel": "minecraft:wood",
+    "toolEfficiency": 12.0,
+    "tints": {
+        "glyph": "gold",
+        "texture": "gold"
+    },
+    "textures": [
+        "shiny",
+        "metal",
+        "default"
+    ],
+    "material": {
+        "items": [ "bb:gold_ingot" ]
+    },
+    "effects": {
+        "stabilizing": 15,
+        "fierySelf": [1, 0.05],
+        "armorPenetration": 2
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:wood",
+        "axe_dig": "minecraft:iron",
+        "cut": "tetranomicon:tier_seven"
+    }
+}
