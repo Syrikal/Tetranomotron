@@ -20,11 +20,11 @@ class ToolRequirements:
         ham, axe, cut = 0, 0, 0
         for tool in tool_tuples:
             # print(f"Parsing {tool[0]}")
-            if tool[0] == "hammer":
+            if tool[0] == "hammer" or tool[0] == "hammer_dig":
                 # print("Requirement is for hammer")
                 ham = int(tool[1])
                 continue
-            elif tool[0] == "axe":
+            elif tool[0] == "axe" or tool[0] == "axe_dig":
                 # print("Requirement is for axe")
                 axe = int(tool[1])
                 continue
@@ -53,11 +53,11 @@ class ToolRequirements:
 
         modern_output = "\n        "
         if self.hammer != 0:
-            modern_output += f'"hammer_dig": "{convert_tool_level(self.hammer)}",\n        '
+            modern_output += f'"hammer_dig": "{tool_level_as_string(self.hammer)}",\n        '
         if self.axe != 0:
-            modern_output += f'"axe_dig": "{convert_tool_level(self.axe)}",\n        '
+            modern_output += f'"axe_dig": "{tool_level_as_string(self.axe)}",\n        '
         if self.cut != 0:
-            modern_output += f'"cut": "{convert_tool_level(self.cut)}",\n        '
+            modern_output += f'"cut": "{tool_level_as_string(self.cut)}",\n        '
 
         modern_output = modern_output.rstrip().removesuffix(",")
 
@@ -79,19 +79,79 @@ class ToolRequirements:
         return ", ".join(reqs)
 
 
-def convert_tool_level(tool_level_integer):
-    match tool_level_integer:
-        case 1:
-            return "minecraft:wood"
-        case 2:
-            return "minecraft:stone"
-        case 3:
-            return "minecraft:iron"
-        case 4:
-            return "minecraft:diamond"
-        case 5:
-            return "minecraft:netherite"
-        case 6:
-            return "tetranomicon:tier_six"
-        case 7:
-            return "tetranomicon:tier_seven"
+def tool_level_format_swap(input_t_level):
+    if isinstance(input_t_level, str):
+        # print(f"swapping t_level '{input_t_level}' from string to int")
+
+        output = None
+        try:
+            output = int(input_t_level)
+            # print("Successfully converted directly to int")
+        except TypeError:
+            # print("Could not convert to int directly")
+            pass
+        finally:
+            if output is not None:
+                return output
+            match input_t_level:
+                case "minecraft:wood":
+                    return 1
+                case "minecraft:stone":
+                    return 2
+                case "minecraft:iron":
+                    return 3
+                case "minecraft:diamond":
+                    return 4
+                case "minecraft:netherite":
+                    return 5
+                case "tetranomicon:tier_six":
+                    return 6
+                case "tetranomicon:six":
+                    return 6
+                case "tetranomicon:tier_seven":
+                    return 7
+                case _:
+                    raise ValueError(f"Failed to do a tool-level format swap on {input_t_level}")
+
+    elif isinstance(input_t_level, int):
+        # print(f"swapping t_level '{input_t_level}' from int to string")
+        match input_t_level:
+            case 1:
+                return "minecraft:wood"
+            case 2:
+                return "minecraft:stone"
+            case 3:
+                return "minecraft:iron"
+            case 4:
+                return "minecraft:diamond"
+            case 5:
+                return "minecraft:netherite"
+            case 6:
+                return "tetranomicon:tier_six"
+            case 7:
+                return "tetranomicon:tier_seven"
+            case _:
+                raise ValueError(f"Failed to do a tool-level format swap on {input_t_level}")
+
+    else:
+        raise TypeError(f"Failed to do a tool-level format swap on {input_t_level}")
+
+
+def tool_level_as_int(input_t_level):
+    # print(f"changing t_level '{input_t_level}' to int")
+    if isinstance(input_t_level, int):
+        # print("t_level already int")
+        return input_t_level
+    else:
+        # print("t_level in string form, swapping")
+        return tool_level_format_swap(input_t_level)
+
+
+def tool_level_as_string(input_t_level):
+    # print(f"changing t_level '{input_t_level}' to string")
+    if isinstance(input_t_level, str):
+        # print("t_level already string")
+        return input_t_level
+    else:
+        # print("t_level in int form, swapping")
+        return tool_level_format_swap(input_t_level)

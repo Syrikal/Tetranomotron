@@ -1,6 +1,13 @@
-from classes.tool_requirements import ToolRequirements, convert_tool_level
+import json
+
+from classes.tool_requirements import ToolRequirements, tool_level_as_int, tool_level_as_string
 from classes.trait import gen_traits_from_string, get_traits_json_block, get_traits_csv_string
 from classes.mc_version import MinecraftVersion, get_versions_csv_string
+
+
+def main():
+    test()
+    pass
 
 
 class Material:
@@ -13,25 +20,25 @@ class Material:
     def __init__(self, name, adjective, mod_id, versions, category, primary, secondary, tertiary, durability,
                  integrity_cost, integrity_gain, magic, tool_level, tool_efficiency, tint, texts, item, effects,
                  improvements, reqtools):
-        self.name = name  # e.g. "Gold"
+        self.name = name  # e.g. "Gold", "Aurora Crystal"
         self.prefix = adjective  # e.g. "Golden"
         self.mod_id = mod_id.lower()
         # Material key is used as the 'key' in the material json as well as the json filename
-        self.material_key = f"{mod_id}_{name.lower()}"
+        self.material_key = f"{mod_id}_{name.lower().replace(' ', '_')}"
         # Versions is a list of MinecraftVersions
         self.versions = versions
         # Category is one of fibre, gem, metal, scale, stone, wood
         self.category = category
-        self.primary = float(primary)
-        self.secondary = float(secondary)
-        self.tertiary = float(tertiary)
+        self.primary = int(primary) if isinstance(primary, int) else float(primary)
+        self.secondary = int(secondary) if isinstance(secondary, int) else float(secondary)
+        self.tertiary = int(tertiary) if isinstance(tertiary, int) else float(tertiary)
         self.durability = int(durability)
         self.integrity_cost = int(integrity_cost)
         self.integrity_gain = int(integrity_gain)
         self.magic_capacity = int(magic)
         # Tool level is stored as a number
-        self.tool_level = int(tool_level)
-        self.tool_efficiency = float(tool_efficiency)
+        self.tool_level = tool_level_as_int(tool_level)
+        self.tool_efficiency = int(tool_efficiency) if isinstance(tool_efficiency, int) else float(tool_efficiency)
         self.tint = tint
         # Textures is a list of strings
         self.textures = texts
@@ -42,15 +49,17 @@ class Material:
         self.improvements = improvements
         # A ToolRequirements object
         self.required_tools = reqtools
+        self.primary = int(primary) if isinstance(primary, int) else self.primary
 
     @classmethod
     # Generates a Material from a CSV row
     def create_from_csv(cls, csv_row):
         print("Creating a material from a CSV row")
         if len(csv_row) != 20:
-            raise ValueError(f"Failed attempt to create a material because csv row was wrong size ({len(csv_row)}): '{csv_row}'")
+            raise ValueError(
+                f"Failed attempt to create a material because csv row was wrong size ({len(csv_row)}): '{csv_row}'")
 
-        name, adjective, mod_id, versions, category, primary, secondary, tertiary, dur, \
+        name, prefix, mod_id, versions, category, primary, secondary, tertiary, dur, \
             integrity_cost, integrity_gain, magic, tool_level, tool_efficiency, \
             tint, texts, item, effects, improvements, tool_requirements \
             = csv_row
@@ -63,22 +72,81 @@ class Material:
         new_tool_requirements = ToolRequirements.create_from_csv(tool_requirements)
         new_versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
 
-        mat = Material(name, adjective, mod_id, new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
+        mat = Material(name, prefix, mod_id, new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
                        integrity_gain, magic, tool_level, tool_efficiency, tint, texts,
                        item, new_effects, new_improvements, new_tool_requirements)
-        print(f"Generated material from CSV: {mat.get_print_string()}")
+        # print(f"Generated material from CSV: {mat.get_print_string()}")
         return mat
 
     @classmethod
     # Generates a Material from a JSON file
-    def create_from_json(cls, json_file):
-        pass
+    def create_from_json(cls, json_file, lang_file, version):
+        opened = open(json_file)
+        mat = json.load(opened)
+        key = mat["key"]
+        cat = mat["category"]
+        pri = mat["primary"]
+        sec = mat["secondary"]
+        dur = mat["durability"]
+        ter = mat["tertiary"]
+        ic = mat["integrityCost"]
+        ig = mat["integrityGain"]
+        mc = mat["magicCapacity"]
+        tl = mat["toolLevel"]
+        te = mat["toolEfficiency"]
+        tin = mat["tints"]["glyph"]
+        tex = mat["textures"]
+        it = mat["material"]
+        imp = mat["improvements"]
+        eff = mat["effects"]
+        req = mat["requiredTools"]
+
+        modid, item = "", ""
+        for name, value in it.items():
+            if name == "item":
+                modid, item = value.split(":")
+            if name == "items":
+                modid, item = value[0].split(":")
+
+        lang_opened = open(lang_file)
+        lang = json.load(lang_opened)
+
+        # Get name and prefix from lang file
+        name = lang[f"tetra.material.{key}"]
+        prefix = lang[f"tetra.material.{key}.prefix"]
+
+        implist = []
+        efflist = []
+        reqlist = []
+
+        for key, value in imp.items():
+            implist.append(f"imp {key} {value} {0}")
+        for key, value in eff.items():
+            if isinstance(value, list):
+                efflist.append(f"eff {key} {value[0]} {value[1]}")
+            else:
+                efflist.append(f"eff {key} {value} {0}")
+        for key, value in req.items():
+            reqlist.append(f"{key} {tool_level_as_int(value)}")
+            # print("added to requirements list: " + f"{key} {tool_level_as_int(value)}")
+
+        newimp = ", ".join(implist)
+        neweff = ", ".join(efflist)
+        newreq = ", ".join(reqlist)
+
+        ver = version.value
+        texts = ", ".join(tex)
+
+        fake_csv_row = [name, prefix, modid, str(ver), cat, pri, sec, ter, dur, ic, ig, mc, tl, te, tin, texts, item,
+                        neweff, newimp, newreq]
+
+        return Material.create_from_csv(fake_csv_row)
 
     def check_valid(self):
         complaint_string = ""
         valid = True
         # Check whether material key is what it should be
-        if self.material_key is not f"{self.mod_id}_{self.name}":
+        if self.material_key != f"{self.mod_id}_{self.name.lower().replace(' ', '_')}":
             valid = False
             complaint_string += f"\n      material key '{self.material_key}' does not fit pattern"
         # Check whether category is acceptable
@@ -111,54 +179,54 @@ class Material:
         textures = textures.rstrip().removesuffix(",")
 
         modern_output = f'''{{
-        "key": "{self.material_key}",
-        "category": "{self.category}",
-        "primary": {self.primary},
-        "secondary": {self.secondary},
-        "tertiary": {self.tertiary},
-        "durability": {self.durability},
-        "integrityCost": {self.integrity_cost},
-        "integrityGain": {self.integrity_gain},
-        "magicCapacity": {self.magic_capacity},
-        "toolLevel": "{convert_tool_level(self.tool_level)}",
-        "toolEfficiency": {self.tool_efficiency},
-        "tints": {{
-            "glyph": "{self.tint}",
-            "texture": "{self.tint}"
-        }},
-        "textures": [{textures}
-        ],
-        "material": {{
-            "items": [ "{self.mod_id}:{self.item}" ]
-        }},{get_traits_json_block(self.effects)}{get_traits_json_block(self.improvements)}
-        "requiredTools": {{{self.required_tools.get_json_block(False)}
-        }}
-    }}'''
+    "key": "{self.material_key}",
+    "category": "{self.category}",
+    "primary": {self.primary},
+    "secondary": {self.secondary},
+    "tertiary": {self.tertiary},
+    "durability": {self.durability},
+    "integrityCost": {self.integrity_cost},
+    "integrityGain": {self.integrity_gain},
+    "magicCapacity": {self.magic_capacity},
+    "toolLevel": "{tool_level_as_string(self.tool_level)}",
+    "toolEfficiency": {self.tool_efficiency},
+    "tints": {{
+        "glyph": "{self.tint}",
+        "texture": "{self.tint}"
+    }},
+    "textures": [{textures}
+    ],
+    "material": {{
+        "items": [ "{self.mod_id}:{self.item}" ]
+    }},{get_traits_json_block(self.effects)}{get_traits_json_block(self.improvements)}
+    "requiredTools": {{{self.required_tools.get_json_block(False)}
+    }}
+}}'''
 
         legacy_output = f'''{{
-        "key": "{self.material_key}",
-        "category": "{self.category}",
-        "primary": "{self.primary}",
-        "secondary": "{self.secondary}",
-        "tertiary": "{self.tertiary}",
-        "durability": "{self.durability}",
-        "integrityCost": "{self.integrity_cost}",
-        "integrityGain": "{self.integrity_gain}",
-        "magicCapacity": "{self.magic_capacity}",
-        "toolLevel": "{self.tool_level}",
-        "toolEfficiency": "{self.tool_efficiency}",
-        "tints": {{
-            "glyph": "{self.tint}",
-            "texture": "{self.tint}"
-        }},
-        "textures": [{textures}
-        ],
-        "material": {{
-            "item": "{self.mod_id}:{self.item}"
-        }},{get_traits_json_block(self.effects)}{get_traits_json_block(self.improvements)}
-        "requiredTools": {{{self.required_tools.get_json_block(True)}
-        }}
-    }}'''
+    "key": "{self.material_key}",
+    "category": "{self.category}",
+    "primary": "{self.primary}",
+    "secondary": "{self.secondary}",
+    "tertiary": "{self.tertiary}",
+    "durability": "{self.durability}",
+    "integrityCost": "{self.integrity_cost}",
+    "integrityGain": "{self.integrity_gain}",
+    "magicCapacity": "{self.magic_capacity}",
+    "toolLevel": "{self.tool_level}",
+    "toolEfficiency": "{self.tool_efficiency}",
+    "tints": {{
+        "glyph": "{self.tint}",
+        "texture": "{self.tint}"
+    }},
+    "textures": [{textures}
+    ],
+    "material": {{
+        "item": "{self.mod_id}:{self.item}"
+    }},{get_traits_json_block(self.effects)}{get_traits_json_block(self.improvements)}
+    "requiredTools": {{{self.required_tools.get_json_block(True)}
+    }}
+}}'''
 
         return legacy_output if legacy else modern_output
 
@@ -174,7 +242,7 @@ class Material:
         text = ", ".join(self.textures)
         eff = get_traits_csv_string(self.effects)
         imp = get_traits_csv_string(self.improvements)
-        tools = self.required_tools.get_versions_csv_string
+        tools = self.required_tools.get_csv_string()
         output = [self.name, self.prefix, self.mod_id, vers, self.category,
                   self.primary, self.secondary, self.tertiary, self.durability,
                   self.integrity_cost, self.integrity_gain, self.magic_capacity, self.tool_level, self.tool_efficiency,
@@ -271,3 +339,42 @@ class Material:
 
         for ver in other_material.versions:
             self.versions.append(ver)
+
+
+def test():
+    print("1.16 testing")
+    aurora = "../../resources/Tetranomicon 1.16/data/tetra/materials/gem/aurora_crystal.json"
+    lang = "../../resources/Tetranomicon 1.16/assets/tetranomicon/lang/en_us.json"
+    aurora_material = Material.create_from_json(aurora, lang, MinecraftVersion.SIXTEEN)
+    aurora_material.check_valid()
+    print("Aurora Crystal Material")
+    print(aurora_material.get_print_string())
+    print("\n\nJSON block:")
+    print(aurora_material.get_json_block(True))
+    print("\n\nLang Lines:")
+    print(aurora_material.get_lang_lines())
+    print("\n\nStoring and retrieving...")
+    new_row = aurora_material.get_csv_row()
+    print(f"CSV row: {new_row}")
+    new_material = Material.create_from_csv(new_row)
+    print(new_material.get_print_string())
+    print("\n\n\n1.18 testing")
+    aurora = "../../resources/Tetranomicon 1.18/data/tetra/materials/gem/betterendforge_aurora_crystal.json"
+    lang = "../../resources/Tetranomicon 1.18/assets/tetranomicon/lang/en_us.json"
+    aurora_material = Material.create_from_json(aurora, lang, MinecraftVersion.EIGHTEEN)
+    aurora_material.check_valid()
+    print("Aurora Crystal Material")
+    print(aurora_material.get_print_string())
+    print("\n\nJSON block:")
+    print(aurora_material.get_json_block(False))
+    print("\n\nLang Lines:")
+    print(aurora_material.get_lang_lines())
+    print("\n\nStoring and retrieving...")
+    new_row = aurora_material.get_csv_row()
+    print(f"CSV row: {new_row}")
+    new_material = Material.create_from_csv(new_row)
+    print(new_material.get_print_string())
+
+
+if __name__ == "__main__":
+    main()

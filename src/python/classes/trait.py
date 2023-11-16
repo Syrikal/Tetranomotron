@@ -45,7 +45,7 @@ class Trait:
 
     # Generates a string formatted for printing
     def get_print_string(self):
-        return f"Trait: {self.name}, type: {self.trait_type.get_name()}, level/efficiency: [{self.level}, {self.efficiency}]"
+        return f"{self.trait_type.get_initial()} {self.name} [{self.level}, {self.efficiency}]"
 
     # Generates a string formatted for putting into a JSON
     def get_json_block(self):
@@ -99,7 +99,7 @@ def gen_traits_from_string(input_string):
 # Generates a string to be used in creating a CSV
 # Works for several traits
 def get_traits_csv_string(list_of_traits):
-    trait_strings = [x.get_versions_csv_string() for x in list_of_traits]
+    trait_strings = [x.get_csv_string() for x in list_of_traits]
     return ", ".join(trait_strings)
 
 
@@ -125,7 +125,7 @@ def get_traits_json_block(list_of_traits):
 
     string_list = [trait.get_json_block() for trait in list_of_traits]
     inner_string = ",\n        ".join(string_list)
-    return f'''\n            "{trait_type_name}": {{
+    return f'''\n    "{trait_type_name}": {{
         {inner_string}
     }},'''
 
@@ -143,6 +143,15 @@ class TraitType(Enum):
                 return "Improvement"
             case TraitType.ATTRIBUTE:
                 return "Attribute"
+
+    def get_initial(self):
+        match self:
+            case TraitType.EFFECT:
+                return "E"
+            case TraitType.IMPROVEMENT:
+                return "I"
+            case TraitType.ATTRIBUTE:
+                return "A"
 
 
 def test():

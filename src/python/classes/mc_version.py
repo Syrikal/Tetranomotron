@@ -38,4 +38,4 @@ class MinecraftVersion(Enum):
 
 
 def get_versions_csv_string(list_of_versions):
-    return ", ".join([x.get_versions_csv_string for x in list_of_versions])
+    return ", ".join([x.get_csv_string() for x in list_of_versions])
