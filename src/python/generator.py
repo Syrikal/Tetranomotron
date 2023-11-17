@@ -125,5 +125,15 @@ def generate_replacements(output_folder_path, input_csv):
     pass
 
 
+def generate_sockets(output_folder_path, input_csv):
+    pass
+
+# TODO Remember to prettify JSONs when created!
+# Might have to do json.load and then json.dump.pretty or whatever immediately
+
+
+# TODO Figure out how the lang file should be organized!
+# For each mod (alphabetically by id), all materials/prefixes alphabetically, then all sockets.
+
 if __name__ == "__main__":
     main()

@@ -105,6 +105,10 @@ def get_traits_csv_string(list_of_traits):
 
 # Generates a JSON block from a list of traits
 def get_traits_json_block(list_of_traits):
+    # Return empty block if there's no traits
+    if not list_of_traits:
+        return ""
+
     # Double-check that all traits are valid
     for trait in list_of_traits:
         if not trait.check_valid():
@@ -117,15 +121,11 @@ def get_traits_json_block(list_of_traits):
             raise ValueError(
                 f"Trait list contains multiple trait types: {[x.get_print_string() for x in list_of_traits]}")
 
-    # Return empty block if there's no traits
-    if not list_of_traits:
-        return ""
-
     trait_type_name = trait_type.get_name().lower() + "s"
 
     string_list = [trait.get_json_block() for trait in list_of_traits]
     inner_string = ",\n        ".join(string_list)
-    return f'''\n    "{trait_type_name}": {{
+    return f'''    "{trait_type_name}": {{
         {inner_string}
     }},'''
 

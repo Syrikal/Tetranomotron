@@ -7,58 +7,58 @@ def main():
 
 
 class ToolBoost:
-    # Has a dictionary relating ToolTypes to lists of an int and a float (level and efficiency, respectively)
-    def __init__(self, input_dict):
-        self.tools = input_dict
+    # Has a ToolType, an int level, and a float efficiency
+    def __init__(self, type, level, efficiency):
+        self.tool_type = type
+        self.level = int(level)
+        self.efficiency = float(efficiency)
 
     @classmethod
     # Generates from a string, such as from a CSV
     def create_from_csv(cls, tool_string):
-        tool_boost_dict = {}
-        individual_tools = tool_string.split(", ")
-        for tool in individual_tools:
-            split = tool.split(" ")
-            if len(split) != 3:
-                raise ValueError(f"Attempted to parse {split} as a tool boost. Aborting.")
-            else:
-                tool_type = ToolType(split[0])
-                boost = [int(split[1]), float(split[2])]
-                tool_boost_dict[tool_type] = boost
-
-        output = ToolBoost(tool_boost_dict)
-        return output
+        split = tool_string.split(" ")
+        if len(split) != 3:
+            raise ValueError(f"Attempted to parse {split} as a tool boost. Aborting.")
+        else:
+            return ToolBoost(ToolType(split[0]), split[1], split[2])
 
     def get_print_string(self):
-        return f"Tool Boosts: {[(x, self.tools[x]) for x in self.tools]}"
+        return f"{self.tool_type.name}: [{self.level}, {self.efficiency}]"
 
     # Generates a json block for insertion into a socket json
-    def get_json_block(self, legacy, relevant_tools):
-        lines = []
-        for tool in self.tools:
-            if tool not in relevant_tools:
-                continue
-            name = tool if legacy else tool.modern_name()
-            level, efficiency = self.tools[tool][0], self.tools[tool][1],
-            lines.append(f'''"{name}": [{level}, {efficiency}]''')
-
-        # If no relevant tools, do not add anything
-        if not lines:
-            return ""
-
-        inner = ",\n            ".join(lines)
-        return f'''
-            "tools": {{
-                {inner}
-            }},'''
+    def get_json_line(self, legacy):
+        name = self.tool_type if legacy else self.tool_type.modern_name()
+        return f'''"{name}": [{self.level}, {self.efficiency}]'''
 
     # Generates a string formatted for storing in a CSV
     def get_csv_string(self):
-        list_of_strings = []
-        for tool in self.tools:
-            tool_type = tool
-            properties = self.tools[tool]
-            list_of_strings.append(f"{tool_type} {properties[0]} {properties[1]}")
-        return ", ".join(list_of_strings)
+        return f"{self.tool_type} {self.level} {self.efficiency}"
+
+
+# Returns a JSON block for a list of tool boosts
+def get_tool_boost_json_block(list_of_boosts, legacy, relevant_tools):
+    lines = []
+    for boost in list_of_boosts:
+        if boost.tool_type in relevant_tools:
+            lines.append(boost.get_json_line(legacy))
+
+    # If no relevant tools, do not add anything
+    if not lines:
+        return ""
+
+    inner = ",\n                ".join(lines)
+    return f'''
+            "tools": {{
+                {inner}
+            }}'''
+
+
+# Creates a list of tool boosts from a csv string
+def create_boosts_from_csv(csv_line):
+    if len(csv_line) == 0:
+        return []
+    split_line = csv_line.split(", ")
+    return [ToolBoost.create_from_csv(boost) for boost in split_line]
 
 
 class ToolType(Enum):
