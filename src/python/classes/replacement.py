@@ -1,7 +1,10 @@
+from collections import OrderedDict
 from enum import Enum
 
 from classes.mc_version import MinecraftVersion, get_versions_csv_string
 import json
+
+from classes.socket import ModularType
 
 
 def main():
@@ -40,7 +43,7 @@ class Replacement:
     @classmethod
     # Creates a Replacement from a JSON object (*not* a file!)
     def create_from_json(cls, json_object, version):
-        print("Creating a replacement from a JSON")
+        # print("Creating a replacement from a JSON")
         mod_and_item = json_object["predicate"]["item"]
         mod_id, item_id = mod_and_item.split(":")
         versions = [version.value]
@@ -97,7 +100,7 @@ class Replacement:
         if name != replacement_type.second_module():
             raise ValueError(f"Encountered unexpected second module {name} when creating {replacement_type.name} replacement from json")
 
-        print(f"Found replacement type {replacement_type}.")
+        # print(f"Found replacement type {replacement_type}.")
 
         improvements = []
         if "improvements" in json_object.keys():
@@ -130,124 +133,181 @@ class Replacement:
         '''
 
     # Generates a json chunk
-    def get_json_block(self, legacy):
-        replacement_type = self.replacement_type
-        modid = self.mod_id
-        itemid = self.item_id
-        material_name = self.material_name
-        predicate_row = self.get_predicate_row(legacy)
-        improvements_block = self.get_improvements_json_block()
+    # def get_json_block(self, legacy):
+    #     replacement_type = self.replacement_type
+    #     modid = self.mod_id
+    #     itemid = self.item_id
+    #     material_name = self.material_name
+    #     predicate_row = self.get_predicate_row(legacy)
+    #     improvements_block = self.get_improvements_json_block()
+    #
+    #     match replacement_type:
+    #         case ReplacementType.AXE:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_double",
+    #     "modules": {{
+    #         "double/head_left": ["double/basic_axe_left", "basic_axe/{modid}_{material_name}"],
+    #         "double/head_right": ["double/butt_right", "butt/{modid}_{material_name}"],
+    #         "double/handle": ["double/basic_handle", "basic_handle/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.DOUBLE_AXE:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_double",
+    #     "modules": {{
+    #         "double/head_left": ["double/basic_axe_left", "basic_axe/{modid}_{material_name}"],
+    #         "double/head_right": ["double/basic_axe_right", "basic_axe/{modid}_{material_name}"],
+    #         "double/handle": ["double/basic_handle", "basic_handle/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.HOE:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_double",
+    #     "modules": {{
+    #         "double/head_left": ["double/hoe_left", "hoe/{modid}_{material_name}"],
+    #         "double/head_right": ["double/butt_right", "butt/{modid}_{material_name}"],
+    #         "double/handle": ["double/basic_handle", "basic_handle/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.KNIFE:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_sword",
+    #     "modules": {{
+    #         "sword/blade": ["sword/short_blade", "short_blade/{modid}_{material_name}"],
+    #         "sword/hilt": ["sword/basic_hilt", "basic_hilt/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.PICK:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_double",
+    #     "modules": {{
+    #         "double/head_left": ["double/basic_pickaxe_left", "basic_pickaxe/{modid}_{material_name}"],
+    #         "double/head_right": ["double/basic_pickaxe_right", "basic_pickaxe/{modid}_{material_name}"],
+    #         "double/handle": ["double/basic_handle", "basic_handle/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.SHOVEL:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_single",
+    #     "modules": {{
+    #         "single/head": ["single/basic_shovel", "basic_shovel/{modid}_{material_name}"],
+    #         "single/handle": ["single/basic_handle", "basic_handle/stick"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #         case ReplacementType.SWORD:
+    #             return f'''{{
+    #     "predicate": {{
+    #         {predicate_row}
+    #     }},
+    #     "item": "tetra:modular_sword",
+    #     "modules": {{
+    #         "sword/blade": ["sword/basic_blade", "basic_blade/{modid}_{material_name}"],
+    #         "sword/hilt": ["sword/basic_hilt", "basic_hilt/stick"],
+    #         "sword/pommel": ["sword/decorative_pommel", "decorative_pommel/{modid}_{material_name}"],
+    #         "sword/guard": ["sword/makeshift_guard", "makeshift_guard/{modid}_{material_name}"]
+    #     }}{improvements_block}
+    # }}'''
+    #
+    #     raise TypeError(
+    #         f"Invalid type! Attempted to generate replacement block with arguments: [{replacement_type}, {modid}, {itemid}, {material_name}]")
 
-        match replacement_type:
-            case ReplacementType.AXE:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_double",
-        "modules": {{
-            "double/head_left": ["double/basic_axe_left", "basic_axe/{modid}_{material_name}"],
-            "double/head_right": ["double/butt_right", "butt/{modid}_{material_name}"],
-            "double/handle": ["double/basic_handle", "basic_handle/stick"]
-        }}{improvements_block}
-    }}'''
+    # # Returns the improvements block to put in a json
+    # def get_improvements_json_block(self):
+    #     if not self.improvements:
+    #         return ""
+    #     else:
+    #         imps = []
+    #         for imp in self.improvements:
+    #             module = imp[0]
+    #             improve = imp[1]
+    #             level = int(imp[2])
+    #             imps.append(f'''"{module}:{improve}": {level}''')
+    #         inner_string = ",\n            ".join(imps)
+    #         return f''',
+    #     "improvements": {
+    #         {inner_string}
+    #     }'''
 
-            case ReplacementType.DOUBLE_AXE:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_double",
-        "modules": {{
-            "double/head_left": ["double/basic_axe_left", "basic_axe/{modid}_{material_name}"],
-            "double/head_right": ["double/basic_axe_right", "basic_axe/{modid}_{material_name}"],
-            "double/handle": ["double/basic_handle", "basic_handle/stick"]
-        }}{improvements_block}
-    }}'''
+    # Generates a JSON object
+    def get_json(self, legacy):
+        output = OrderedDict()
 
-            case ReplacementType.HOE:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_double",
-        "modules": {{
-            "double/head_left": ["double/hoe_left", "hoe/{modid}_{material_name}"],
-            "double/head_right": ["double/butt_right", "butt/{modid}_{material_name}"],
-            "double/handle": ["double/basic_handle", "basic_handle/stick"]
-        }}{improvements_block}
-    }}'''
-
-            case ReplacementType.KNIFE:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_sword",
-        "modules": {{
-            "sword/blade": ["sword/short_blade", "short_blade/{modid}_{material_name}"],
-            "sword/hilt": ["sword/basic_hilt", "basic_hilt/stick"]
-        }}{improvements_block}
-    }}'''
-
-            case ReplacementType.PICK:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_double",
-        "modules": {{
-            "double/head_left": ["double/basic_pickaxe_left", "basic_pickaxe/{modid}_{material_name}"],
-            "double/head_right": ["double/basic_pickaxe_right", "basic_pickaxe/{modid}_{material_name}"],
-            "double/handle": ["double/basic_handle", "basic_handle/stick"]
-        }}{improvements_block}
-    }}'''
-
-            case ReplacementType.SHOVEL:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_single",
-        "modules": {{
-            "single/head": ["single/basic_shovel", "basic_shovel/{modid}_{material_name}"],
-            "single/handle": ["single/basic_handle", "basic_handle/stick"]
-        }}{improvements_block}
-    }}'''
-
-            case ReplacementType.SWORD:
-                return f'''{{
-        "predicate": {{
-            {predicate_row}
-        }},
-        "item": "tetra:modular_sword",
-        "modules": {{
-            "sword/blade": ["sword/basic_blade", "basic_blade/{modid}_{material_name}"],
-            "sword/hilt": ["sword/basic_hilt", "basic_hilt/stick"],
-            "sword/pommel": ["sword/decorative_pommel", "decorative_pommel/{modid}_{material_name}"],
-            "sword/guard": ["sword/makeshift_guard", "makeshift_guard/{modid}_{material_name}"]
-        }}{improvements_block}
-    }}'''
-
-        raise TypeError(
-            f"Invalid type! Attempted to generate replacement block with arguments: [{replacement_type}, {modid}, {itemid}, {material_name}]")
-
-    # Returns the improvements block to put in a json
-    def get_improvements_json_block(self):
-        if not self.improvements:
-            return ""
+        predicate = OrderedDict()
+        if legacy:
+            predicate["item"] = f"{self.mod_id}:{self.item_id}"
         else:
-            imps = []
-            for imp in self.improvements:
-                module = imp[0]
-                improve = imp[1]
-                level = int(imp[2])
-                imps.append(f'''"{module}:{improve}": {level}''')
-            inner_string = ",\n            ".join(imps)
-            return f''',
-        "improvements": {
-            {inner_string}
-        }'''
+            predicate["items"] = [f"{self.mod_id}:{self.item_id}"]
+        output["predicate"] = predicate
+
+        output["item"] = f"tetra:modular_{self.replacement_type.get_modular_type().value}"
+
+        modules = OrderedDict()
+        material_name = self.material_name
+        modid = self.mod_id
+        stick = "stick"
+        match self.replacement_type:
+            case ReplacementType.AXE:
+                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{modid}_{material_name}"]
+                modules["double/head_right"] = ["double/butt_right", f"butt/{modid}_{material_name}"]
+                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{stick}"]
+            case ReplacementType.DOUBLE_AXE:
+                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{modid}_{material_name}"]
+                modules["double/head_right"] = ["double/basic_axe_right", f"basic_axe/{modid}_{material_name}"]
+                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+            case ReplacementType.PICK:
+                modules["double/head_left"] = ["double/basic_pickaxe_left", f"basic_pickaxe/{modid}_{material_name}"]
+                modules["double/head_right"] = ["double/basic_pickaxe_right", f"basic_pickaxe/{modid}_{material_name}"]
+                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+            case ReplacementType.HOE:
+                modules["double/head_left"] = ["double/hoe_left", f"hoe/{modid}_{material_name}"]
+                modules["double/head_right"] = ["double/butt_right", f"butt/{modid}_{material_name}"]
+                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+            case ReplacementType.SHOVEL:
+                modules["single/head"] = ["single/basic_shovel", f"basic_shovel/{modid}_{material_name}"]
+                modules["single/handle"] = ["single/basic_handle", "basic_handle/stick"]
+            case ReplacementType.SWORD:
+                modules["sword/blade"] = ["sword/basic_blade", f"basic_blade/{modid}_{material_name}"]
+                modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
+                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{modid}_{material_name}"]
+                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{modid}_{material_name}"]
+            case ReplacementType.KNIFE:
+                modules["sword/blade"] = ["sword/short_blade", f"short_blade/{modid}_{material_name}"]
+                modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
+                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{modid}_{material_name}"]
+                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{modid}_{material_name}"]
+        output["modules"] = modules
+
+        improvements = OrderedDict()
+        for imp in self.improvements:
+            improvements[f"{imp[0]}:{imp[1]}"] = int(imp[2])
+        if self.improvements:
+            output["improvements"] = improvements
+
+        return output
 
     # Returns the predicate row to put in a json
     # This is the only difference between legacy and modern formatting
@@ -274,12 +334,12 @@ def gen_replacements_from_json(json_file, version):
     return outputs
 
 
-# Generates a full JSON file from a bunch of replacements
-def get_json_file(list_of_replacements, legacy):
-    blocks = [x.get_json_block(legacy) for x in list_of_replacements]
-    inner = ",\n    ".join(blocks)
-    return f'''[
-    {inner}\n]'''
+# # Generates a full JSON file from a bunch of replacements
+# def get_json_file(list_of_replacements, legacy):
+#     blocks = [x.get_json_block(legacy) for x in list_of_replacements]
+#     inner = ",\n    ".join(blocks)
+#     return f'''[
+#     {inner}\n]'''
 
 
 class ReplacementType(Enum):
@@ -308,13 +368,26 @@ class ReplacementType(Enum):
             case ReplacementType.KNIFE:
                 return "basic_hilt"
 
+    def get_modular_type(self):
+        if self in [ReplacementType.AXE, ReplacementType.DOUBLE_AXE, ReplacementType.PICK, ReplacementType.HOE]:
+            return ModularType.DOUBLE
+        elif self in [ReplacementType.SHOVEL]:
+            return ModularType.SINGLE
+        elif self in [ReplacementType.SWORD, ReplacementType.KNIFE]:
+            return ModularType.SWORD
+
 
 def test():
     axesfile = "../../resources/Tetranomicon 1.16/data/tetra/replacements/tetranomiconaxes.json"
     axes = gen_replacements_from_json(axesfile, MinecraftVersion.SIXTEEN)
-    for axe in axes:
-        print(f"{axe.get_print_string()}")
-    print(get_json_file(axes, True))
+    # for axe in axes:
+        # print(f"{axe.get_print_string()}")
+    # print(get_json_file(axes, True))
+
+    axejsons = [x.get_json(True) for x in axes]
+
+    print(json.dumps(axejsons, indent=4))
+
     pass
 
 

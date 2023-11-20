@@ -1,9 +1,10 @@
+from collections import OrderedDict
 from enum import Enum
 import json
 
 from classes.mc_version import MinecraftVersion, get_versions_csv_string
-from classes.tool_boost import ToolType, create_boosts_from_csv, get_tool_boost_json_block
-from classes.trait import gen_traits_from_string, get_traits_json_block, get_traits_csv_string
+from classes.tool_boost import ToolType, create_boosts_from_csv
+from classes.trait import gen_traits_from_string, get_traits_csv_string
 
 
 def main():
@@ -21,7 +22,7 @@ class Socket:
     def __init__(self, name, mod_id, lang_name, versions, modular_types, durability, durability_multiplier,
                  integrity, tint, attributes, effects, tool_boosts, item, xp_cost):
         self.name = name  # e.g. "ametrine"
-        self.mod_id = mod_id.lower()
+        self.mod_id = mod_id.lower()  # e.g. "byg"
         self.lang_name = lang_name  # e.g. "Socket [§9Blue Geode§r]"
         self.variant_key = f"{mod_id}_{name.lower()}"
         self.versions = versions
@@ -46,7 +47,7 @@ class Socket:
     @classmethod
     # Generates a Socket from a CSV row
     def create_from_csv(cls, csv_row):
-        print("Creating a socket from a CSV row")
+        # print("Creating a socket from a CSV row")
         if len(csv_row) != 14:
             raise ValueError(
                 f"Failed attempt to create a socket because csv row was wrong size ({len(csv_row)}): '{csv_row}'")
@@ -152,15 +153,43 @@ class Socket:
         Crafting: {self.mod_id}:{self.item}, {self.xp_cost} levels
         '''
 
-    # Generates a block to go in a JSON
-    def get_json_block(self, legacy, mod_type):
-        if mod_type not in self.modular_types:
-            raise ValueError(f"Illegally tried to create a {mod_type.name} block for {self.name} socket'")
+    # Generates a JSON object
+    def get_json(self, legacy, mod_type):
+        output = OrderedDict()
+        output["key"] = f"{mod_type.value}_socket/{self.variant_key}"
+        output["category"] = "gem"
+        if self.durability != 0:
+            output["durability"] = self.durability
+        if self.durability_multiplier != 1:
+            output["durabilityMultiplier"] = self.durability_multiplier
+        if self.integrity != 0:
+            output["integrity"] = self.integrity
+        if self.attributes:
+            att_dict = OrderedDict()
+            for x in self.attributes:
+                att_dict[f"{x.name}"] = x.efficiency
+            output["attributes"] = att_dict
+        if self.effects:
+            eff_dict = OrderedDict()
+            for x in self.effects:
+                if x.efficiency != 0:
+                    eff_dict[f"{x.name}"] = [x.level, x.efficiency]
+                else:
+                    eff_dict[f"{x.name}"] = x.level
+            output["effects"] = eff_dict
+        if self.tool_boosts:
+            tool_dict = OrderedDict()
+            for boost in self.tool_boosts:
+                if boost.tool_type in mod_type.get_relevant_tools():
+                    name = boost.tool_type.value if legacy else boost.tool_type.modern_name()
+                    tool_dict[f"{name}"] = [boost.level, boost.efficiency]
+            output["tools"] = tool_dict
 
-        durability_block = f'''"durability": {self.durability}''' if (self.durability != 0) else ""
-        durability_multiplier_block = f'''            "durabilityMultiplier": {self.durability_multiplier}''' \
-            if (self.durability_multiplier != 0) else ""
-        integrity_block = f'''            "integrity": {self.integrity}''' if (self.integrity != 0) else ""
+        glyph = OrderedDict()
+        glyph["tint"] = self.tint
+        glyph["textureX"] = 80
+        glyph["textureY"] = 16
+        output["glyph"] = glyph
 
         location = ""
         match mod_type:
@@ -170,72 +199,41 @@ class Socket:
                 location = "tetra:items/module/double/binding/socket/default"
             case ModularType.SINGLE:
                 location = "tetra:items/module/single/binding/socket/default"
+        model = OrderedDict()
+        model["location"] = location
+        model["tint"] = self.tint
+        output["models"] = [model]
 
-        model_block = ""
-        glyph_block = ""
-        if self.tint:
-            model_block = f'''"models": [{{
-                "location": "{location}",
-                "tint": "{self.tint}"
-            }}]'''
-            glyph_block = f'''"glyph": {{
-                "tint": "{self.tint}",
-                "textureX": 80,
-                "textureY": 16
-            }}'''
+        return output
 
-        stat_blocks = ",\n".join([durability_block, durability_multiplier_block, integrity_block, get_tool_boost_json_block(self.tool_boosts, legacy, mod_type.get_relevant_tools())])
-        visual_blocks = ",\n".join([glyph_block, model_block])
+    # Generates a JSON object to go in a schematic JSON file
+    def get_schematic_json(self, legacy, mod_type):
 
-        output = f'''        {{
-            "key": "{mod_type.value}_socket/{self.variant_key}",
-            "category": "gem",
-            {stat_blocks},
-            {get_traits_json_block(self.attributes)}{get_traits_json_block(self.effects)}
-            {visual_blocks}
-        }}'''
-        print(output)
-
-        json_output = json.loads(output)
-        new_output = json.dumps(json_output, indent=4)
-        return new_output
-
-    # Generates a block to go in a schematic JSON
-    def get_schematic_json_block(self, legacy, mod_type):
         if mod_type not in self.modular_types:
             raise ValueError(f"Illegally tried to create a {mod_type.name} schematic for {self.name} socket'")
 
-        material_key = ""
+        output = OrderedDict()
+
         if self.craft_with_tag:
-            material_key = "tag"
+            output["material"] = {"tag": f"{self.mod_id}:{self.item}"}
         elif legacy:
-            material_key = "items"
+            output["material"] = {"item": f"{self.mod_id}:{self.item}"}
         else:
-            material_key = "item"
+            output["material"] = {"items": [f"{self.mod_id}:{self.item}"]}
 
-        modern_output = f'''{{
-        "material": {{
-            {material_key}: "{self.mod_id}:{self.item}"
-            }},
-        "experienceCost": {self.xp_cost},
-        "moduleKey": "{mod_type.name}/socket",
-        "moduleVariant": "{mod_type.name}_socket/{self.variant_key}"
-    }}'''
-        legacy_output = f'''{{
-        "material": {{
-            {material_key}: [ "{self.mod_id}:{self.item}" ]
-            }},
-        "experienceCost": {self.xp_cost},
-        "moduleKey": "{mod_type.name}/socket",
-        "moduleVariant": "{mod_type.name}_socket/{self.variant_key}"
-    }}'''
-        return legacy_output if legacy else modern_output
+        output["experienceCost"] = self.xp_cost
+        output["moduleKey"] = f"{mod_type.value}/socket"
+        output["moduleVariant"] = f"{mod_type.value}_socket/{self.variant_key}"
 
-    # Generates the lang lines for a socket
+        # print(json.dumps(output, indent=4))
+
+        return output
+
+    # Generates the lang lines for a socket. Returns them as an OrderedDict.
     def get_lang_lines(self):
-        lines = []
+        lines = OrderedDict()
         for modular_type in self.modular_types:
-            lines.append(f'''"tetra.variant.{modular_type.name}_socket/{self.variant_key}": "{self.lang_name}"''')
+            lines[f"tetra.variant.{modular_type.name}_socket/{self.variant_key}"] = f"{self.lang_name}"
         return lines
 
     # Generates a CSV row
@@ -274,9 +272,20 @@ def find_schematic(socket_json_object, schematic_file):
             return schematic
 
 
-# Generates the text for a full JSON file given a modular item type and a list of sockets
-def generate_full_json(mod_type, list_of_sockets):
-    pass
+# Generates a full JSON file given a modular item type and a list of Socket objects
+def generate_sockets_json(list_of_sockets, legacy, mod_type):
+    output = OrderedDict()
+    output["replace"] = False
+    output["variants"] = [x.get_json(legacy, mod_type) for x in list_of_sockets]
+    return output
+
+
+# Generates a full schematics JSON file given a list of sockets
+def generate_schematics_json(list_of_sockets, legacy, mod_type):
+    output = OrderedDict()
+    output["replace"] = False
+    output["outcomes"] = [x.get_schematic_json(legacy, mod_type) for x in list_of_sockets]
+    return output
 
 
 class ModularType(Enum):
@@ -301,10 +310,13 @@ def test():
 
     sockets = gen_sockets_from_json(sixteen_double_sockets, sixteen_lang, sixteen_schematics, MinecraftVersion.SIXTEEN)
 
-    for socket in sockets:
-        print(socket.get_print_string())
-        print()
-        print(socket.get_json_block(True, ModularType.DOUBLE))
+    output_json = generate_sockets_json(sockets, False, ModularType.DOUBLE)
+    # print(json.dumps(output_json, indent=4))
+    schematics_json = generate_schematics_json(sockets, True, ModularType.DOUBLE)
+    print(json.dumps(schematics_json, indent=4))
+
+    # for socket in sockets:
+    #     print(json.dumps(socket.get_schematic_json_object(True, ModularType.DOUBLE), indent=4))
 
     pass
 

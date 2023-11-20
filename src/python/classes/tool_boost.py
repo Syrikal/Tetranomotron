@@ -8,8 +8,8 @@ def main():
 
 class ToolBoost:
     # Has a ToolType, an int level, and a float efficiency
-    def __init__(self, type, level, efficiency):
-        self.tool_type = type
+    def __init__(self, tool_type, level, efficiency):
+        self.tool_type = tool_type
         self.level = int(level)
         self.efficiency = float(efficiency)
 
@@ -25,32 +25,9 @@ class ToolBoost:
     def get_print_string(self):
         return f"{self.tool_type.name}: [{self.level}, {self.efficiency}]"
 
-    # Generates a json block for insertion into a socket json
-    def get_json_line(self, legacy):
-        name = self.tool_type if legacy else self.tool_type.modern_name()
-        return f'''"{name}": [{self.level}, {self.efficiency}]'''
-
     # Generates a string formatted for storing in a CSV
     def get_csv_string(self):
         return f"{self.tool_type} {self.level} {self.efficiency}"
-
-
-# Returns a JSON block for a list of tool boosts
-def get_tool_boost_json_block(list_of_boosts, legacy, relevant_tools):
-    lines = []
-    for boost in list_of_boosts:
-        if boost.tool_type in relevant_tools:
-            lines.append(boost.get_json_line(legacy))
-
-    # If no relevant tools, do not add anything
-    if not lines:
-        return ""
-
-    inner = ",\n                ".join(lines)
-    return f'''
-            "tools": {{
-                {inner}
-            }}'''
 
 
 # Creates a list of tool boosts from a csv string
