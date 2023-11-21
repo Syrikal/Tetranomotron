@@ -274,6 +274,66 @@ class Socket:
 
         return output
 
+    # Checks whether it matches another socket
+    def matches(self, other_socket, verbose=False):
+        match = True
+        unmatches = []
+        if self.name != other_socket.name:
+            unmatches.append("name")
+            match = False
+        if self.mod_id != other_socket.mod_id:
+            unmatches.append("mod ID")
+            match = False
+        if self.lang_name != other_socket.lang_name:
+            unmatches.append("lang name")
+            match = False
+        if self.durability != other_socket.durability:
+            unmatches.append("durability")
+            match = False
+        if self.durability_multiplier != other_socket.durability_multiplier:
+            unmatches.append("durability_multiplier")
+            match = False
+        if self.integrity != other_socket.integrity:
+            unmatches.append("integrity")
+            match = False
+        if self.tint != other_socket.tint:
+            unmatches.append("tint")
+            match = False
+        if get_traits_csv_string(self.attributes) != get_traits_csv_string(other_socket.attributes):
+            unmatches.append("attributes")
+            match = False
+        if get_traits_csv_string(self.effects) != get_traits_csv_string(other_socket.effects):
+            unmatches.append("effects")
+            match = False
+        if ", ".join([x.get_csv_string() for x in self.tool_boosts]) != ", ".join(
+                [x.get_csv_string() for x in other_socket.tool_boosts]):
+            unmatches.append("tool boosts")
+            match = False
+        if self.item != other_socket.item:
+            unmatches.append("item")
+            match = False
+        if self.xp_cost != other_socket.xp_cost:
+            unmatches.append("XP cost")
+            match = False
+
+        if match:
+            if verbose:
+                print(f"{self.name} socket matches {other_socket.name} socket")
+            return True
+        else:
+            if verbose:
+                print(
+                    f"{self.name} socket does not match {other_socket.name} socket: mismatched {', '.join(unmatches)}")
+            return False
+
+    # Incorporates a second socket's versions and modular types
+    def assimilate(self, other_socket):
+        if not self.matches(other_socket):
+            raise ValueError(f"Can't assimilate {self.name} and {other_socket.name}, no match detected")
+
+        self.versions = list(set(self.versions + other_socket.versions))
+        self.modular_types = list(set(self.modular_types + other_socket.modular_types))
+
 
 # Generates a bunch of sockets from a JSON file
 def gen_sockets_from_json(json_file, lang_file, schematic_file, version):

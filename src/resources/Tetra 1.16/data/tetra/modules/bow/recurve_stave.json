@@ -1,0 +1,76 @@
+{
+    "replace": true,
+    "slots": [
+        "bow/stave"
+    ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:enchantment/power",
+        "tetra:enchantment/flame",
+        "tetra:enchantment/cyclic_multishot",
+        "tetra:enchantment/cyclic_quickshot",
+        "tetra:enchantment/ensorcellation_hunter",
+        "tetra:enchantment/ensorcellation_quick_draw",
+        "tetra:enchantment/ensorcellation_trueshot",
+        "tetra:enchantment/ensorcellation_volley",
+        "tetra:enchantment/ma-enchants_true_shot",
+        "tetra:enchantment/ma-enchants_quick_draw",
+        "tetra:enchantment/ma-enchants_timeless",
+        "tetra:enchantment/vanishing_curse",
+        "tetra:enchantment/ensorcellation_soulbound",
+        "tetra:enchantment/ma-enchants_curse_death",
+        "tetra:enchantment/cursed_misfortune",
+        "tetra:enchantment/cursed_fading",
+        "tetra:enchantment/cursed_obedience",
+        "tetra:bow/straight_stave/",
+        "tetra:bow/shared_stave/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": ["tetra:wood/", "tetra:misc/stick", "tetra:metal/"],
+            "key": "recurve_stave/",
+            "attributes": {
+                "tetra:draw_speed": 0.95
+            },
+            "durability": 200,
+            "integrity": -1,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.14,
+                    "tetra:draw_strength": 0.95
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.09,
+                    "tetra:draw_strength": 0.5
+                },
+                "durability": 0.6,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 160,
+                    "textureY": 32
+                },
+                "availableTextures": ["crude"],
+                "models": [
+                    {
+                        "location": "tetra:items/module/bow/stave/recurve/"
+                    },
+                    {
+                        "type": "draw_0",
+                        "location": "tetra:items/module/bow/stave/recurve/"
+                    },
+                    {
+                        "type": "draw_1",
+                        "location": "tetra:items/module/bow/stave/recurve/1_"
+                    },
+                    {
+                        "type": "draw_2",
+                        "location": "tetra:items/module/bow/stave/recurve/1_"
+                    }
+                ]
+            }
+        }
+    ]
+}

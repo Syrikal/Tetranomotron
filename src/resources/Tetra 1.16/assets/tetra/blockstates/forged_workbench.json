@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "tetra:block/forged_workbench"
+    },
+    "variants": {
+        "axis=x": {
+            "model": "tetra:block/forged_workbench"
+        },
+        "axis=z": {
+            "model": "tetra:block/forged_workbench",
+            "y": 90
+        }
+    }
+}

@@ -3,6 +3,7 @@ import csv
 
 from classes.material import Material
 from classes.mc_version import MinecraftVersion
+from classes.replacement import gen_replacements_from_json
 from classes.socket import ModularType, gen_sockets_from_json
 
 
@@ -138,14 +139,87 @@ def sockets():
 
     all_sockets = sockets16 + sockets18 + sockets19
 
+    merged_sockets = []
+
+    for soc in all_sockets:
+        if not merged_sockets:
+            merged_sockets.append(soc)
+            continue
+
+        new = True
+        for existing_soc in merged_sockets:
+            if soc.matches(existing_soc):
+                existing_soc.assimilate(soc)
+                new = False
+                break
+
+        if new:
+            merged_sockets.append(soc)
+
+    print(f"Found {len(merged_sockets)} final sockets")
+
     # Creating CSV
     with open("outputs/csvs/sockets.csv", 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         leadingrow = ["Name", "Mod ID", "Lang Name", "Versions", "Item Types", "Durability", "Durability Mod",
                       "Integrity", "Tint", "Attributes", "Effects", "Tool Boosts", "Item", "XP Cost"]
         writer.writerow(leadingrow)
-        writer.writerows([sock.get_csv_row() for sock in all_sockets])
+        writer.writerows([sock.get_csv_row() for sock in merged_sockets])
+
+
+def replacements():
+    # 1.16
+    print("Gathering 1.16 replacements...")
+    folder = "../resources/Tetranomicon 1.16/data/tetra/replacements"
+
+    replacements = []
+
+    for file in os.listdir(folder):
+        filepath = os.path.join(folder, file)
+        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.SIXTEEN))
+
+    # 1.18
+    print("Gathering 1.18 replacements...")
+    folder = "../resources/Tetranomicon 1.18/data/tetra/replacements"
+
+    for file in os.listdir(folder):
+        filepath = os.path.join(folder, file)
+        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.EIGHTEEN))
+
+    # 1.19
+    print("Gathering 1.19 replacements...")
+    folder = "../resources/Tetranomicon 1.19/data/tetra/replacements"
+
+    for file in os.listdir(folder):
+        filepath = os.path.join(folder, file)
+        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.NINETEEN))
+
+    merged_replacements = []
+
+    for rep in replacements:
+        if not merged_replacements:
+            merged_replacements.append(rep)
+            continue
+
+        new = True
+        for existing_rep in merged_replacements:
+            if rep.matches(existing_rep):
+                existing_rep.assimilate(rep)
+                new = False
+                break
+
+        if new:
+            merged_replacements.append(rep)
+
+    print(f"Found {len(merged_replacements)} final replacements")
+
+    with open("outputs/csvs/replacements.csv", 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        leadingrow = ["Item ID", "Mod ID", "Replacement Type", "Versions", "Material", "Improvements"]
+        writer.writerow(leadingrow)
+        writer.writerows([rep.get_csv_row() for rep in merged_replacements])
 
 
 # materials()
-sockets()
+# sockets()
+replacements()

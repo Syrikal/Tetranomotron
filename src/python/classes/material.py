@@ -385,8 +385,7 @@ class Material:
         if not self.matches(other_material):
             raise ValueError(f"Can't assimilate {self.name} and {other_material.name}, no match detected")
 
-        for ver in other_material.versions:
-            self.versions.append(ver)
+        self.versions.extend(other_material.versions)
 
 
 def test():

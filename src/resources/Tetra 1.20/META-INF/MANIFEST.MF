@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: tetra
+Specification-Vendor: Mickelus
+Specification-Version: 1
+Implementation-Title: tetra
+Implementation-Version: 1.20.1-6.1.0
+Implementation-Vendor: Mickelus
+Implementation-Timestamp: 2023-11-10T22:46:04+0100
+MixinConfigs: tetra.mixins.json
+

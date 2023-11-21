@@ -1,0 +1,74 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [
+        "double/head_left",
+        "double/head_right"
+    ],
+    "slotSuffixes": [
+        "_left",
+        "_right"
+    ],
+    "improvements": [
+        "tetra:enchantment/sharpness",
+        "tetra:enchantment/smite",
+        "tetra:enchantment/bane_of_arthropods",
+        "tetra:enchantment/fire_aspect",
+        "tetra:enchantment/looting",
+        "tetra:enchantment/efficiency_pickaxe",
+        "tetra:enchantment/silk_touch",
+        "tetra:enchantment/fortune",
+        "tetra:enchantment/vanishing_curse",
+        "tetra:enchantment/apotheosis_depth_miner",
+        "tetra:enchantment/cyclic_excavate",
+        "tetra:enchantment/enchantable_ore_eater",
+        "tetra:enchantment/enchantable_excavator",
+        "tetra:enchantment/ensorcellation_excavating",
+        "tetra:enchantment/ensorcellation_soulbound",
+        "tetra:enchantment/ma-enchants_reinforced_tip",
+        "tetra:enchantment/ma-enchants_stone_mending",
+        "tetra:enchantment/ma-enchants_momentum",
+        "tetra:enchantment/ma-enchants_curse_death",
+        "tetra:enchantment/cursed_curtail",
+        "tetra:enchantment/cursed_ignorance",
+        "tetra:enchantment/cursed_misfortune",
+        "tetra:enchantment/cursed_fragility",
+        "tetra:enchantment/cursed_fading",
+        "tetra:enchantment/cursed_obedience",
+        "tetra:enchantment/cursed_encumbrance",
+        "tetra:double/pickaxe/",
+        "tetra:double/shared_head/",
+        "tetra:double/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": ["tetra:metal/", "tetra:stone/", "tetra:wood/", "tetra:gem/"],
+            "key": "basic_pickaxe/",
+            "attributes": {
+                "generic.attack_damage": -2,
+                "generic.attack_speed": -1.2
+            },
+            "tools": {
+                "pickaxe": -1
+            },
+            "durability": -10,
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 1
+                },
+                "tools": {
+                    "pickaxe": [1, 0.91]
+                },
+                "durability": 0.5,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 176
+                },
+                "availableTextures": ["crude", "metal", "shiny"],
+                "models": [{ "location": "tetra:items/module/double/head/basic_pickaxe/" }]
+            }
+        }
+    ]
+}

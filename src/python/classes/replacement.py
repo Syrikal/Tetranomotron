@@ -6,6 +6,7 @@ import json
 from jsondiff import diff
 
 from classes.socket import ModularType
+from classes.trait import get_traits_csv_string
 
 
 def main():
@@ -16,11 +17,11 @@ def main():
 class Replacement:
     # Replacement_Type is axe, double_axe hoe, knife, pick, shovel, or sword
     # Improvements is a list of lists of length 3: module, improvement, level
-    def __init__(self, replacement_type, versions, modid, itemid, material, improvements):
+    def __init__(self, itemid, modid, replacement_type, versions, material, improvements):
+        self.item_id = itemid
+        self.mod_id = modid
         self.replacement_type = ReplacementType(replacement_type)
         self.versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
-        self.mod_id = modid
-        self.item_id = itemid
         self.material_name = material.lower()
         self.improvements = improvements
         # print(f"Generating Replacement with improvements {improvements}")
@@ -32,7 +33,7 @@ class Replacement:
         if len(csv_row) != 6:
             raise ValueError(f"Failed attempt to create a replacement from csv row because row was wrong size: '{csv_row}'")
 
-        replacement_type, versions, modid, itemid, material_name, improvements = csv_row
+        itemid, mod_id, replacement_type, versions, material_name, improvements = csv_row
 
         # Turn comma-separated lists into actual lists
         versions = versions.split(", ")
@@ -41,7 +42,7 @@ class Replacement:
         if not improvements:
             improvements_new = []
 
-        rep = Replacement(replacement_type, versions, modid, itemid, material_name, improvements_new)
+        rep = Replacement(itemid, mod_id, replacement_type, versions, material_name, improvements_new)
         # print(f"Generated replacement from CSV: {rep.get_print_string()}")
         return rep
 
@@ -49,7 +50,12 @@ class Replacement:
     # Creates a Replacement from a JSON object (*not* a file!)
     def create_from_json(cls, json_object, version):
         # print("Creating a replacement from a JSON")
-        mod_and_item = json_object["predicate"]["item"]
+        predicate_block = json_object["predicate"]
+        mod_and_item = ""
+        if version == MinecraftVersion.SIXTEEN:
+            mod_and_item = json_object["predicate"]["item"]
+        else:
+            mod_and_item = json_object["predicate"]["items"][0]
         mod_id, item_id = mod_and_item.split(":")
         versions = [version.value]
         # print(f"Found mod id {mod_id} and item id {item_id} from combined form {mod_and_item}.")
@@ -72,7 +78,7 @@ class Replacement:
         module, material = module_key.split("/")
         # print(f"Split module key into module {module} and material {material}.")
 
-        replacement_type = ""
+        replacement_type = None
         match module:
             case "basic_axe":
                 second_module = modules_dict["double/head_right"][1].split("/")[0]
@@ -85,12 +91,16 @@ class Replacement:
                 replacement_type = ReplacementType.HOE
             case "short_blade":
                 replacement_type = ReplacementType.KNIFE
-            case "basic_pickaxe_left":
+            case "basic_pickaxe":
                 replacement_type = ReplacementType.PICK
             case "basic_shovel":
                 replacement_type = ReplacementType.SHOVEL
             case "basic_blade":
                 replacement_type = ReplacementType.SWORD
+            case "heavy_blade":
+                replacement_type = ReplacementType.GREATSWORD
+            case _:
+                raise ValueError(f"Can't parse module {module}")
 
         # Double-check we have the right replacement type
         second_module = None
@@ -115,13 +125,13 @@ class Replacement:
                 improvements.append([module, imp_name, level])
 
         # print("Generating Replacement item."
-        output = Replacement(replacement_type, versions, mod_id, item_id, material, improvements)
+        output = Replacement(item_id, mod_id, replacement_type, versions, material, improvements)
         # legacy = version == MinecraftVersion.SIXTEEN
         # output_json = output.get_json(legacy)
         # print("Generated replacement from JSON. Output JSON has differences: ")
         # print(diff(json_object, output_json))
 
-        return Replacement(replacement_type, versions, mod_id, item_id, material, improvements)
+        return output
 
     def check_valid(self):
         complaint_string = ""
@@ -219,14 +229,49 @@ class Replacement:
         for x in self.improvements:
             improvements.append(" ".join([str(y) for y in x]))
 
-        output = [self.replacement_type.value, get_versions_csv_string(self.versions), self.mod_id, self.item_id,
+        output = [self.item_id, self.mod_id, self.replacement_type.value, get_versions_csv_string(self.versions),
                 self.material_name, ", ".join(improvements)]
-        print(f"Created CSV row: {output}")
+        # print(f"Created CSV row: {output}")
         return output
+
+    def matches(self, other_replacement, verbose=False):
+        match = True
+        unmatches = []
+        if self.replacement_type != other_replacement.replacement_type:
+            unmatches.append("replacement type")
+            match = False
+        if self.mod_id != other_replacement.mod_id:
+            unmatches.append("mod ID")
+            match = False
+        if self.item_id != other_replacement.item_id:
+            unmatches.append("item ID")
+            match = False
+        if self.material_name != other_replacement.material_name:
+            unmatches.append("material name")
+            match = False
+        if self.improvements != other_replacement.improvements:
+            unmatches.append("improvements")
+            match = False
+
+        if match:
+            if verbose or len(unmatches) < 4:
+                print(f"{self.item_id} replacement matches {other_replacement.item_id} replacement")
+            return True
+        else:
+            if verbose:
+                print(f"{self.item_id} replacement does not match {other_replacement.item_id}: mismatched {', '.join(unmatches)}")
+            return False
+
+    def assimilate(self, other_replacement):
+        if not self.matches(other_replacement):
+            raise ValueError(f"Can't assimilate {self.item_id} and {other_replacement.item_id}, no match detected")
+
+        self.versions = list(set(self.versions + other_replacement.versions))
 
 
 # Generates a bunch of replacements from a JSON file
 def gen_replacements_from_json(json_file, version):
+    print(f"Generating replacements from json {json_file}")
     opened = open(json_file)
     reps = json.load(opened)
     outputs = []
@@ -247,31 +292,27 @@ class ReplacementType(Enum):
     PICK = "pick"
     SHOVEL = "shovel"
     SWORD = "sword"
+    GREATSWORD = "greatsword"
     KNIFE = "knife"
 
     def second_module(self):
-        match self:
-            case ReplacementType.AXE:
-                return "butt"
-            case ReplacementType.DOUBLE_AXE:
-                return "basic_axe"
-            case ReplacementType.HOE:
-                return "butt"
-            case ReplacementType.PICK:
-                return "basic_pickaxe"
-            case ReplacementType.SHOVEL:
-                return "basic_handle"
-            case ReplacementType.SWORD:
-                return "basic_hilt"
-            case ReplacementType.KNIFE:
-                return "basic_hilt"
+        if self in [ReplacementType.AXE, ReplacementType.HOE]:
+            return "butt"
+        elif self in [ReplacementType.DOUBLE_AXE]:
+            return "basic_axe"
+        elif self in [ReplacementType.PICK]:
+            return "basic_pickaxe"
+        elif self in [ReplacementType.SHOVEL]:
+            return "basic_handle"
+        elif self in [ReplacementType.SWORD, ReplacementType.GREATSWORD, ReplacementType.KNIFE]:
+            return "basic_hilt"
 
     def get_modular_type(self):
         if self in [ReplacementType.AXE, ReplacementType.DOUBLE_AXE, ReplacementType.PICK, ReplacementType.HOE]:
             return ModularType.DOUBLE
         elif self in [ReplacementType.SHOVEL]:
             return ModularType.SINGLE
-        elif self in [ReplacementType.SWORD, ReplacementType.KNIFE]:
+        elif self in [ReplacementType.SWORD, ReplacementType.GREATSWORD, ReplacementType.KNIFE]:
             return ModularType.SWORD
 
 

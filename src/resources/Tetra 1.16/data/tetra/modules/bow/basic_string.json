@@ -1,0 +1,70 @@
+{
+    "replace": true,
+    "slots": ["bow/string"],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:enchantment/infinity",
+        "tetra:enchantment/mending",
+        "tetra:enchantment/unbreaking",
+        "tetra:enchantment/punch",
+        "tetra:enchantment/ma-enchants_floating",
+        "tetra:enchantment/ma-enchants_paralysis",
+        "tetra:enchantment/apotheosis_life_mending",
+        "tetra:enchantment/apotheosis_true_infinity",
+        "tetra:enchantment/ma-enchants_curse_breaking",
+        "tetra:enchantment/ma-enchants_detonation",
+        "tetra:enchantment/naturesaura_aura_mending",
+        "tetra:enchantment/vanishing_curse",
+        "tetra:enchantment/ensorcellation_soulbound",
+        "tetra:enchantment/ma-enchants_curse_death",
+        "tetra:enchantment/cursed_fragility",
+        "tetra:enchantment/cursed_misfortune",
+        "tetra:enchantment/cursed_fading",
+        "tetra:enchantment/cursed_obedience",
+        "tetra:bow/basic_string/",
+        "tetra:bow/shared_string/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": ["tetra:fibre/", "tetra:skin/"],
+            "key": "basic_string/",
+            "integrity": 1,
+            "durability": 70,
+            "attributes": {
+                "tetra:draw_speed": -0.05
+            },
+            "extract": {
+                "secondaryAttributes": {
+                    "tetra:draw_speed": 0.07
+                },
+                "durability": 0.5,
+                "integrity": 1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 112,
+                    "textureY": 32
+                },
+                "availableTextures": ["default"],
+                "models": [
+                    {
+                        "location": "tetra:items/module/bow/string/basic/"
+                    },
+                    {
+                        "type": "draw_0",
+                        "location": "tetra:items/module/bow/string/basic/0_"
+                    },
+                    {
+                        "type": "draw_1",
+                        "location": "tetra:items/module/bow/string/basic/1_"
+                    },
+                    {
+                        "type": "draw_2",
+                        "location": "tetra:items/module/bow/string/basic/2_"
+                    }
+                ]
+            }
+        }
+    ]
+}

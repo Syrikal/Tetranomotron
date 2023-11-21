@@ -1,0 +1,56 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [
+        "single/head"
+    ],
+    "improvements": [
+        "tetra:enchantment/efficiency_pickaxe",
+        "tetra:enchantment/silk_touch",
+        "tetra:enchantment/fortune",
+        "tetra:enchantment/piercing",
+        "tetra:enchantment/vanishing_curse",
+        "tetra:enchantment/apotheosis_depth_miner",
+        "tetra:enchantment/enchantable_ore_eater",
+        "tetra:enchantment/ensorcellation_soulbound",
+        "tetra:enchantment/ma-enchants_reinforced_tip",
+        "tetra:enchantment/ma-enchants_stone_mending",
+        "tetra:enchantment/ma-enchants_momentum",
+        "tetra:enchantment/ma-enchants_curse_death",
+        "tetra:enchantment/cursed_curtail",
+        "tetra:enchantment/cursed_ignorance",
+        "tetra:enchantment/cursed_misfortune",
+        "tetra:enchantment/cursed_fragility",
+        "tetra:enchantment/cursed_fading",
+        "tetra:enchantment/cursed_obedience",
+        "tetra:enchantment/cursed_encumbrance",
+        "tetra:single/earthpiercer/",
+        "tetra:single/shared_head/",
+        "tetra:single/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "earthpiercer/earthpiercer",
+            "durability": 771,
+            "integrity": -3,
+            "magicCapacity": 48,
+            "attributes": {
+                "generic.attack_damage": 2,
+                "generic.attack_speed": -1.95
+            },
+            "tools": {
+                "pickaxe": [3, 5]
+            },
+            "effects": {
+                "piercing": 2,
+                "piercingHarvest": 1
+            },
+            "glyph": {
+                "textureX": 224,
+                "textureY": 32
+            },
+            "models": [{ "location": "tetra:items/module/single/head/earthpiercer/default" }]
+        }
+    ]
+}

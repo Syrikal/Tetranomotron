@@ -2,7 +2,7 @@ from enum import Enum
 
 
 def main():
-    # test()
+    test()
     pass
 
 
@@ -31,13 +31,49 @@ class ToolBoost:
     def get_csv_string(self):
         return f"{self.tool_type.value} {self.level} {self.efficiency}"
 
+    # Returns True if it's the same as another provided boost
+    def matches(self, other_boost):
+        return all([self.tool_type == other_boost.tool_type, self.level == other_boost.level, self.efficiency == other_boost.efficiency])
+
 
 # Creates a list of tool boosts from a csv string
 def create_boosts_from_csv(csv_entry):
     if len(csv_entry) == 0:
         return []
-    split_line = csv_entry.split(", ")
-    return [ToolBoost.create_from_csv(boost) for boost in split_line]
+
+    if csv_entry.startswith("all"):
+        # print("generating all")
+        boosts = []
+        for tool in ToolType:
+            # print(f"adding tool '{tool.value}'")
+            newstring = csv_entry.replace("all", tool.value)
+            # print(f"generating from string {newstring}")
+            boosts.append(ToolBoost.create_from_csv(newstring))
+        return boosts
+
+    else:
+        split_line = csv_entry.split(", ")
+        return [ToolBoost.create_from_csv(boost) for boost in split_line]
+
+
+def get_toolboosts_csv_string(list_of_boosts):
+    # Check if it's an 'all x y' situation
+    all = True
+    first_boost = list_of_boosts[0]
+    x, y = first_boost.level, first_boost.efficiency
+    # print(f"Level and efficiency: {x}, {y}")
+    for tool in ToolType:
+        seeking = ToolBoost(tool, x, y)
+        if not any([seeking.matches(x) for x in list_of_boosts]):
+            all = False
+            # print(f"{tool.value} did not have a matching boost present")
+            break
+
+    if all:
+        # print("Returning all!")
+        return f"all {x} {y}"
+    else:
+        return ", ".join([x.get_csv_string() for x in list_of_boosts])
 
 
 class ToolType(Enum):
@@ -62,6 +98,11 @@ class ToolType(Enum):
 
 
 def test():
+    csv_string = "all 1 3"
+    boosts = create_boosts_from_csv(csv_string)
+    print([x.get_print_string() for x in boosts])
+    print(get_toolboosts_csv_string(boosts))
+
     pass
 
 
