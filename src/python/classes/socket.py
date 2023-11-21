@@ -2,6 +2,8 @@ from collections import OrderedDict
 from enum import Enum
 import json
 
+from jsondiff import diff
+
 from classes.mc_version import MinecraftVersion, get_versions_csv_string
 from classes.tool_boost import ToolType, create_boosts_from_csv
 from classes.trait import gen_traits_from_string, get_traits_csv_string
@@ -96,7 +98,7 @@ class Socket:
 
         ver = str(version.value)
 
-        modular_types = []
+        modular_types = ""
         match socket_type:
             case "double_socket":
                 modular_types = "double"
@@ -107,7 +109,7 @@ class Socket:
 
         durability = json_object["durability"] if "durability" in json_object.keys() else 0
         durability_multiplier = json_object[
-            "durabilityMultiplier"] if "durabilityMultiplier" in json_object.keys() else 0
+            "durabilityMultiplier"] if "durabilityMultiplier" in json_object.keys() else 1
         integrity = json_object["integrity"] if "integrity" in json_object.keys() else 0
         tint = json_object["glyph"]["tint"] if "glyph" in json_object.keys() else ""
         attributes = json_object["attributes"] if "attributes" in json_object.keys() else {}
@@ -136,7 +138,27 @@ class Socket:
         fake_csv_row = [name, mod_id, lang_name, ver, modular_types, durability, durability_multiplier, integrity,
                         tint, newer_attributes, newer_effects, newer_tools, item, xp_cost]
 
-        return Socket.create_from_csv(fake_csv_row)
+        output = Socket.create_from_csv(fake_csv_row)
+        # legacy = version == MinecraftVersion.SIXTEEN
+        # mod_type = ModularType(modular_types)
+        # output_json = output.get_json(legacy, mod_type)
+        # print("Generated socket from JSON. Differences:")
+        # print(diff(json_object, output_json))
+
+        return output
+
+    # Compares the Socket to an original.
+    def compare_to_original(self, json_object, legacy, mod_type):
+        print(f"Comparing replacement of socket {self.name}...")
+        jsonified = self.get_json(legacy, mod_type)
+        print("Difference between self and original:")
+        print(diff(json_object, jsonified))
+        print("Saving and restoring from CSV...")
+        csvified = self.get_csv_row()
+        restored = Socket.create_from_csv(csvified)
+        restored_json = restored.get_json(legacy, mod_type)
+        print("Difference between restored and originally created:")
+        print(diff(jsonified, restored_json))
 
     # Generates a string formatted for printing
     def get_print_string(self):
@@ -186,23 +208,24 @@ class Socket:
             output["tools"] = tool_dict
 
         glyph = OrderedDict()
-        glyph["tint"] = self.tint
-        glyph["textureX"] = 80
-        glyph["textureY"] = 16
-        output["glyph"] = glyph
+        if self.tint:
+            glyph["tint"] = self.tint
+            glyph["textureX"] = 80
+            glyph["textureY"] = 16
+            output["glyph"] = glyph
 
-        location = ""
-        match mod_type:
-            case ModularType.SWORD:
-                location = "tetra:items/module/sword/guard/socket/default"
-            case ModularType.DOUBLE:
-                location = "tetra:items/module/double/binding/socket/default"
-            case ModularType.SINGLE:
-                location = "tetra:items/module/single/binding/socket/default"
-        model = OrderedDict()
-        model["location"] = location
-        model["tint"] = self.tint
-        output["models"] = [model]
+            location = ""
+            match mod_type:
+                case ModularType.SWORD:
+                    location = "tetra:items/module/sword/guard/socket/default"
+                case ModularType.DOUBLE:
+                    location = "tetra:items/module/double/binding/socket/default"
+                case ModularType.SINGLE:
+                    location = "tetra:items/module/single/binding/socket/default"
+            model = OrderedDict()
+            model["location"] = location
+            model["tint"] = self.tint
+            output["models"] = [model]
 
         return output
 
@@ -241,9 +264,9 @@ class Socket:
 
         att = get_traits_csv_string(self.attributes)
         eff = get_traits_csv_string(self.effects)
-        boost = self.tool_boosts.get_versions_csv_string
+        boost = ", ".join([x.get_csv_string() for x in self.tool_boosts])
         vers = get_versions_csv_string(self.versions)
-        mods = ", ".join([x.name for x in self.modular_types])
+        mods = ", ".join([x.value for x in self.modular_types])
 
         output = [self.name, self.mod_id, self.lang_name, vers, mods,
                   self.durability, self.durability_multiplier, self.integrity, self.tint,
@@ -308,12 +331,19 @@ def test():
     sixteen_lang = "../../resources/Tetranomicon 1.16/assets/tetranomicon/lang/en_us.json"
     sixteen_schematics = "../../resources/Tetranomicon 1.16/data/tetra/schematics/double/socket.json"
 
-    sockets = gen_sockets_from_json(sixteen_double_sockets, sixteen_lang, sixteen_schematics, MinecraftVersion.SIXTEEN)
+    # sockets = gen_sockets_from_json(sixteen_double_sockets, sixteen_lang, sixteen_schematics, MinecraftVersion.SIXTEEN)
+    #
+    # output_json = generate_sockets_json(sockets, False, ModularType.DOUBLE)
+    # # print(json.dumps(output_json, indent=4))
+    # schematics_json = generate_schematics_json(sockets, True, ModularType.DOUBLE)
+    # print(json.dumps(schematics_json, indent=4))
 
-    output_json = generate_sockets_json(sockets, False, ModularType.DOUBLE)
-    # print(json.dumps(output_json, indent=4))
-    schematics_json = generate_schematics_json(sockets, True, ModularType.DOUBLE)
-    print(json.dumps(schematics_json, indent=4))
+    socks = open(sixteen_double_sockets)
+    socs = json.load(socks)
+    for og_json in socs["variants"]:
+        socket_object = Socket.create_from_json(og_json, sixteen_lang, sixteen_schematics, MinecraftVersion.SIXTEEN)
+        socket_object.compare_to_original(og_json, True, ModularType.DOUBLE)
+        print("\n\n")
 
     # for socket in sockets:
     #     print(json.dumps(socket.get_schematic_json_object(True, ModularType.DOUBLE), indent=4))

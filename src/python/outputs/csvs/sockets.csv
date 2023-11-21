@@ -1,0 +1,100 @@
+Name,Mod ID,Lang Name,Versions,Item Types,Durability,Durability Mod,Integrity,Tint,Attributes,Effects,Tool Boosts,Item,XP Cost
+ametrine,byg,Socket [§eAmet§drine§r],16,double,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],16,double,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],16,double,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],16,double,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],16,double,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],16,double,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],16,double,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],16,double,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],16,double,640,0.8,-1,6fc39c,,,"axe 0 3.0, pickaxe 0 3.0, hoe 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],16,double,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"axe 0 6.0, shovel 0 6.0, pickaxe 0 6.0, hoe 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],16,double,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],16,single,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],16,single,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],16,single,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],16,single,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"shovel 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],16,single,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"shovel 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],16,single,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"shovel 0 5.0, cut 0 5.0",purple_geode,10
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],16,single,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],16,single,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],16,single,640,0.8,-1,6fc39c,,,"shovel 0 3.0, cut 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],16,single,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"shovel 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],16,single,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],16,sword,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],16,sword,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],16,sword,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],16,sword,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],16,sword,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],16,sword,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],16,sword,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],16,sword,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],16,sword,640,0.8,-1,6fc39c,,,cut 0 3.0,mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],16,sword,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,cut 0 6.0,godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],16,sword,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],18,double,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],18,double,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],18,double,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],18,double,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],18,double,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],18,double,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],18,double,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],18,double,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],18,double,640,0.8,-1,6fc39c,,,"axe 0 3.0, pickaxe 0 3.0, hoe 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],18,double,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"axe 0 6.0, shovel 0 6.0, pickaxe 0 6.0, hoe 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],18,double,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],18,single,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],18,single,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],18,single,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],18,single,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"shovel 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],18,single,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"shovel 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],18,single,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"shovel 0 5.0, cut 0 5.0",purple_geode,10
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],18,single,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],18,single,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],18,single,640,0.8,-1,6fc39c,,,"shovel 0 3.0, cut 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],18,single,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"shovel 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],18,single,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],18,sword,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],18,sword,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],18,sword,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],18,sword,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],18,sword,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],18,sword,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],18,sword,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],18,sword,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],18,sword,640,0.8,-1,6fc39c,,,cut 0 3.0,mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],18,sword,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,cut 0 6.0,godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],18,sword,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],19,double,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],19,double,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],19,double,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],19,double,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],19,double,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],19,double,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],19,double,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],19,double,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],19,double,640,0.8,-1,6fc39c,,,"axe 0 3.0, pickaxe 0 3.0, hoe 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],19,double,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"axe 0 6.0, shovel 0 6.0, pickaxe 0 6.0, hoe 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],19,double,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],19,single,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],19,single,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],19,single,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],19,single,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"shovel 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],19,single,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"shovel 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],19,single,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"shovel 0 5.0, cut 0 5.0",purple_geode,10
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],19,single,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],19,single,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],19,single,640,0.8,-1,6fc39c,,,"shovel 0 3.0, cut 0 3.0",mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],19,single,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,"shovel 0 6.0, cut 0 6.0",godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],19,single,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
+ametrine,byg,Socket [§eAmet§drine§r],19,sword,1024,1.0,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
+blue_geode,wyrmroost,Socket [§9Blue Geode§r],19,sword,512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,"axe 0 2.0, shovel 0 2.0, pickaxe 0 2.0, hoe 0 2.0, cut 0 2.0",blue_geode,2
+red_geode,wyrmroost,Socket [§4Red Geode§r],19,sword,640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,"axe 0 3.0, shovel 0 3.0, pickaxe 0 3.0, hoe 0 3.0, cut 0 3.0",red_geode,5
+purple_geode,wyrmroost,Socket [§5Purple Geode§r],19,sword,768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,"axe 0 5.0, shovel 0 5.0, pickaxe 0 5.0, hoe 0 5.0, cut 0 5.0",purple_geode,10
+aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],19,sword,0,1.0,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
+eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],19,sword,512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
+cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],19,sword,0,1.0,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
+rose_crystal,outer_end,Socket [§cRose Crystal§r],19,sword,0,1.0,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
+mint_crystal,outer_end,Socket [§aMint Crystal§r],19,sword,640,0.8,-1,6fc39c,,,cut 0 3.0,mint_crystal_shard,10
+godshard,atum,Socket [§bGodshard§r],19,sword,1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,cut 0 6.0,godshards,30
+smaragdant,betterendforge,Socket [§3Smaragdant§r],19,sword,256,1.0,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30

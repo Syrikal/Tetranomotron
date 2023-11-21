@@ -22,19 +22,21 @@ class ToolBoost:
         else:
             return ToolBoost(ToolType(split[0]), split[1], split[2])
 
+    # Generates a print-formatted string.
+    # (Also formatted for a JSON, but don't need that anymore.)
     def get_print_string(self):
         return f"{self.tool_type.name}: [{self.level}, {self.efficiency}]"
 
     # Generates a string formatted for storing in a CSV
     def get_csv_string(self):
-        return f"{self.tool_type} {self.level} {self.efficiency}"
+        return f"{self.tool_type.value} {self.level} {self.efficiency}"
 
 
 # Creates a list of tool boosts from a csv string
-def create_boosts_from_csv(csv_line):
-    if len(csv_line) == 0:
+def create_boosts_from_csv(csv_entry):
+    if len(csv_entry) == 0:
         return []
-    split_line = csv_line.split(", ")
+    split_line = csv_entry.split(", ")
     return [ToolBoost.create_from_csv(boost) for boost in split_line]
 
 
