@@ -6,7 +6,6 @@ import json
 from jsondiff import diff
 
 from classes.socket import ModularType
-from classes.trait import get_traits_csv_string
 
 
 def main():
@@ -22,14 +21,14 @@ class Replacement:
         self.mod_id = modid
         self.replacement_type = ReplacementType(replacement_type)
         self.versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
-        self.material_name = material.lower()
+        self.material_key = material.lower()
         self.improvements = improvements
         # print(f"Generating Replacement with improvements {improvements}")
 
     @classmethod
     # Creates a Replacement from a CSV row
     def create_from_csv(cls, csv_row):
-        print("Creating a replacement from a CSV row")
+        # print("Creating a replacement from a CSV row")
         if len(csv_row) != 6:
             raise ValueError(f"Failed attempt to create a replacement from csv row because row was wrong size: '{csv_row}'")
 
@@ -160,7 +159,7 @@ class Replacement:
     # Generates a string formatted for printing
     def get_print_string(self):
         return f'''
-        Replacement of '{self.item_id}' from mod '{self.mod_id}' uses material '{self.mod_id}_{self.material_name}'. Replacement type: {self.replacement_type.name}.
+        Replacement of '{self.item_id}' from mod '{self.mod_id}' uses material '{self.mod_id}_{self.material_key}'. Replacement type: {self.replacement_type.name}.
         Improvements: {self.improvements}
         Versions: {[ver.get_print_string() for ver in self.versions]}.
         '''
@@ -179,43 +178,43 @@ class Replacement:
         output["item"] = f"tetra:modular_{self.replacement_type.get_modular_type().value}"
 
         modules = OrderedDict()
-        material_name = self.material_name
+        material_key = self.material_key
         modid = self.mod_id
         stick = "stick"
         match self.replacement_type:
             case ReplacementType.AXE:
-                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{modid}_{material_name}"]
-                modules["double/head_right"] = ["double/butt_right", f"butt/{modid}_{material_name}"]
+                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{material_key}"]
+                modules["double/head_right"] = ["double/butt_right", f"butt/{material_key}"]
                 modules["double/handle"] = ["double/basic_handle", f"basic_handle/{stick}"]
             case ReplacementType.DOUBLE_AXE:
-                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{modid}_{material_name}"]
-                modules["double/head_right"] = ["double/basic_axe_right", f"basic_axe/{modid}_{material_name}"]
+                modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{material_key}"]
+                modules["double/head_right"] = ["double/basic_axe_right", f"basic_axe/{material_key}"]
                 modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
             case ReplacementType.PICK:
-                modules["double/head_left"] = ["double/basic_pickaxe_left", f"basic_pickaxe/{modid}_{material_name}"]
-                modules["double/head_right"] = ["double/basic_pickaxe_right", f"basic_pickaxe/{modid}_{material_name}"]
+                modules["double/head_left"] = ["double/basic_pickaxe_left", f"basic_pickaxe/{material_key}"]
+                modules["double/head_right"] = ["double/basic_pickaxe_right", f"basic_pickaxe/{material_key}"]
                 modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
             case ReplacementType.HOE:
-                modules["double/head_left"] = ["double/hoe_left", f"hoe/{modid}_{material_name}"]
-                modules["double/head_right"] = ["double/butt_right", f"butt/{modid}_{material_name}"]
+                modules["double/head_left"] = ["double/hoe_left", f"hoe/{material_key}"]
+                modules["double/head_right"] = ["double/butt_right", f"butt/{material_key}"]
                 modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
             case ReplacementType.SHOVEL:
-                modules["single/head"] = ["single/basic_shovel", f"basic_shovel/{modid}_{material_name}"]
+                modules["single/head"] = ["single/basic_shovel", f"basic_shovel/{material_key}"]
                 modules["single/handle"] = ["single/basic_handle", "basic_handle/stick"]
             case ReplacementType.SWORD:
-                modules["sword/blade"] = ["sword/basic_blade", f"basic_blade/{modid}_{material_name}"]
+                modules["sword/blade"] = ["sword/basic_blade", f"basic_blade/{material_key}"]
                 modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
-                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{modid}_{material_name}"]
-                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{modid}_{material_name}"]
+                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{material_key}"]
+                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{material_key}"]
             case ReplacementType.KNIFE:
-                modules["sword/blade"] = ["sword/short_blade", f"short_blade/{modid}_{material_name}"]
+                modules["sword/blade"] = ["sword/short_blade", f"short_blade/{material_key}"]
                 modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
-                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{modid}_{material_name}"]
-                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{modid}_{material_name}"]
+                modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{material_key}"]
+                modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{material_key}"]
         output["modules"] = modules
 
         if self.improvements:
-            print(f"Improvements: {self.improvements}")
+            # print(f"Improvements: {self.improvements}")
             improvements = OrderedDict()
             for imp in self.improvements:
                 improvements[f"{imp[0]}:{imp[1]}"] = int(imp[2])
@@ -230,7 +229,7 @@ class Replacement:
             improvements.append(" ".join([str(y) for y in x]))
 
         output = [self.item_id, self.mod_id, self.replacement_type.value, get_versions_csv_string(self.versions),
-                self.material_name, ", ".join(improvements)]
+                  self.material_key, ", ".join(improvements)]
         # print(f"Created CSV row: {output}")
         return output
 
@@ -246,7 +245,7 @@ class Replacement:
         if self.item_id != other_replacement.item_id:
             unmatches.append("item ID")
             match = False
-        if self.material_name != other_replacement.material_name:
+        if self.material_key != other_replacement.material_key:
             unmatches.append("material name")
             match = False
         if self.improvements != other_replacement.improvements:

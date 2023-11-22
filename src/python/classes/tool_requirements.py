@@ -47,17 +47,17 @@ class ToolRequirements:
     def get_json_object(self, legacy):
         output = OrderedDict()
 
-        if self.hammer != 0:
+        if self.hammer != ToolLevel.ZERO:
             if legacy:
                 output["hammer"] = self.hammer.get_legacy_int()
             else:
                 output["hammer_dig"] = self.hammer.get_modern_string()
-        if self.axe != 0:
+        if self.axe != ToolLevel.ZERO:
             if legacy:
                 output["axe"] = self.axe.get_legacy_int()
             else:
                 output["axe_dig"] = self.axe.get_modern_string()
-        if self.cut != 0:
+        if self.cut != ToolLevel.ZERO:
             if legacy:
                 output["cut"] = self.cut.get_legacy_int()
             else:

@@ -252,11 +252,11 @@ class Socket:
 
         return output
 
-    # Generates the lang lines for a socket. Returns them as an OrderedDict.
+    # Generates the lang lines for a socket. Returns them as a list.
     def get_lang_lines(self):
-        lines = OrderedDict()
+        lines = []
         for modular_type in self.modular_types:
-            lines[f"tetra.variant.{modular_type.name}_socket/{self.variant_key}"] = f"{self.lang_name}"
+            lines.append(f'''"tetra.variant.{modular_type.value}_socket/{self.variant_key}": "{self.lang_name}"''')
         return lines
 
     # Generates a CSV row

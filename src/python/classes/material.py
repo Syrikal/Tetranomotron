@@ -69,6 +69,8 @@ class Material:
             tint, texts, item, effects, improvements, tool_requirements \
             = csv_row
 
+        # print(f"Creating material {mod_id}_{name.lower().replace(' ', '_')} from CSV row: versions {versions}")
+
         # Turn comma-separated lists into lists of strings
         versions, texts = versions.split(", "), texts.split(", ")
 
@@ -89,6 +91,9 @@ class Material:
     def create_from_json(cls, json_file, lang_file, version):
         opened = open(json_file)
         mat = json.load(opened)
+
+        # print(f"Creating material {mat['key']} from JSON")
+
         key = mat["key"]
         cat = mat["category"]
         pri = mat["primary"]
@@ -99,6 +104,7 @@ class Material:
         ig = mat["integrityGain"]
         mc = mat["magicCapacity"]
         tl = mat["toolLevel"] if "toolLevel" in mat.keys() else 0
+        # print(f"Set tool level to {tl}")
         te = mat["toolEfficiency"]
         tin = mat["tints"]["glyph"]
         tex = mat["textures"]
@@ -150,9 +156,11 @@ class Material:
         fake_csv_row = [name, prefix, modid, str(ver), cat, pri, sec, ter, dur, ic, ig, mc, tl, te, tin, texts, item,
                         neweff, newimp, newreq]
 
-        print(f"Creating {name} material from JSON")
+        # print(f"Creating {name} material from JSON")
+        output = Material.create_from_csv(fake_csv_row)
+        # print(f"Material has a tool level of {output.tool_level}")
 
-        return Material.create_from_csv(fake_csv_row)
+        return output
 
     def check_valid(self):
         complaint_string = ""
@@ -196,7 +204,7 @@ class Material:
         Versions: {[ver.get_print_string() for ver in self.versions]}.
         Material category: {self.category}
         Base Stats: Hardness {self.primary}, Density {self.secondary}, Flexibility {self.tertiary}.
-        Other Stats: Durability {self.durability}, Integrity cost/gain {self.integrity_cost}/{self.integrity_gain}, Magic Capacity {self.magic_capacity}, Tool Level/Efficiency {self.tool_level}/{self.tool_efficiency}.
+        Other Stats: Durability {self.durability}, Integrity cost/gain {self.integrity_cost}/{self.integrity_gain}, Magic Capacity {self.magic_capacity}, Tool Level/Efficiency {self.tool_level.value}/{self.tool_efficiency}.
         Visual: Tint '{self.tint}', Textures {self.textures}
         Effects: {[eff.get_print_string() for eff in self.effects]}
         Improvements: {[imp.get_print_string() for imp in self.improvements]}
@@ -207,6 +215,8 @@ class Material:
     def get_json(self, legacy):
         output = OrderedDict()
 
+        # print(f"Getting JSON for material {self.material_key}")
+
         output["key"] = self.material_key
         output["category"] = self.category
         output["primary"] = self.primary
@@ -216,8 +226,8 @@ class Material:
         output["integrityCost"] = self.integrity_cost
         output["integrityGain"] = self.integrity_gain
         output["magicCapacity"] = self.magic_capacity
-        if self.tool_level != 0:
-            output["toolLevel"] = self.tool_level.get_legacy_int() if legacy else self.tool_level.get_modern_string()
+        # print(f"Material's tool level is {self.tool_level}")
+        output["toolLevel"] = self.tool_level.get_legacy_int() if legacy else self.tool_level.get_modern_string()
         output["toolEfficiency"] = self.tool_efficiency
 
         if self.improvements:
@@ -260,7 +270,7 @@ class Material:
             output["integrityCost"] = str(self.integrity_cost)
             output["integrityGain"] = str(self.integrity_gain)
             output["magicCapacity"] = str(self.magic_capacity)
-            output["toolLevel"] = str(self.tool_level)
+            output["toolLevel"] = str(output["toolLevel"])
             output["toolEfficiency"] = str(self.tool_efficiency)
 
         return output
@@ -268,7 +278,7 @@ class Material:
     # Generates the lang lines for a material (returned as a list, no commas)
     def get_lang_lines(self):
         output = [f'''"tetra.material.{self.material_key}": "{self.name}"''',
-                  f'''tetra.material.{self.material_key}.prefix": "{self.prefix}"''']
+                  f'''"tetra.material.{self.material_key}.prefix": "{self.prefix}"''']
         return output
 
     # Generates a CSV row
@@ -280,7 +290,7 @@ class Material:
         tools = self.required_tools.get_csv_string()
         output = [self.name, self.prefix, self.mod_id, vers, self.category,
                   self.primary, self.secondary, self.tertiary, self.durability,
-                  self.integrity_cost, self.integrity_gain, self.magic_capacity, self.tool_level, self.tool_efficiency,
+                  self.integrity_cost, self.integrity_gain, self.magic_capacity, self.tool_level.value, self.tool_efficiency,
                   self.tint, text, self.item,
                   eff, imp, tools]
 

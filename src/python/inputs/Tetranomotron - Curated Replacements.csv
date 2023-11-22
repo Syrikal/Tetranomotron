@@ -1,0 +1,88 @@
+Item ID,Mod ID,Replacement Type,Versions,Material,Improvements
+iron_greatsword,atum,greatsword,"16, 18, 19",iron,sword/blade brutal 0
+limestone_axe,atum,axe,"16, 18, 19",atum_limestone,
+limestone_hoe,atum,hoe,"16, 18, 19",atum_limestone,
+limestone_pickaxe,atum,pick,"16, 18, 19",atum_limestone,
+limestone_shovel,atum,shovel,"16, 18, 19",atum_limestone,
+limestone_sword,atum,sword,"16, 18, 19",atum_limestone,
+stoneguard_greatsword,atum,greatsword,"16, 18, 19",atum_khnumite,sword/blade brutal 0
+stoneguard_sword,atum,sword,"16, 18, 19",atum_khnumite,
+aeternium_axe,betterendforge,axe,"16, 18, 19",betterendforge_aeternium,double/handle basic_handle/wrap_leather 1
+aeternium_hoe,betterendforge,hoe,"16, 18, 19",betterendforge_aeternium,double/handle basic_handle/wrap_leather 1
+aeternium_pickaxe,betterendforge,pick,"16, 18, 19",betterendforge_aeternium,double/handle basic_handle/wrap_leather 1
+aeternium_shovel,betterendforge,shovel,"16, 18, 19",betterendforge_aeternium,single/handle basic_handle/wrap_leather 1
+aeternium_sword,betterendforge,sword,"16, 18, 19",betterendforge_aeternium,sword/hilt basic_hilt/wrap_leather 1
+terminite_axe,betterendforge,axe,"16, 18, 19",betterendforge_terminite,
+terminite_hoe,betterendforge,hoe,"16, 18, 19",betterendforge_terminite,
+terminite_pickaxe,betterendforge,pick,"16, 18, 19",betterendforge_terminite,
+terminite_shovel,betterendforge,shovel,"16, 18, 19",betterendforge_terminite,
+terminite_sword,betterendforge,sword,"16, 18, 19",betterendforge_terminite,
+thallasium_axe,betterendforge,axe,"16, 18, 19",betterendforge_thallasium,
+thallasium_hoe,betterendforge,hoe,"16, 18, 19",betterendforge_thallasium,
+thallasium_pickaxe,betterendforge,pick,"16, 18, 19",betterendforge_thallasium,
+thallasium_shovel,betterendforge,shovel,"16, 18, 19",betterendforge_thallasium,
+thallasium_sword,betterendforge,sword,"16, 18, 19",betterendforge_thallasium,
+pendorite_axe,byg,axe,"16, 18, 19",byg_pendorite,
+pendorite_battleaxe,byg,double_axe,"16, 18, 19",byg_pendorite,
+pendorite_hoe,byg,hoe,"16, 18, 19",byg_pendorite,
+pendorite_pickaxe,byg,pick,"16, 18, 19",byg_pendorite,
+pendorite_shovel,byg,shovel,"16, 18, 19",byg_pendorite,
+pendorite_sword,byg,sword,"16, 18, 19",byg_pendorite,
+enderite_axe,enderitemod,axe,"16, 18, 19",enderitemod_enderite,"double/head_left enderite_void_floating_innate 3, double/head_right enderite_void_floating_innate 3"
+enderite_hoe,enderitemod,hoe,"16, 18, 19",enderitemod_enderite,"double/head_left enderite_void_floating_innate 3, double/head_right enderite_void_floating_innate 3"
+enderite_pickaxe,enderitemod,pick,"16, 18, 19",enderitemod_enderite,"double/head_left enderite_void_floating_innate 3, double/head_right enderite_void_floating_innate 3"
+enderite_shovel,enderitemod,shovel,"16, 18, 19",enderitemod_enderite,single/head enderite_void_floating_innate 3
+enderite_sword,enderitemod,sword,"16, 18, 19",enderitemod_enderite,sword/blade enderite_void_floating_innate 3
+blazing_gold_axe,netheragriculture,axe,"16, 18, 19",netheragriculture_blazing_gold,"double/head_left blazing_tool 2, double/head_right blazing_tool 2"
+blazing_gold_hoe,netheragriculture,hoe,"16, 18, 19",netheragriculture_blazing_gold,"double/head_left blazing_tool 2, double/head_right blazing_tool 2"
+blazing_gold_pickaxe,netheragriculture,pick,"16, 18, 19",netheragriculture_blazing_gold,"double/head_left blazing_tool 2, double/head_right blazing_tool 2"
+blazing_gold_shovel,netheragriculture,shovel,"16, 18, 19",netheragriculture_blazing_gold,single/head blazing_tool 2
+blazing_gold_sword,netheragriculture,sword,"16, 18, 19",netheragriculture_blazing_gold,sword/blade blazing_blade 4
+diamond_knife,netheragriculture,knife,"16, 18, 19",diamond,sword/blade arrested 0
+knife,netheragriculture,knife,"16, 18, 19",iron,
+netherite_knife,netheragriculture,knife,"16, 18, 19",netherite,sword/hilt basic_hilt/soot 0
+chorundum_axe,stalwart_dungeons,axe,"16, 18, 19",stalwart_dungeons_chorundum,
+chorundum_hoe,stalwart_dungeons,hoe,"16, 18, 19",stalwart_dungeons_chorundum,
+chorundum_pickaxe,stalwart_dungeons,pick,"16, 18, 19",stalwart_dungeons_chorundum,
+chorundum_shovel,stalwart_dungeons,shovel,"16, 18, 19",stalwart_dungeons_chorundum,
+chorundum_sword,stalwart_dungeons,sword,"16, 18, 19",stalwart_dungeons_chorundum,
+tungsten_axe,stalwart_dungeons,axe,"16, 18, 19",stalwart_dungeons_tungsten,
+tungsten_hoe,stalwart_dungeons,hoe,"16, 18, 19",stalwart_dungeons_tungsten,
+tungsten_pickaxe,stalwart_dungeons,pick,"16, 18, 19",stalwart_dungeons_tungsten,
+tungsten_shovel,stalwart_dungeons,shovel,"16, 18, 19",stalwart_dungeons_tungsten,
+tungsten_sword,stalwart_dungeons,sword,"16, 18, 19",stalwart_dungeons_tungsten,
+fiery_pickaxe,twilightforest,pick,"16, 18, 19",twilightforest_fiery_metal,
+fiery_sword,twilightforest,sword,"16, 18, 19",twilightforest_fiery_metal,sword/blade enchantment/fire_aspect 1
+ironwood_axe,twilightforest,axe,"16, 18, 19",twilightforest_ironwood,
+ironwood_hoe,twilightforest,hoe,"16, 18, 19",twilightforest_ironwood,
+ironwood_pickaxe,twilightforest,pick,"16, 18, 19",twilightforest_ironwood,
+ironwood_shovel,twilightforest,shovel,"16, 18, 19",twilightforest_ironwood,
+ironwood_sword,twilightforest,sword,"16, 18, 19",twilightforest_ironwood,
+knightmetal_axe,twilightforest,axe,"16, 18, 19",twilightforest_knightmetal,
+knightmetal_pickaxe,twilightforest,pick,"16, 18, 19",twilightforest_knightmetal,
+knightmetal_sword,twilightforest,sword,"16, 18, 19",twilightforest_knightmetal,
+steeleaf_axe,twilightforest,axe,"16, 18, 19",twilightforest_steeleaf,
+steeleaf_hoe,twilightforest,hoe,"16, 18, 19",twilightforest_steeleaf,
+steeleaf_pickaxe,twilightforest,pick,"16, 18, 19",twilightforest_steeleaf,
+steeleaf_shovel,twilightforest,shovel,"16, 18, 19",twilightforest_steeleaf,
+steeleaf_sword,twilightforest,sword,"16, 18, 19",twilightforest_steeleaf,
+blue_geode_axe,wyrmroost,double_axe,"16, 18, 19",wyrmroost_blue_geode,
+blue_geode_hoe,wyrmroost,hoe,"16, 18, 19",wyrmroost_blue_geode,
+blue_geode_pickaxe,wyrmroost,pick,"16, 18, 19",wyrmroost_blue_geode,
+blue_geode_shovel,wyrmroost,shovel,"16, 18, 19",wyrmroost_blue_geode,
+blue_geode_sword,wyrmroost,sword,"16, 18, 19",wyrmroost_blue_geode,
+platinum_axe,wyrmroost,axe,"16, 18, 19",wyrmroost_platinum,
+platinum_hoe,wyrmroost,hoe,"16, 18, 19",wyrmroost_platinum,
+platinum_pickaxe,wyrmroost,pick,"16, 18, 19",wyrmroost_platinum,
+platinum_shovel,wyrmroost,shovel,"16, 18, 19",wyrmroost_platinum,
+platinum_sword,wyrmroost,sword,"16, 18, 19",wyrmroost_platinum,
+purple_geode_axe,wyrmroost,double_axe,"16, 18, 19",wyrmroost_purple_geode,
+purple_geode_hoe,wyrmroost,hoe,"16, 18, 19",wyrmroost_purple_geode,
+purple_geode_pickaxe,wyrmroost,pick,"16, 18, 19",wyrmroost_purple_geode,
+purple_geode_shovel,wyrmroost,shovel,"16, 18, 19",wyrmroost_purple_geode,
+purple_geode_sword,wyrmroost,sword,"16, 18, 19",wyrmroost_purple_geode,
+red_geode_axe,wyrmroost,double_axe,"16, 18, 19",wyrmroost_red_geode,
+red_geode_hoe,wyrmroost,hoe,"16, 18, 19",wyrmroost_red_geode,
+red_geode_pickaxe,wyrmroost,pick,"16, 18, 19",wyrmroost_red_geode,
+red_geode_shovel,wyrmroost,shovel,"16, 18, 19",wyrmroost_red_geode,
+red_geode_sword,wyrmroost,sword,"16, 18, 19",wyrmroost_red_geode,
