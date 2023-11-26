@@ -1,1 +1,21 @@
-[{"key":"double/warforged","integrity":-2,"effects":{"severing":[15,4]},"aspects":{"edgedWeapon":1},"models":[{"location":"tetra:item/module/double/head/basic_axe/warforged","tint":"inherit"}]}]
+[
+    {
+        "key": "double/warforged",
+        "integrity": -2,
+        "effects": {
+            "severing": [
+                15,
+                4
+            ]
+        },
+        "aspects": {
+            "edgedWeapon": 1
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/double/head/basic_axe/warforged",
+                "tint": "inherit"
+            }
+        ]
+    }
+]

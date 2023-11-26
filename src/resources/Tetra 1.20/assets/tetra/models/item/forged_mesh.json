@@ -1,1 +1,6 @@
-{"parent":"minecraft:item/generated","textures":{"layer0":"tetra:item/forged_mesh"}}
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "tetra:item/forged_mesh"
+    }
+}

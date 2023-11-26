@@ -1,1 +1,8 @@
-[{"key":"crying","effects":{"unstable":7}}]
+[
+    {
+        "key": "crying",
+        "effects": {
+            "unstable": 7
+        }
+    }
+]

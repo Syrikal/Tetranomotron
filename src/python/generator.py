@@ -7,7 +7,7 @@ import json
 from classes.material import Material
 from classes.mc_version import MinecraftVersion
 from classes.replacement import Replacement, get_json_file
-from classes.socket import Socket, generate_sockets_json, generate_schematics_json
+from classes.socket import Socket, generate_sockets_json, generate_schematics_json, ModularType
 
 
 def main():
@@ -161,8 +161,8 @@ def generate_sockets(output_folder_path, input_csv):
         for version in socket.versions:
             version_dictionary[version].append(socket)
 
-    # For each version:
-    for version in MinecraftVersion:
+    # For old versions:
+    for version in [MinecraftVersion.SIXTEEN, MinecraftVersion.EIGHTEEN]:
         # Ignore if no sockets for that version
         if not version_dictionary[version]:
             continue
@@ -202,7 +202,7 @@ def generate_sockets(output_folder_path, input_csv):
             os.makedirs(folder)
             filepath = os.path.join(folder, "socket.json")
             with open(filepath, 'w') as jsonfile:
-                replacements_json = generate_sockets_json(modular_type_dict[modular_type], legacy, modular_type)
+                replacements_json = generate_sockets_json(modular_type_dict[modular_type], version, modular_type)
                 jsonfile.write(json.dumps(replacements_json, indent=4))
 
             # Create a schematics folder and a socket.json file in it
@@ -212,6 +212,31 @@ def generate_sockets(output_folder_path, input_csv):
             with open(filepath, 'w') as jsonfile:
                 schematics_json = generate_schematics_json(modular_type_dict[modular_type], legacy, modular_type)
                 jsonfile.write(json.dumps(schematics_json, indent=4))
+
+    # For new versions:
+    for version in [MinecraftVersion.NINETEEN, MinecraftVersion.TWENTY]:
+        # Ignore if no sockets for that version
+        if not version_dictionary[version]:
+            continue
+
+        print(version.get_print_string())
+
+        # Create version folder if not already
+        ver_output_folder = os.path.join(output_folder_path, version.get_print_string())
+        if not os.path.isdir(ver_output_folder):
+            os.makedirs(ver_output_folder)
+
+        # Create materials/sockets folder if not already
+        sockets_folder = os.path.join(ver_output_folder, "data/tetra/materials/sockets")
+        if not os.path.isdir(sockets_folder):
+            os.makedirs(sockets_folder)
+
+        # Add each socket to the folder
+        for socket in version_dictionary[version]:
+            socket_json_filepath = os.path.join(sockets_folder, f"socket_{socket.variant_key}.json")
+            with open(socket_json_filepath, 'w') as jsonfile:
+                socket_json = socket.get_socket_json(version, ModularType.DOUBLE)
+                jsonfile.write(json.dumps(socket_json, indent=4))
 
 
 def generate_lang(output_folder_path, materials_csv, sockets_csv):
@@ -289,7 +314,7 @@ def generate_lang(output_folder_path, materials_csv, sockets_csv):
                 lang_rows.append("")
 
             for socket in mod_sockets:
-                lang_rows.extend(socket.get_lang_lines())
+                lang_rows.extend(socket.get_socket_lang_lines(version.value > 18))
 
             if mod_id != last_mod:
                 lang_rows.append("")

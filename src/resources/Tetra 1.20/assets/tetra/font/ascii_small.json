@@ -1,1 +1,22 @@
-{"providers":[{"type":"space","advances":{" ":2}},{"type":"bitmap","file":"tetra:font/ascii_small.png","height":5,"ascent":4,"chars":[" !\"#$%&'()*+,-./\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","0123456789:;<=>?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","ABCDEFGHIJKLMNOPQRSTUVWXY","Z[\\]\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"]}]}
+{
+    "providers": [
+        {
+            "type": "space",
+            "advances": {
+                " ": 2
+            }
+        },
+        {
+            "type": "bitmap",
+            "file": "tetra:font/ascii_small.png",
+            "height": 5,
+            "ascent": 4,
+            "chars": [
+                " !\"#$%&'()*+,-./\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                "0123456789:;<=>?\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                "ABCDEFGHIJKLMNOPQRSTUVWXY",
+                "Z[\\]\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+            ]
+        }
+    ]
+}

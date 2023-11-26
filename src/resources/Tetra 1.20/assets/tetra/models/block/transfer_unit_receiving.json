@@ -1,1 +1,7 @@
-{"parent":"tetra:block/transfer_unit","textures":{"east":"tetra:block/transfer_unit_indicator_receive","west":"tetra:block/transfer_unit_indicator_receive"}}
+{
+    "parent": "tetra:block/transfer_unit",
+    "textures": {
+        "east": "tetra:block/transfer_unit_indicator_receive",
+        "west": "tetra:block/transfer_unit_indicator_receive"
+    }
+}

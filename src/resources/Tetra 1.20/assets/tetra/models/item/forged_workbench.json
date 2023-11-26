@@ -1,1 +1,3 @@
-{"parent":"tetra:block/forged_workbench"}
+{
+    "parent": "tetra:block/forged_workbench"
+}

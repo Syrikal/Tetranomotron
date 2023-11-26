@@ -1,1 +1,9 @@
-[{"key":"hollow","durabilityMultiplier":0.9,"attributes":{"tetra:ability_cooldown":-0.2}}]
+[
+    {
+        "key": "hollow",
+        "durabilityMultiplier": 0.9,
+        "attributes": {
+            "tetra:ability_cooldown": -0.2
+        }
+    }
+]

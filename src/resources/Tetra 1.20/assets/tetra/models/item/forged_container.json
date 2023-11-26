@@ -1,1 +1,3 @@
-{"parent":"tetra:block/forged_container"}
+{
+    "parent": "tetra:block/forged_container"
+}

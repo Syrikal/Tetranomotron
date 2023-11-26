@@ -1,1 +1,8 @@
-{"parent":"block/slab_top","textures":{"bottom":"tetra:block/forged_platform_bottom","top":"tetra:block/forged_platform_alternate","side":"tetra:block/forged_platform_side"}}
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "tetra:block/forged_platform_bottom",
+        "top": "tetra:block/forged_platform_alternate",
+        "side": "tetra:block/forged_platform_side"
+    }
+}

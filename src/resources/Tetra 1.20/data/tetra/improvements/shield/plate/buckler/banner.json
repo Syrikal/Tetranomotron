@@ -1,1 +1,10 @@
-[{"key":"shield/banner","models":[{"type":"tetra:banner/buckler"}]}]
+[
+    {
+        "key": "shield/banner",
+        "models": [
+            {
+                "type": "tetra:banner/buckler"
+            }
+        ]
+    }
+]

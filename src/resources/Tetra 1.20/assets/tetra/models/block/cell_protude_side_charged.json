@@ -1,1 +1,7 @@
-{"parent":"tetra:block/cell_protude_side","textures":{"cell_side":"tetra:block/cell_side_charged","cell_top":"tetra:block/cell_top_charged"}}
+{
+    "parent": "tetra:block/cell_protude_side",
+    "textures": {
+        "cell_side": "tetra:block/cell_side_charged",
+        "cell_top": "tetra:block/cell_top_charged"
+    }
+}

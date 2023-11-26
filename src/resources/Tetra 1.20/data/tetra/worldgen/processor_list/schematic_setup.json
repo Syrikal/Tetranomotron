@@ -1,1 +1,7 @@
-{"processors":[{"processor_type":"tetra:multiblock_schematic"}]}
+{
+    "processors": [
+        {
+            "processor_type": "tetra:multiblock_schematic"
+        }
+    ]
+}

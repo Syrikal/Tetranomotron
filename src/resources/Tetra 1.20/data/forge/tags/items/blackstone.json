@@ -1,1 +1,7 @@
-{"replace":false,"values":["minecraft:blackstone","minecraft:gilded_blackstone"]}
+{
+    "replace": false,
+    "values": [
+        "minecraft:blackstone",
+        "minecraft:gilded_blackstone"
+    ]
+}

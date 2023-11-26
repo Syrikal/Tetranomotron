@@ -1,1 +1,7 @@
-{"processors":[{"processor_type":"tetra:crate"}]}
+{
+    "processors": [
+        {
+            "processor_type": "tetra:crate"
+        }
+    ]
+}

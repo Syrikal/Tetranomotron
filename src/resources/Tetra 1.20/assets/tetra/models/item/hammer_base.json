@@ -1,1 +1,3 @@
-{"parent":"tetra:block/hammer_base"}
+{
+    "parent": "tetra:block/hammer_base"
+}

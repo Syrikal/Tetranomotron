@@ -1,1 +1,6 @@
-{"parent":"minecraft:item/generated","textures":{"layer0":"tetra:item/planar_stabilizer"}}
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "tetra:item/planar_stabilizer"
+    }
+}

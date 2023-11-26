@@ -1,1 +1,8 @@
-{"parent":"tetra:block/transfer_unit","textures":{"config":"tetra:block/transfer_unit_config0","indicator":"tetra:block/transfer_unit_indicator_idle","plate":"tetra:block/transparent"}}
+{
+    "parent": "tetra:block/transfer_unit",
+    "textures": {
+        "config": "tetra:block/transfer_unit_config0",
+        "indicator": "tetra:block/transfer_unit_indicator_idle",
+        "plate": "tetra:block/transparent"
+    }
+}

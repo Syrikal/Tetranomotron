@@ -1,1 +1,13 @@
-{"material":{"items":["tetra:metal_scrap"],"count":8},"requiredTools":{"hammer_dig":"minecraft:diamond"},"moduleKey":"single/basic_handle","moduleVariant":"basic_handle/forged_beam"}
+{
+    "material": {
+        "items": [
+            "tetra:metal_scrap"
+        ],
+        "count": 8
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:diamond"
+    },
+    "moduleKey": "single/basic_handle",
+    "moduleVariant": "basic_handle/forged_beam"
+}

@@ -1,1 +1,7 @@
-{"replace":false,"values":["minecraft:loyalty","minecraft:channeling"]}
+{
+    "replace": false,
+    "values": [
+        "minecraft:loyalty",
+        "minecraft:channeling"
+    ]
+}

@@ -1,1 +1,10 @@
-[{"key":"shield/banner","models":[{"type":"tetra:banner/heater"}]}]
+[
+    {
+        "key": "shield/banner",
+        "models": [
+            {
+                "type": "tetra:banner/heater"
+            }
+        ]
+    }
+]

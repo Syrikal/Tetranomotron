@@ -1,1 +1,8 @@
-[{"key":"gilded_material","effects":{"stabilizing":10}}]
+[
+    {
+        "key": "gilded_material",
+        "effects": {
+            "stabilizing": 10
+        }
+    }
+]

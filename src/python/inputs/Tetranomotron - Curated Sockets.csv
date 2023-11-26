@@ -1,12 +1,12 @@
-Name,Mod ID,Lang Name,Versions,Item Types,Durability,Durability Mod,Integrity,Tint,Attributes,Effects,Tool Boosts,Item,XP Cost
-godshard,atum,Socket [§bGodshard§r],"16, 18, 19","double, single, sword",1024,0.8,-1,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,all 0 6.0,godshards,30
-aurora_crystal,betterendforge,Socket [§dAurora Crystal§f],"16, 18, 19","double, single, sword",0,1,-1,862ec0,,eff intuit 1 0,,crystal_shards,5
-eternal_crystal,betterendforge,Socket [§dEternal Crystal§f],"16, 18, 19","double, single, sword",512,0.8,-1,00fbf8,,eff intuit 3 0,,eternal_crystal,20
-smaragdant,betterendforge,Socket [§3Smaragdant§r],"16, 18, 19","double, single, sword",256,1,-1,00cca6,,eff criticalStrike 25 2.5,,smaragdant_crystal_shard,30
-ametrine,byg,Socket [§eAmet§drine§r],"16, 18, 19","double, single, sword",1024,1,-1,d399d1,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,ametrine_gems,10
-cobalt_crystal,outer_end,Socket [§3Cobalt Crystal§r],"16, 18, 19","double, single, sword",0,1,-1,768ed0,,eff intuit 3 0,,cobalt_crystal_shard,10
-mint_crystal,outer_end,Socket [§aMint Crystal§r],"16, 18, 19","double, single, sword",640,0.8,-1,6fc39c,,,all 0 3.0,mint_crystal_shard,10
-rose_crystal,outer_end,Socket [§cRose Crystal§r],"16, 18, 19","double, single, sword",0,1,-1,c56eb9,att **generic.attack_damage 0 0.25,,,rose_crystal_shard,10
-blue_geode,wyrmroost,Socket [§9Blue Geode§r],"16, 18, 19","double, single, sword",512,0.8,-1,225589,att **generic.attack_damage 0 0.1,,all 0 2.0,blue_geode,2
-purple_geode,wyrmroost,Socket [§5Purple Geode§r],"16, 18, 19","double, single, sword",768,0.8,-1,9b0dbf,att **generic.attack_damage 0 0.3,,all 0 5.0,purple_geode,10
-red_geode,wyrmroost,Socket [§4Red Geode§r],"16, 18, 19","double, single, sword",640,0.8,-1,8d2e2f,att **generic.attack_damage 0 0.2,,all 0 3.0,red_geode,5
+Name,Mod ID,Colored String,Versions,Item Types,Durability,Durability Mod,Integrity,Tint,Textures,Attributes,Effects,Tool Level,Tool Efficiency,Item,XP Cost
+Godshard,atum,§bGodshard§r,16,"double, single, sword",1024,0.8,1,,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,,6,tag!godshards,30
+Aurora Crystal,betterendforge,§dAurora Crystal§f,16,"double, single, sword",0,1,1,862ec0,default,,eff intuit 1 0,,,crystal_shards,5
+Eternal Crystal,betterendforge,§dEternal Crystal§f,16,"double, single, sword",512,0.8,1,00fbf8,pristine,,eff intuit 3 0,,,eternal_crystal,20
+Smaragdant,betterendforge,§3Smaragdant§r,16,"double, single, sword",256,1,1,00cca6,default,,eff criticalStrike 25 2.5,,,smaragdant_crystal_shard,30
+Ametrine,byg,§eAmet§drine§r,"16, 18, 19","double, single, sword",1024,1,1,d399d1,default,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,,ametrine_gems,10
+Cobalt Crystal,outer_end,§3Cobalt Crystal§r,16,"double, single, sword",0,1,1,768ed0,default,,eff intuit 3 0,,,cobalt_crystal_shard,10
+Mint Crystal,outer_end,§aMint Crystal§r,16,"double, single, sword",640,0.8,1,6fc39c,default,,,,3,mint_crystal_shard,10
+Rose Crystal,outer_end,§cRose Crystal§r,16,"double, single, sword",0,1,1,c56eb9,default,att **generic.attack_damage 0 0.25,,,,rose_crystal_shard,10
+Blue Geode,wyrmroost,§9Blue Geode§r,16,"double, single, sword",512,0.8,1,225589,default,att **generic.attack_damage 0 0.1,,,2,blue_geode,2
+Purple Geode,wyrmroost,§5Purple Geode§r,16,"double, single, sword",768,0.8,1,9b0dbf,default,att **generic.attack_damage 0 0.3,,,5,purple_geode,10
+Red Geode,wyrmroost,§4Red Geode§r,16,"double, single, sword",640,0.8,1,8d2e2f,default,att **generic.attack_damage 0 0.2,,,3,red_geode,5

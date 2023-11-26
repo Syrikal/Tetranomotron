@@ -1,1 +1,13 @@
-{"material":{"items":["tetra:metal_scrap"],"count":8},"requiredTools":{"hammer_dig":"minecraft:diamond"},"moduleKey":"single/earthpiercer","moduleVariant":"earthpiercer/earthpiercer"}
+{
+    "material": {
+        "items": [
+            "tetra:metal_scrap"
+        ],
+        "count": 8
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:diamond"
+    },
+    "moduleKey": "single/earthpiercer",
+    "moduleVariant": "earthpiercer/earthpiercer"
+}

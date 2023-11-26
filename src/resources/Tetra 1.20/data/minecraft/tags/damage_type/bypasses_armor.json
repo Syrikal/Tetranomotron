@@ -1,1 +1,6 @@
-{"replace":false,"values":["tetra:bleeding"]}
+{
+    "replace": false,
+    "values": [
+        "tetra:bleeding"
+    ]
+}

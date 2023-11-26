@@ -4,7 +4,8 @@ from collections import OrderedDict
 
 from jsondiff import diff
 
-from classes.tool_requirements import ToolRequirements, ToolLevel
+from classes.tool_requirements import ToolRequirements
+from classes.tool_properties import ToolLevel
 from classes.trait import gen_traits_from_string, get_traits_csv_string
 from classes.mc_version import MinecraftVersion, get_versions_csv_string
 

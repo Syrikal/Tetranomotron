@@ -1,1 +1,7 @@
-{"replace":false,"values":["tetra:basic_workbench","tetra:rack"]}
+{
+    "replace": false,
+    "values": [
+        "tetra:basic_workbench",
+        "tetra:rack"
+    ]
+}

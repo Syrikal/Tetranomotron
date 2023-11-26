@@ -1,1 +1,7 @@
-{"processors":[{"processor_type":"tetra:container"}]}
+{
+    "processors": [
+        {
+            "processor_type": "tetra:container"
+        }
+    ]
+}

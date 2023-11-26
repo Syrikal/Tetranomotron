@@ -1,1 +1,13 @@
-{"material":{"items":["tetra:metal_scrap"],"count":3},"requiredTools":{"hammer_dig":"minecraft:diamond"},"moduleKey":"sword/binding","moduleVariant":"sword_binding/bolt"}
+{
+    "material": {
+        "items": [
+            "tetra:metal_scrap"
+        ],
+        "count": 3
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:diamond"
+    },
+    "moduleKey": "sword/binding",
+    "moduleVariant": "sword_binding/bolt"
+}

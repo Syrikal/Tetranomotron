@@ -1,1 +1,6 @@
-{"replace":false,"values":["minecraft:crying_obsidian"]}
+{
+    "replace": false,
+    "values": [
+        "minecraft:crying_obsidian"
+    ]
+}

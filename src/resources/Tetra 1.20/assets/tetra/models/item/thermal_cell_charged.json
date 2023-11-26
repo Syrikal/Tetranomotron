@@ -1,1 +1,6 @@
-{"parent":"minecraft:item/generated","textures":{"layer0":"tetra:item/thermal_cell_charged"}}
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "tetra:item/thermal_cell_charged"
+    }
+}

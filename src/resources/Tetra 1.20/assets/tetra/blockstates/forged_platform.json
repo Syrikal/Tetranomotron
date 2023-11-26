@@ -1,1 +1,9 @@
-{"variants":{"":[{"model":"tetra:block/forged_platform"}]}}
+{
+    "variants": {
+        "": [
+            {
+                "model": "tetra:block/forged_platform"
+            }
+        ]
+    }
+}

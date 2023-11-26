@@ -1,4 +1,4 @@
-from enum import Enum
+from tool_properties import ToolType
 
 
 def main():
@@ -74,27 +74,6 @@ def get_toolboosts_csv_string(list_of_boosts):
         return f"all {x} {y}"
     else:
         return ", ".join([x.get_csv_string() for x in list_of_boosts])
-
-
-class ToolType(Enum):
-    AXE = "axe"
-    SHOVEL = "shovel"
-    PICKAXE = "pickaxe"
-    HOE = "hoe"
-    CUT = "cut"
-
-    def modern_name(self):
-        match self:
-            case ToolType.AXE:
-                return "axe_dig"
-            case ToolType.SHOVEL:
-                return "shovel_dig"
-            case ToolType.HOE:
-                return "hoe_dig"
-            case ToolType.PICKAXE:
-                return "pickaxe_dig"
-            case ToolType.CUT:
-                return "cut"
 
 
 def test():

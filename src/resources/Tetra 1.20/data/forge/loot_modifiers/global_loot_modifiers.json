@@ -1,1 +1,6 @@
-{"replace":false,"entries":["tetra:bartering_additions"]}
+{
+    "replace": false,
+    "entries": [
+        "tetra:bartering_additions"
+    ]
+}
