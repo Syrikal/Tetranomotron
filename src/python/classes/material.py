@@ -4,10 +4,10 @@ from collections import OrderedDict
 
 from jsondiff import diff
 
-from classes.tool_requirements import ToolRequirements
-from classes.tool_properties import ToolLevel
-from classes.trait import gen_traits_from_string, get_traits_csv_string
-from classes.mc_version import MinecraftVersion, get_versions_csv_string
+from tool_requirements import ToolRequirements
+from tool_properties import ToolLevel
+from trait import gen_traits_from_string, get_traits_csv_string
+from mc_version import MinecraftVersion, get_versions_csv_string
 
 
 def main():
@@ -65,12 +65,10 @@ class Material:
             raise ValueError(
                 f"Failed attempt to create a material because csv row was wrong size ({len(csv_row)}): '{csv_row}'")
 
-        name, prefix, mod_id, versions, category, primary, secondary, tertiary, dur, \
+        names_raw, prefixes_raw, mod_ids_raw, versions, category, primary, secondary, tertiary, dur, \
             integrity_cost, integrity_gain, magic, tool_level, tool_efficiency, \
-            tint, texts, item, effects, improvements, tool_requirements \
+            tints_raw, texts, items_raw, effects, improvements, tool_requirements \
             = csv_row
-
-        # print(f"Creating material {mod_id}_{name.lower().replace(' ', '_')} from CSV row: versions {versions}")
 
         # Turn comma-separated lists into lists of strings
         versions, texts = versions.split(", "), texts.split(", ")
@@ -81,11 +79,21 @@ class Material:
         new_versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
         new_tool_level = ToolLevel.get_tool_level(tool_level)
 
-        mat = Material(name, prefix, mod_id, new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
-                       integrity_gain, magic, new_tool_level, tool_efficiency, tint, texts,
-                       item, new_effects, new_improvements, new_tool_requirements)
+        names = names_raw.split(", ")
+        prefixes = prefixes_raw.split(", ")
+        mod_ids = mod_ids_raw.split(", ")
+        tints = tints_raw.split(", ")
+        items = items_raw.split(", ")
+
+        number_of_materials = len(names)
+        outputs = []
+        for i in range(number_of_materials):
+            mat = Material(names[i], prefixes[i], mod_ids[i], new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
+                           integrity_gain, magic, new_tool_level, tool_efficiency, tints[i], texts,
+                           items[i], new_effects, new_improvements, new_tool_requirements)
+            outputs.append(mat)
         # print(f"Generated material from CSV: {mat.get_print_string()}")
-        return mat
+        return outputs
 
     @classmethod
     # Generates a Material from a JSON file
@@ -158,7 +166,7 @@ class Material:
                         neweff, newimp, newreq]
 
         # print(f"Creating {name} material from JSON")
-        output = Material.create_from_csv(fake_csv_row)
+        output = Material.create_from_csv(fake_csv_row)[0]
         # print(f"Material has a tool level of {output.tool_level}")
 
         return output
@@ -189,7 +197,7 @@ class Material:
             printed = True
         # print("Saving and restoring from CSV...")
         csvified = self.get_csv_row()
-        restored = Material.create_from_csv(csvified)
+        restored = Material.create_from_csv(csvified)[0]
         restored_json = restored.get_json(legacy)
         difference2 = diff(jsonified, restored_json)
         if difference2:

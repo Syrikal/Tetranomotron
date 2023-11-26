@@ -45,7 +45,7 @@ def generate_materials(output_folder_path, input_csv):
         headers = next(reader)
         for row in reader:
             # print(f"Reading CSV row about {row[0]}")
-            materials.append(Material.create_from_csv(row))
+            materials.extend(Material.create_from_csv(row))
 
     if not materials:
         print("No materials provided. Ending run.")
@@ -249,7 +249,7 @@ def generate_lang(output_folder_path, materials_csv, sockets_csv):
         headers = next(reader)
         for row in reader:
             # print(f"Reading CSV row about {row[0]}")
-            materials.append(Material.create_from_csv(row))
+            materials.extend(Material.create_from_csv(row))
 
     sockets = []
     with open(sockets_csv, 'r', encoding='utf-8-sig') as sockets_csv_file:
@@ -314,7 +314,8 @@ def generate_lang(output_folder_path, materials_csv, sockets_csv):
                 lang_rows.append("")
 
             for socket in mod_sockets:
-                lang_rows.extend(socket.get_socket_lang_lines(version.value > 18))
+                post_119 = int(version.value) > 18
+                lang_rows.extend(socket.get_socket_lang_lines(post_119))
 
             if mod_id != last_mod:
                 lang_rows.append("")

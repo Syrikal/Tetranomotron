@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from classes.tool_properties import ToolLevel
+from tool_properties import ToolLevel
 
 
 class ToolRequirements:
