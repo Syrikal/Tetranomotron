@@ -4,6 +4,7 @@ from collections import OrderedDict
 
 from jsondiff import diff
 
+from src.python.classes import util
 from tool_requirements import ToolRequirements
 from tool_properties import ToolLevel
 from trait import gen_traits_from_string, get_traits_csv_string
@@ -286,6 +287,8 @@ class Material:
         output["material"] = material_dict
 
         output["requiredTools"] = self.required_tools.get_json_object(legacy)
+
+        util.add_mod_loaded_condition(output, self.mod_id)
 
         # Turn stuff into strings if legacy
         if legacy:

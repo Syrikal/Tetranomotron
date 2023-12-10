@@ -305,8 +305,6 @@ class Socket:
         else:
             output = OrderedDict()
 
-            util.add_mod_loaded_condition(output, self.mod_id)
-
             output["key"] = f"socket_{self.variant_key}"
             output["hidden"] = True
             output["category"] = "socket"
@@ -350,6 +348,8 @@ class Socket:
             material_dict = OrderedDict()
             material_dict["items"] = [f"{self.mod_id}:{self.item}"]
             output["material"] = material_dict
+
+            util.add_mod_loaded_condition(output, self.mod_id)
 
             return output
 
