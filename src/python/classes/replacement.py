@@ -6,6 +6,7 @@ import json
 from jsondiff import diff
 
 from socket import ModularType
+from src.python.classes import util
 
 
 def main():
@@ -14,14 +15,15 @@ def main():
 
 
 class Replacement:
-    # Replacement_Type is axe, double_axe hoe, knife, pick, shovel, or sword
+    # Replacement_Type is axe, double_axe, hoe, knife, pick, shovel, or sword   TO ADD: Bow, Crossbow, Spear
     # Improvements is a list of lists of length 3: module, improvement, level
-    def __init__(self, itemid, modid, replacement_type, versions, material, improvements):
+    def __init__(self, itemid, modid, replacement_type, versions, material, handle_material, improvements):
         self.item_id = itemid
         self.mod_id = modid
         self.replacement_type = ReplacementType(replacement_type)
         self.versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
         self.material_key = material.lower()
+        self.handle_material_key = handle_material.lower()
         self.improvements = improvements
         # print(f"Generating Replacement with improvements {improvements}")
 
@@ -29,10 +31,10 @@ class Replacement:
     # Creates a Replacement from a CSV row
     def create_from_csv(cls, csv_row):
         # print("Creating a replacement from a CSV row")
-        if len(csv_row) != 6:
+        if len(csv_row) != 7:
             raise ValueError(f"Failed attempt to create a replacement from csv row because row was wrong size: '{csv_row}'")
 
-        itemid, mod_id, replacement_type, versions, material_name, improvements = csv_row
+        itemid, mod_id, replacement_type, versions, material_name, handle_material_name, improvements = csv_row
 
         # Turn comma-separated lists into actual lists
         versions = versions.split(", ")
@@ -41,7 +43,7 @@ class Replacement:
         if not improvements:
             improvements_new = []
 
-        rep = Replacement(itemid, mod_id, replacement_type, versions, material_name, improvements_new)
+        rep = Replacement(itemid, mod_id, replacement_type, versions, material_name, handle_material_name, improvements_new)
         # print(f"Generated replacement from CSV: {rep.get_print_string()}")
         return rep
 
@@ -49,33 +51,39 @@ class Replacement:
     # Creates a Replacement from a JSON object (*not* a file!)
     def create_from_json(cls, json_object, version):
         # print("Creating a replacement from a JSON")
-        predicate_block = json_object["predicate"]
-        mod_and_item = ""
+
         if version == MinecraftVersion.SIXTEEN:
             mod_and_item = json_object["predicate"]["item"]
         else:
             mod_and_item = json_object["predicate"]["items"][0]
         mod_id, item_id = mod_and_item.split(":")
         versions = [version.value]
-        # print(f"Found mod id {mod_id} and item id {item_id} from combined form {mod_and_item}.")
-        # print(f"Given versions {versions}.")
 
         modules_dict = json_object["modules"]
-        # print(f"List of modules: {modules_dict}")
 
-        first_module = None
+        modular_item_type = None
         if "double/head_left" in modules_dict.keys():
-            first_module = modules_dict["double/head_left"]
+            modular_item_type = "double"
         elif "single/head" in modules_dict.keys():
-            first_module = modules_dict["single/head"]
+            modular_item_type = "single"
         elif "sword/blade" in modules_dict.keys():
-            first_module = modules_dict["sword/blade"]
+            modular_item_type = "sword"
 
-        # print(f"First module: {first_module}")
-        module_type, module_key = first_module[0], first_module[1]
-        # print(f"Module type: {module_type}. Module key: {module_key}")
-        module, material = module_key.split("/")
-        # print(f"Split module key into module {module} and material {material}.")
+        match modular_item_type:
+            case "double":
+                module, material = modules_dict["double/head_left"][1].split("/")
+                handle_material = modules_dict["double/handle"][1].split("/")[1]
+            case "single":
+                module, material = modules_dict["single/head"][1].split("/")
+                handle_material = modules_dict["single/handle"][1].split("/")[1]
+            case "sword":
+                module, material = modules_dict["sword/blade"][1].split("/")
+                handle_material = modules_dict["sword/hilt"][1].split("/")[1]
+            case _:
+                raise ValueError("Replacement not recognized!")
+
+        if handle_material == "stick":
+            handle_material = ""
 
         replacement_type = None
         match module:
@@ -102,17 +110,18 @@ class Replacement:
                 raise ValueError(f"Can't parse module {module}")
 
         # Double-check we have the right replacement type
-        second_module = None
-        if "double/head_right" in modules_dict.keys():
-            second_module = modules_dict["double/head_right"]
-        elif "single/handle" in modules_dict.keys():
-            second_module = modules_dict["single/handle"]
-        elif "sword/hilt" in modules_dict.keys():
-            second_module = modules_dict["sword/hilt"]
-        name = second_module[1].split("/")[0]
+        match modular_item_type:
+            case "double":
+                second_module_name = modules_dict["double/head_right"][1].split("/")[0]
+            case "single":
+                second_module_name = modules_dict["single/handle"][1].split("/")[0]
+            case "sword":
+                second_module_name = modules_dict["sword/hilt"][1].split("/")[0]
+            case _:
+                second_module_name = "ERROR NO MODULAR ITEM TYPE"
 
-        if name != replacement_type.second_module():
-            raise ValueError(f"Encountered unexpected second module {name} when creating {replacement_type.name} replacement from json")
+        if second_module_name != replacement_type.second_module():
+            raise ValueError(f"Encountered unexpected second module {second_module_name} when creating {replacement_type.name} replacement from json")
 
         # print(f"Found replacement type {replacement_type}.")
 
@@ -123,13 +132,7 @@ class Replacement:
                 level = value
                 improvements.append([module, imp_name, level])
 
-        # print("Generating Replacement item."
-        output = Replacement(item_id, mod_id, replacement_type, versions, material, improvements)
-        # legacy = version == MinecraftVersion.SIXTEEN
-        # output_json = output.get_json(legacy)
-        # print("Generated replacement from JSON. Output JSON has differences: ")
-        # print(diff(json_object, output_json))
-
+        output = Replacement(item_id, mod_id, replacement_type, versions, material, handle_material, improvements)
         return output
 
     def check_valid(self):
@@ -158,8 +161,9 @@ class Replacement:
 
     # Generates a string formatted for printing
     def get_print_string(self):
+        handle_string = f" with handle material '{self.handle_material_key}'" if self.handle_material_key else ""
         return f'''
-        Replacement of '{self.item_id}' from mod '{self.mod_id}' uses material '{self.mod_id}_{self.material_key}'. Replacement type: {self.replacement_type.name}.
+        Replacement of '{self.item_id}' from mod '{self.mod_id}' uses material '{self.mod_id}_{self.material_key}'{handle_string}. Replacement type: {self.replacement_type.name}.
         Improvements: {self.improvements}
         Versions: {[ver.get_print_string() for ver in self.versions]}.
         '''
@@ -167,6 +171,8 @@ class Replacement:
     # Generates a JSON object
     def get_json(self, legacy):
         output = OrderedDict()
+
+        util.add_mod_loaded_condition(output, self.mod_id)
 
         predicate = OrderedDict()
         if legacy:
@@ -179,36 +185,35 @@ class Replacement:
 
         modules = OrderedDict()
         material_key = self.material_key
-        modid = self.mod_id
-        stick = "stick"
+        handle_material = self.handle_material_key if self.handle_material_key else "stick"
         match self.replacement_type:
             case ReplacementType.AXE:
                 modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{material_key}"]
                 modules["double/head_right"] = ["double/butt_right", f"butt/{material_key}"]
-                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{stick}"]
+                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{handle_material}"]
             case ReplacementType.DOUBLE_AXE:
                 modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{material_key}"]
                 modules["double/head_right"] = ["double/basic_axe_right", f"basic_axe/{material_key}"]
-                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{handle_material}"]
             case ReplacementType.PICK:
                 modules["double/head_left"] = ["double/basic_pickaxe_left", f"basic_pickaxe/{material_key}"]
                 modules["double/head_right"] = ["double/basic_pickaxe_right", f"basic_pickaxe/{material_key}"]
-                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{handle_material}"]
             case ReplacementType.HOE:
                 modules["double/head_left"] = ["double/hoe_left", f"hoe/{material_key}"]
                 modules["double/head_right"] = ["double/butt_right", f"butt/{material_key}"]
-                modules["double/handle"] = ["double/basic_handle", "basic_handle/stick"]
+                modules["double/handle"] = ["double/basic_handle", f"basic_handle/{handle_material}"]
             case ReplacementType.SHOVEL:
                 modules["single/head"] = ["single/basic_shovel", f"basic_shovel/{material_key}"]
-                modules["single/handle"] = ["single/basic_handle", "basic_handle/stick"]
+                modules["single/handle"] = ["single/basic_handle", f"basic_handle/{handle_material}"]
             case ReplacementType.SWORD:
                 modules["sword/blade"] = ["sword/basic_blade", f"basic_blade/{material_key}"]
-                modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
+                modules["sword/hilt"] = ["sword/basic_hilt", f"basic_hilt/{handle_material}"]
                 modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{material_key}"]
                 modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{material_key}"]
             case ReplacementType.KNIFE:
                 modules["sword/blade"] = ["sword/short_blade", f"short_blade/{material_key}"]
-                modules["sword/hilt"] = ["sword/basic_hilt", "basic_hilt/stick"]
+                modules["sword/hilt"] = ["sword/basic_hilt", f"basic_hilt/{handle_material}"]
                 modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{material_key}"]
                 modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{material_key}"]
         output["modules"] = modules
@@ -229,7 +234,7 @@ class Replacement:
             improvements.append(" ".join([str(y) for y in x]))
 
         output = [self.item_id, self.mod_id, self.replacement_type.value, get_versions_csv_string(self.versions),
-                  self.material_key, ", ".join(improvements)]
+                  self.material_key, self.handle_material_key, ", ".join(improvements)]
         # print(f"Created CSV row: {output}")
         return output
 
@@ -247,6 +252,9 @@ class Replacement:
             match = False
         if self.material_key != other_replacement.material_key:
             unmatches.append("material name")
+            match = False
+        if self.handle_material_key != other_replacement.handle_material_key:
+            unmatches.append("handle material name")
             match = False
         if self.improvements != other_replacement.improvements:
             unmatches.append("improvements")
@@ -319,7 +327,7 @@ def test():
     axesfile = "../../resources/Tetranomicon 1.16/data/tetra/replacements/tetranomiconaxes.json"
     # axes = gen_replacements_from_json(axesfile, MinecraftVersion.SIXTEEN)
     # for axe in axes:
-        # print(f"{axe.get_print_string()}")
+    # print(f"{axe.get_print_string()}")
     # print(get_json_file(axes, True))
 
     opened = open(axesfile)

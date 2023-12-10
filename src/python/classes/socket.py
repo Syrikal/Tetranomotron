@@ -5,6 +5,7 @@ import json
 from jsondiff import diff
 
 from mc_version import MinecraftVersion, get_versions_csv_string
+from src.python.classes import util
 from tool_properties import ToolType
 from trait import gen_traits_from_string, get_traits_csv_string
 
@@ -250,6 +251,7 @@ class Socket:
             legacy = version == MinecraftVersion.SIXTEEN
 
             output = OrderedDict()
+            util.add_mod_loaded_condition(output, self.mod_id)
             output["key"] = f"{mod_type.value}_socket/{self.variant_key}"
             output["category"] = "gem"
             if self.durability != 0:
@@ -302,6 +304,8 @@ class Socket:
         # For 1.19 and 1.20, creates a material.
         else:
             output = OrderedDict()
+
+            util.add_mod_loaded_condition(output, self.mod_id)
 
             output["key"] = f"socket_{self.variant_key}"
             output["hidden"] = True
@@ -356,6 +360,8 @@ class Socket:
             raise ValueError(f"Illegally tried to create a {mod_type.name} schematic for {self.name} socket'")
 
         output = OrderedDict()
+
+        util.add_mod_loaded_condition(output, self.mod_id)
 
         if self.craft_with_tag:
             output["material"] = {"tag": f"{self.mod_id}:{self.item}"}

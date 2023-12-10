@@ -1,9 +1,11 @@
 from collections import OrderedDict
+
 from tool_properties import ToolLevel
 
 
 class ToolRequirements:
     # Generates a ToolRequirements from three integers
+    # Integers refer to tier level
     def __init__(self, hammer, axe, cut):
         self.hammer = ToolLevel(hammer)
         self.axe = ToolLevel(axe)
@@ -26,15 +28,15 @@ class ToolRequirements:
             # print(f"Parsing {tool[0]}")
             if tool[0] == "hammer" or tool[0] == "hammer_dig":
                 # print("Requirement is for hammer")
-                ham = int(tool[1])
+                ham = tool[1]
                 continue
             elif tool[0] == "axe" or tool[0] == "axe_dig":
                 # print("Requirement is for axe")
-                axe = int(tool[1])
+                axe = tool[1]
                 continue
             elif tool[0] == "cut":
                 # print("Requirement is for cut")
-                cut = int(tool[1])
+                cut = tool[1]
                 continue
             else:
                 raise ValueError(f"Attempted to parse {tool} as a tool requirement. Aborting.")
@@ -49,7 +51,9 @@ class ToolRequirements:
 
         if self.hammer != ToolLevel.ZERO:
             if legacy:
-                output["hammer"] = self.hammer.get_legacy_int()
+                # Hammers are different numbers in 1.16
+                # Or rather, they're the only ones that are the same in both versions
+                output["hammer"] = self.hammer.get_legacy_hammer_int()
             else:
                 output["hammer_dig"] = self.hammer.get_modern_string()
         if self.axe != ToolLevel.ZERO:

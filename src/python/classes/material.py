@@ -22,7 +22,7 @@ class Material:
     # textures is a list of strings
     # effects and improvements are lists of Traits
     # reqtools is a ToolRequirements
-    # tool_level is a ToolLevel
+    # tool_level is input as a ToolLevel
     def __init__(self, name, adjective, mod_id, versions, category, primary, secondary, tertiary, durability,
                  integrity_cost, integrity_gain, magic, tool_level, tool_efficiency, tint, texts, item, effects,
                  improvements, reqtools):
@@ -42,7 +42,7 @@ class Material:
         self.integrity_cost = int(integrity_cost)
         self.integrity_gain = int(integrity_gain)
         self.magic_capacity = int(magic)
-        # Tool level is stored as a number
+        # Tool level is stored as a ToolLevel
         self.tool_level = tool_level
         self.tool_efficiency = int(tool_efficiency) if float(tool_efficiency).is_integer() else float(tool_efficiency)
         self.tint = tint
@@ -58,7 +58,7 @@ class Material:
         self.primary = int(primary) if isinstance(primary, int) else self.primary
 
     @classmethod
-    # Generates a Material from a CSV row
+    # Generates one or more Materials from a CSV row
     def create_from_csv(cls, csv_row):
         # print("Creating a material from a CSV row")
         if len(csv_row) != 20:
@@ -76,21 +76,33 @@ class Material:
         new_effects = gen_traits_from_string(effects)
         new_improvements = gen_traits_from_string(improvements)
         new_tool_requirements = ToolRequirements.create_from_csv(tool_requirements)
-        new_versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
+        # Tool Level must be input as tier number, not 1.16 version!
         new_tool_level = ToolLevel.get_tool_level(tool_level)
 
+        # Multiple materials can share a row. This allows individual entries for name, prefix, mod id, tints, items
+        # Any of these with only one entry is applied to all
         names = names_raw.split(", ")
         prefixes = prefixes_raw.split(", ")
         mod_ids = mod_ids_raw.split(", ")
         tints = tints_raw.split(", ")
         items = items_raw.split(", ")
+        version_lists = versions.split("; ")
 
         number_of_materials = len(names)
         outputs = []
         for i in range(number_of_materials):
-            mat = Material(names[i], prefixes[i], mod_ids[i], new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
-                           integrity_gain, magic, new_tool_level, tool_efficiency, tints[i], texts,
-                           items[i], new_effects, new_improvements, new_tool_requirements)
+            name = names[i] if len(names) > 1 else names[0]
+            prefix = prefixes[i] if len(prefixes) > 1 else prefixes[0]
+            mod_id = mod_ids[i] if len(mod_ids) > 1 else mod_ids[0]
+            tint = tints[i] if len(tints) > 1 else tints[0]
+            item = items[i] if len(items) > 1 else items[0]
+            vers = version_lists[i] if len(version_lists) > 1 else version_lists[0]
+
+            new_versions = [MinecraftVersion.get_version(int(ver)) for ver in vers]
+
+            mat = Material(name, prefix, mod_id, new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
+                           integrity_gain, magic, new_tool_level, tool_efficiency, tint, texts,
+                           item, new_effects, new_improvements, new_tool_requirements)
             outputs.append(mat)
         # print(f"Generated material from CSV: {mat.get_print_string()}")
         return outputs
@@ -113,7 +125,6 @@ class Material:
         ig = mat["integrityGain"]
         mc = mat["magicCapacity"]
         tl = mat["toolLevel"] if "toolLevel" in mat.keys() else 0
-        # print(f"Set tool level to {tl}")
         te = mat["toolEfficiency"]
         tin = mat["tints"]["glyph"]
         tex = mat["textures"]
@@ -148,21 +159,27 @@ class Material:
             else:
                 efflist.append(f"eff {key} {value} {0}")
         for key, value in req.items():
-            if isinstance(value, int):
-                reqlist.append(f"{key} {value}")
+            if version == MinecraftVersion.SIXTEEN:
+                tool_level = ToolLevel.ToolLevel_from_legacy(value)
             else:
-                tool_level = ToolLevel.ToolLevel_from_string(value)
-                reqlist.append(f"{key} {tool_level.value}")
+                tool_level = ToolLevel.get_tool_level(value)
+            reqlist.append(f"{key} {tool_level.value}")
             # print("added to requirements list: " + f"{key} {tool_level_as_int(value)}")
 
         newimp = ", ".join(implist)
         neweff = ", ".join(efflist)
         newreq = ", ".join(reqlist)
 
+        if version == MinecraftVersion.SIXTEEN:
+            new_tl = ToolLevel.ToolLevel_from_legacy(tl)
+        else:
+            new_tl = ToolLevel.get_tool_level(tl)
+        new_tl = new_tl.value()
+
         ver = version.value
         texts = ", ".join(tex)
 
-        fake_csv_row = [name, prefix, modid, str(ver), cat, pri, sec, ter, dur, ic, ig, mc, tl, te, tin, texts, item,
+        fake_csv_row = [name, prefix, modid, str(ver), cat, pri, sec, ter, dur, ic, ig, mc, new_tl, te, tin, texts, item,
                         neweff, newimp, newreq]
 
         # print(f"Creating {name} material from JSON")
