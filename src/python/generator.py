@@ -12,14 +12,14 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 
 def main():
     # Create the output folder
-    generation_name = "testing"
+    generation_name = "tetranomicon-full"
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
-    materials_csv = "inputs/Tetranomotron - Curated Materials.csv"
-    replacements_csv = "inputs/Tetranomotron - Curated Replacements.csv"
-    sockets_csv = "inputs/Tetranomotron - Curated Sockets.csv"
+    materials_csv = "inputs/Materials.csv"
+    replacements_csv = "inputs/Replacements.csv"
+    sockets_csv = "inputs/Sockets.csv"
 
     try:
         generate_materials(output_subfolder, materials_csv)

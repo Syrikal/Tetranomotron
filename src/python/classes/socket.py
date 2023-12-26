@@ -383,7 +383,8 @@ class Socket:
         lines = []
         if post_119:
             lines.append(f'''"tetra.material.socket_{self.variant_key}": "{self.name} socket"''')
-            lines.append(f'''"tetra.material.socket_{self.variant_key}.prefix": "{self.colored_string}"''')
+            colored_string = self.colored_string.replace("§", "\u00a7")
+            lines.append(f'''"tetra.material.socket_{self.variant_key}.prefix": "{colored_string}"''')
         else:
             for modular_type in self.modular_types:
                 lines.append(f'''"tetra.variant.{modular_type.value}_socket/{self.variant_key}": "Socket [{self.colored_string}]"''')
