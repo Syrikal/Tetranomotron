@@ -1,0 +1,4 @@
+ Name,ignore Add-On, Mod ID, Colored String, Versions, Item Types, Durability, Durability Mod, Integrity, Tint, Textures, Attributes, Effects, Tool Level, Tool Efficiency, Item, XP Cost
+Golden Amber,AT,aether,§6Golden Amber§r,"19, 20","double, single, sword",512,1,1,ffd84d,default,,eff earthbind 8 0,,,golden_amber,4
+Zanite,AT,aether,§uZanite§r,"19, 20","double, single, sword",512,1,1,763ace,default,att **generic.attack_damage 0 0.1,,,2,zanite_gemstone,2
+Skyjade,AT,deep_aether,§qSkyjade§r,"19, 20","double, single, sword",,1,1,b2e865,default,att **generic.movement_speed 0 0.05,eff criticalStrike 20 1.5,,2,skyjade,2

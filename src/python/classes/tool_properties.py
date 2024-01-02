@@ -32,27 +32,31 @@ class ToolLevel(Enum):
     NETHERITE = 6               # Netherite.                Harvest level 4    Tool level 5 / 6        Netherite hammer (6)
     NETHERITE_PLUS_ONE = 7      # One above netherite.      Harvest level 5    Tool level 6 / 7        Maxed forge hammer (7)
     NETHERITE_PLUS_TWO = 8      # Two above netherite.      Harvest level 6    Tool level 7 / 8
+    NETHERITE_PLUS_THREE = 9    # Three above netherite     Harvest level 7    Tool level 8 / 9
+    NETHERITE_PLUS_FOUR = 10    # Four above netherite.     Harvest level 8    Tool level 9 / 10
+    NETHERITE_PLUS_FIVE = 11    # Five above netherite.     Harvest level 9    Tool level 10 / 11
 
     # Tool tier number in 1.16
     def get_legacy_int(self):
-        if self.value() in [0, 1]:
-            return self.value()
+        if self.value in [0, 1]:
+            return self.value
         else:
-            return self.value() - 1
+            return self.value - 1
 
     def get_legacy_hammer_int(self):
-        return self.value()
+        return self.value
 
     # Coded into Minecraft
     def get_harvest_level(self):
-        return max(self.value() - 2, 0)
+        return max(self.value - 2, 0)
 
     # Modern string tier
     def get_modern_string(self):
         string_dict = {0: 0, 1: "minecraft:wood", 2: "minecraft:gold", 3: "minecraft:stone",
                        4: "minecraft:iron", 5: "minecraft:diamond", 6: "minecraft:netherite",
-                       7: "tetra:maxed_forge_hammer", 8: "tetranomicon:tier_eight"}
-        return string_dict[self.value()]
+                       7: "tetra:maxed_forge_hammer", 8: "tetranomicon:tier_eight",
+                       9: "tetranomicon:tier_nine", 10: "tetranomicon:tier_ten", 11: "tetranomicon:tier_eleven"}
+        return string_dict[self.value]
 
     @classmethod
     def ToolLevel_from_legacy(cls, input_level):
@@ -96,6 +100,9 @@ class ToolLevel(Enum):
     @classmethod
     def get_tool_level(cls, input_level):
         if isinstance(input_level, str):
-            return ToolLevel.ToolLevel_from_string(input_level)
+            if input_level.isdigit():
+                return ToolLevel(int(input_level))
+            else:
+                return ToolLevel.ToolLevel_from_string(input_level)
         elif isinstance(input_level, int):
             return ToolLevel(input_level)

@@ -1,11 +1,11 @@
 from collections import OrderedDict
 from enum import Enum
 
-from mc_version import MinecraftVersion, get_versions_csv_string
+from classes.mc_version import MinecraftVersion, get_versions_csv_string
 import json
 from jsondiff import diff
 
-from socket import ModularType
+from classes.socket import ModularType
 from src.python.classes import util
 
 
@@ -206,6 +206,9 @@ class Replacement:
             case ReplacementType.SHOVEL:
                 modules["single/head"] = ["single/basic_shovel", f"basic_shovel/{material_key}"]
                 modules["single/handle"] = ["single/basic_handle", f"basic_handle/{handle_material}"]
+            case ReplacementType.SPEAR:
+                modules["single/head"] = ["single/spearhead", f"spearhead/{material_key}"]
+                modules["single/handle"] = ["single/light_handle", f"light_handle/{handle_material}"]
             case ReplacementType.SWORD:
                 modules["sword/blade"] = ["sword/basic_blade", f"basic_blade/{material_key}"]
                 modules["sword/hilt"] = ["sword/basic_hilt", f"basic_hilt/{handle_material}"]
@@ -301,6 +304,7 @@ class ReplacementType(Enum):
     SWORD = "sword"
     GREATSWORD = "greatsword"
     KNIFE = "knife"
+    SPEAR = "spear"
 
     def second_module(self):
         if self in [ReplacementType.AXE, ReplacementType.HOE]:
@@ -317,7 +321,7 @@ class ReplacementType(Enum):
     def get_modular_type(self):
         if self in [ReplacementType.AXE, ReplacementType.DOUBLE_AXE, ReplacementType.PICK, ReplacementType.HOE]:
             return ModularType.DOUBLE
-        elif self in [ReplacementType.SHOVEL]:
+        elif self in [ReplacementType.SHOVEL, ReplacementType.SPEAR]:
             return ModularType.SINGLE
         elif self in [ReplacementType.SWORD, ReplacementType.GREATSWORD, ReplacementType.KNIFE]:
             return ModularType.SWORD

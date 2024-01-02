@@ -12,20 +12,20 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 
 def main():
     # Create the output folder
-    generation_name = "tetranomicon-full"
+    generation_name = "aetheric-tetranomicon"
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
-    materials_csv = "inputs/Materials.csv"
-    replacements_csv = "inputs/Replacements.csv"
-    sockets_csv = "inputs/Sockets.csv"
+    materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
+    replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
+    sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
 
     try:
-        generate_materials(output_subfolder, materials_csv)
+        materials = generate_materials(output_subfolder, materials_csv)
         generate_replacements(output_subfolder, replacements_csv)
-        generate_sockets(output_subfolder, sockets_csv)
-        generate_lang(output_subfolder, materials_csv, sockets_csv)
+        sockets = generate_sockets(output_subfolder, sockets_csv)
+        generate_lang(output_subfolder, materials, sockets)
     except Exception as exc:
         print(traceback.format_exc())
         print(exc)
@@ -43,13 +43,17 @@ def generate_materials(output_folder_path, input_csv):
     with open(input_csv, 'r', encoding='utf-8-sig') as materials_csv:
         reader = csv.reader(materials_csv)
         headers = next(reader)
+        important_columns = [i for i in range(len(headers))]
+        for header in headers:
+            if header.startswith("ignore"):
+                important_columns.remove(headers.index(header))
+
         for row in reader:
+            row = [row[i] for i in important_columns]
             # Add material(s) from row to materials list
             # Ignore vanilla and undergarden materials
             row_materials = Material.create_from_csv(row)
-            for row_mat in row_materials:
-                if row_mat.mod_id not in ["vanilla", "undergarden"]:
-                    materials.append(row_mat)
+            materials.extend(row_materials)
 
     if not materials:
         print("No materials provided. Ending run.")
@@ -82,6 +86,8 @@ def generate_materials(output_folder_path, input_csv):
                 material_json = material.get_json(legacy)
                 jsonfile.write(json.dumps(material_json, indent=4))
 
+    return materials
+
 
 def generate_replacements(output_folder_path, input_csv):
     print("\n\n\nGenerating replacements...")
@@ -90,7 +96,13 @@ def generate_replacements(output_folder_path, input_csv):
     with open(input_csv, 'r', encoding='utf-8-sig') as replacements_csv:
         reader = csv.reader(replacements_csv)
         headers = next(reader)
+        important_columns = [i for i in range(len(headers))]
+        for header in headers:
+            if header.startswith("ignore"):
+                important_columns.remove(headers.index(header))
+
         for row in reader:
+            row = [row[i] for i in important_columns]
             # print(f"Reading CSV row about {row[0]}")
             replacements.append(Replacement.create_from_csv(row))
 
@@ -149,9 +161,14 @@ def generate_sockets(output_folder_path, input_csv):
     with open(input_csv, 'r', encoding='utf-8-sig') as sockets_csv:
         reader = csv.reader(sockets_csv)
         headers = next(reader)
+        important_columns = [i for i in range(len(headers))]
+        for header in headers:
+            if header.startswith("ignore"):
+                important_columns.remove(headers.index(header))
         for row in reader:
+            row = [row[i] for i in important_columns]
             # print(f"Reading CSV row about {row[0]}")
-            sockets.append(Socket.create_from_csv(row))
+            sockets.extend(Socket.create_from_csv(row))
 
     if not sockets:
         print("No sockets provided. Ending run.")
@@ -242,26 +259,11 @@ def generate_sockets(output_folder_path, input_csv):
                 socket_json = socket.get_socket_json(version, ModularType.DOUBLE)
                 jsonfile.write(json.dumps(socket_json, indent=4))
 
+    return sockets
 
-def generate_lang(output_folder_path, materials_csv, sockets_csv):
+
+def generate_lang(output_folder_path, materials, sockets):
     print("\n\nGenerating lang files\n")
-
-    # Go through csv and make a list of all the materials
-    materials = []
-    with open(materials_csv, 'r', encoding='utf-8-sig') as materials_csv_file:
-        reader = csv.reader(materials_csv_file)
-        headers = next(reader)
-        for row in reader:
-            # print(f"Reading CSV row about {row[0]}")
-            materials.extend(Material.create_from_csv(row))
-
-    sockets = []
-    with open(sockets_csv, 'r', encoding='utf-8-sig') as sockets_csv_file:
-        reader = csv.reader(sockets_csv_file)
-        headers = next(reader)
-        for row in reader:
-            # print(f"Reading CSV row about {row[0]}")
-            sockets.append(Socket.create_from_csv(row))
 
     for version in MinecraftVersion:
         print(f"Working on lang file for version {version.get_print_string()}")
@@ -318,7 +320,7 @@ def generate_lang(output_folder_path, materials_csv, sockets_csv):
                 lang_rows.append("")
 
             for socket in mod_sockets:
-                post_119 = int(version.value()) > 18
+                post_119 = int(version.value) > 18
                 lang_rows.extend(socket.get_socket_lang_lines(post_119))
 
             if mod_id != last_mod:

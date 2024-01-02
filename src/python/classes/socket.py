@@ -4,10 +4,10 @@ import json
 
 from jsondiff import diff
 
-from mc_version import MinecraftVersion, get_versions_csv_string
+from classes.mc_version import MinecraftVersion, get_versions_csv_string
 from src.python.classes import util
-from tool_properties import ToolType
-from trait import gen_traits_from_string, get_traits_csv_string
+from classes.tool_properties import ToolType
+from classes.trait import gen_traits_from_string, get_traits_csv_string
 
 
 def main():
@@ -31,7 +31,7 @@ class Socket:
         self.versions = versions
         # Double, single, sword
         self.modular_types = modular_types
-        self.durability = int(durability)
+        self.durability = int(durability) if durability else 0
         self.durability_multiplier = float(durability_multiplier)
         self.integrity_cost = int(integrity_cost)
         # A single string
@@ -51,26 +51,51 @@ class Socket:
         pass
 
     @classmethod
-    # Generates a Socket from a CSV row
+    # Generates a Socket (or sockets) from a CSV row
     def create_from_csv(cls, csv_row):
         # print("Creating a socket from a CSV row")
         if len(csv_row) != 16:
             raise ValueError(
                 f"Failed attempt to create a socket because csv row was wrong size ({len(csv_row)}): '{csv_row}'")
 
-        name, mod_id, lang_name, versions, modular_types, durability, durability_multiplier, integrity, tint, textures, \
-            attributes, effects, tool_level_boost, tool_efficiency_boost, item, xp_cost = csv_row
+        names_raw, mod_ids_raw, lang_names_raw, versions, modular_types, durability, durability_multiplier, integrity, tints_raw, textures, \
+            attributes, effects, tool_level_boost, tool_efficiency_boost, items_raw, xp_cost = csv_row
 
-        versions, modular_types, textures = versions.split(", "), modular_types.split(", "), textures.split(", ")
+        modular_types, textures = modular_types.split(", "), textures.split(", ")
         new_attributes = gen_traits_from_string(attributes)
         new_effects = gen_traits_from_string(effects)
-        new_versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
         new_modular_types = [ModularType(x) for x in modular_types]
 
-        soc = Socket(name, mod_id, lang_name, new_versions, new_modular_types, durability, durability_multiplier,
+        # Multiple sockets can share a row. This allows individual entries for name, mod id, lang names, tints, items, versions
+        # Any of these with only one entry is applied to all
+        names = names_raw.split(", ")
+        mod_ids = mod_ids_raw.split(", ")
+        lang_names = lang_names_raw.split(", ")
+        tints = tints_raw.split(", ")
+        items = items_raw.split(", ")
+        version_lists = versions.split("; ")
+
+        lengths = [len(names), len(mod_ids), len(lang_names), len(tints), len(items), len(version_lists)]
+        number_of_materials = max(lengths)
+
+        outputs = []
+        for i in range(number_of_materials):
+            name = names[i] if len(names) > 1 else names[0]
+            lang_name = lang_names[i] if len(lang_names) > 1 else lang_names[0]
+            mod_id = mod_ids[i] if len(mod_ids) > 1 else mod_ids[0]
+            tint = tints[i] if len(tints) > 1 else tints[0]
+            item = items[i] if len(items) > 1 else items[0]
+            vers = version_lists[i] if len(version_lists) > 1 else version_lists[0]
+
+            vers2 = vers.split(", ")
+            new_versions = [MinecraftVersion.get_version(int(ver)) for ver in vers2]
+
+            soc = Socket(name, mod_id, lang_name, new_versions, new_modular_types, durability, durability_multiplier,
                      integrity, tint, textures, new_attributes, new_effects, tool_level_boost, tool_efficiency_boost,
                      item, xp_cost)
-        return soc
+            outputs.append(soc)
+        return outputs
+
 
     @classmethod
     # Generates a Socket from a JSON object
@@ -224,7 +249,7 @@ class Socket:
         print(diff(json_object, jsonified))
         print("Saving and restoring from CSV...")
         csvified = self.get_csv_row()
-        restored = Socket.create_from_csv(csvified)
+        restored = Socket.create_from_csv(csvified)[0]
         restored_json = restored.get_socket_json(legacy, mod_type)
         print("Difference between restored and originally created:")
         print(diff(jsonified, restored_json))
@@ -527,7 +552,7 @@ def test():
     socs = json.load(socks)
     for og_json in socs["variants"]:
         socket_object = Socket.create_socket_from_old_jsons(og_json, sixteen_lang, sixteen_schematics,
-                                                            MinecraftVersion.SIXTEEN)
+                                                            MinecraftVersion.SIXTEEN)[0]
         socket_object.compare_to_original(og_json, True, ModularType.DOUBLE)
         print("\n\n")
 

@@ -1,15 +1,15 @@
 from collections import OrderedDict
 
-from tool_properties import ToolLevel
+from classes.tool_properties import ToolLevel
 
 
 class ToolRequirements:
     # Generates a ToolRequirements from three integers
     # Integers refer to tier level
     def __init__(self, hammer, axe, cut):
-        self.hammer = ToolLevel(hammer)
-        self.axe = ToolLevel(axe)
-        self.cut = ToolLevel(cut)
+        self.hammer = ToolLevel.get_tool_level(hammer)
+        self.axe = ToolLevel.get_tool_level(axe)
+        self.cut = ToolLevel.get_tool_level(cut)
 
     @classmethod
     # Generates a ToolRequirements from a string, such as from a CSV

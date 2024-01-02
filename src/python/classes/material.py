@@ -5,10 +5,10 @@ from collections import OrderedDict
 from jsondiff import diff
 
 from src.python.classes import util
-from tool_requirements import ToolRequirements
-from tool_properties import ToolLevel
-from trait import gen_traits_from_string, get_traits_csv_string
-from mc_version import MinecraftVersion, get_versions_csv_string
+from classes.tool_requirements import ToolRequirements
+from classes.tool_properties import ToolLevel
+from classes.trait import gen_traits_from_string, get_traits_csv_string
+from classes.mc_version import MinecraftVersion, get_versions_csv_string
 
 
 def main():
@@ -72,7 +72,7 @@ class Material:
             = csv_row
 
         # Turn comma-separated lists into lists of strings
-        versions, texts = versions.split(", "), texts.split(", ")
+        texts = texts.split(", ")
 
         new_effects = gen_traits_from_string(effects)
         new_improvements = gen_traits_from_string(improvements)
@@ -89,7 +89,9 @@ class Material:
         items = items_raw.split(", ")
         version_lists = versions.split("; ")
 
-        number_of_materials = len(names)
+        lengths = [len(names), len(prefixes), len(mod_ids), len(tints), len(items), len(version_lists)]
+        number_of_materials = max(lengths)
+
         outputs = []
         for i in range(number_of_materials):
             name = names[i] if len(names) > 1 else names[0]
@@ -98,8 +100,12 @@ class Material:
             tint = tints[i] if len(tints) > 1 else tints[0]
             item = items[i] if len(items) > 1 else items[0]
             vers = version_lists[i] if len(version_lists) > 1 else version_lists[0]
+            # print("Version list: " + vers)
+            if not vers:
+                print("Error in versions for " + name)
 
-            new_versions = [MinecraftVersion.get_version(int(ver)) for ver in vers]
+            vers2 = vers.split(", ")
+            new_versions = [MinecraftVersion.get_version(int(ver)) for ver in vers2]
 
             mat = Material(name, prefix, mod_id, new_versions, category, primary, secondary, tertiary, dur, integrity_cost,
                            integrity_gain, magic, new_tool_level, tool_efficiency, tint, texts,
@@ -279,12 +285,14 @@ class Material:
 
         output["textures"] = self.textures
 
-        material_dict = OrderedDict()
-        if legacy:
-            material_dict["item"] = f"{self.mod_id}:{self.item}"
-        else:
-            material_dict["items"] = [f"{self.mod_id}:{self.item}"]
-        output["material"] = material_dict
+        if self.item:
+            material_dict = OrderedDict()
+            item_id = f"{self.item}" if ":" in self.item else f"{self.mod_id}:{self.item}"
+            if legacy:
+                material_dict["item"] = f"{item_id}"
+            else:
+                material_dict["items"] = [f"{item_id}"]
+            output["material"] = material_dict
 
         output["requiredTools"] = self.required_tools.get_json_object(legacy)
 
