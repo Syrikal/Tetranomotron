@@ -1,0 +1,101 @@
+ Name,ignore Add-On, Mod ID, Colored String, Versions, Item Types, Durability, Durability Mod, Integrity, Tint, Textures, Attributes, Effects, Tool Level, Tool Efficiency, Item, XP Cost
+Abyssal Amethyst,Tnc 1.5,aquamirae,§dAbyssal Amethyst§r,"16, 18, 19, 20","double, single, sword",512,1,1,ff7bff,default,,"eff criticalStrike 20 2, eff backstab 2 0",,2,abyssal_amethyst,15
+Alexandrite,Tnc 1.5,silentgems,§5Alexandrite§r,"16, 18, 19, 20","double, single, sword",,1,1,9e17dd,default,att **generic.attack_damage 0 0.1,,,2,alexandrite,6
+Allurite Shard,Tnc 1.5,galosphere,§bAllurite Shard§r,"18, 19, 20","double, single, sword",,1,1,8affff,default,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,,allurite_shard,5
+Amber Curiosity,Tnc 1.5,alexscaves,§6Amber Curiosity§r,20,"double, single, sword",,1,1,ff8c00,default,,eff earthbind 8 0,,,amber_curiosity,10
+Amethyst,Tnc 1.5,ms,§uAmethyst§r,16; 18,"double, single, sword",,1,1,8d6acc,default,,eff criticalStrike 15 2,,,"gem/amethyst, gem/refined_amethyst_ingot",4
+Amethyst,Tnc 1.5,ms,§uAmethyst§r,"19, 20","double, single, sword",,1,1,8d6acc,default,"att forge:reach_distance 0 0.5, att forge:attack_distance 0 0.5",eff reaching 10 0.45,,,gem/refined_amethyst_ingot,4
+Amethyst,Tnc 1.5,oresabovediamonds,§uAmethyst§r,"16, 18, 19, 20","double, single, sword",714,1,1,c25fdf,default,att **generic.attack_damage 0 0.2,,,4,amethyst,20
+Ametrine,Tnc,byg,§eAmet§drine§r,"16, 18, 19","double, single, sword",1024,1,1,d399d1,default,"att generic.armor 0 2, att generic.armor_toughness 0 2",,,,ametrine_gems,15
+Ammolite,Tnc 1.5,silentgems,§uAmmolite§r,"16, 18, 19, 20","double, single, sword",,1,1,b834f9,default,att generic.armor 0 2,,,2,ammolite,6
+Aquamarine,Tnc 1.5,epicsamurai,§9Aquamarine§r,"18, 19, 20","double, single, sword",,1,1,5f9fbf,default,att **generic.attack_damage 0 0.2,,,,aquamarine,4
+Aquamarine,Tnc 1.5,ms,§bAquamarine§r,"16, 18, 19, 20","double, single, sword",,1,1,55f4ff,default,att **generic.attack_damage 0 0.1,,,,gem/aquamarine,4
+Aquite,Tnc 1.5,blue_skies,§bAquite§r,"16, 18, 19, 20","double, single, sword",,1,1,62bee3,default,,eff intuit 1 0,,,aquite,5
+Astral Crystal,Tnc 1.5,voidscape,§dAstral Crystal§r,"16, 18, 19, 20","double, single, sword",1561,1,1,c24cab,default,"att **generic.attack_damage 0 0.3, att **generic.movement_speed 0 0.15, att **generic.attack_speed 0 0.1",eff skewering 2 10,1,6,astral_crystal,45
+Aurora Crystal,Tnc,betterendforge,§dAurora Crystal§f,16,"double, single, sword",0,1,1,862ec0,default,,eff intuit 2 0,,2,crystal_shards,10
+Azure Electrum Nugget,Tnc 1.5,silentgear,§9Azure Electrum Nugget§r,"16, 18, 19, 20","double, single, sword",,1,1,4575e3,default,,eff stabilizing 20 0,,6,azure_electrum_nugget,30
+Azure Silver Nugget,Tnc 1.5,silentgear,§uAzure Silver Nugget§r,"16, 18, 19, 20","double, single, sword",,1,1,d09ef6,default,,eff stabilizing 10 0,,4,azure_silver_nugget,15
+Black Diamond,Tnc 1.5,ms,§5Black Diamond§r,"16; 18, 19, 20","double, single, sword",714,1,1,562980,default,att **generic.attack_damage 0 0.1,,,4,"gem/blackdiamond, gem/black_diamond",20
+Black Diamond,Tnc 1.5,silentgems,§jBlack Diamond§r,"16, 18, 19, 20","double, single, sword",512,1,1,5f524c,default,att **generic.attack_damage 0 0.15,eff unbreaking 1 0,,2,black_diamond,10
+Black Opal,Tnc 1.5,oresabovediamonds,§5Black Opal§r,"16, 18, 19, 20","double, single, sword",916,1,1,3b2361,default,att **generic.attack_damage 0 0.25,,,5,black_opal,30
+Blaze Gold Nugget,Tnc 1.5,silentgear,§6Blaze Gold Nugget§r,"16, 18, 19, 20","double, single, sword",,1,1,e3a645,default,,"eff workable 10 0, eff stabilizing 10 0",,,blaze_gold_nugget,10
+Blue Geode,Tnc,wyrmroost,§9Blue Geode§r,16,"double, single, sword",512,1,1,225589,default,att **generic.attack_damage 0 0.1,,,2,blue_geode,2
+Carnelian,Tnc 1.5,silentgems,§cCarnelian§r,"16, 18, 19, 20","double, single, sword",512,1,1,e6351f,default,att **generic.attack_damage 0 0.1,,,,carnelian,6
+Charoite,Tnc 1.5,blue_skies,§uCharoite§r,"16, 18, 19, 20","double, single, sword",512,1,1,9d71c3,default,att **generic.attack_damage 0 0.1,,,4,charoite,10
+Citrine,Tnc 1.5,ms,§pCitrine§r,"16, 18, 19, 20","double, single, sword",,1,1,cda21b,default,att **generic.attack_damage 0 0.1,eff intuit 1 0,,,gem/citrine,10
+Citrine,Tnc 1.5,silentgems,§pCitrine§r,"16, 18, 19, 20","double, single, sword",,1,1,c48f17,default,att **generic.attack_damage 0 0.1,eff intuit 1 0,,,citrine,6
+Cobalt Crystal,Tnc,outer_end,§3Cobalt Crystal§r,16,"double, single, sword",0,1,1,768ed0,default,,eff intuit 3 0,,,cobalt_crystal_shard,15
+Crimson Iron Nugget,Tnc 1.5,silentgear,§cCrimson Iron Nugget§r,"16, 18, 19, 20","double, single, sword",,1,1,f3476f,default,,eff workable 10 0,,2,crimson_iron_nugget,10
+Crimson Steel Nugget,Tnc 1.5,silentgear,§4Crimson Steel Nugget§r,"16, 18, 19, 20","double, single, sword",512,1,1,dc143c,default,,eff workable 15 0,,4,crimson_steel_nugget,20
+Crystal Shard,Tnc 1.5,phantasm,§bCrystal Shard§r,"16, 18, 19, 20","double, single, sword",714,1,1,b7c6e2,default,att generic.armor 0 2,,,4,crystal_shard,20
+Crystallized Ichor,Tnc 1.5,voidscape,§pCrystallized Ichor§r,"16, 18, 19, 20","double, single, sword",1024,1,1,fda14b,default,"att **generic.attack_damage 0 0.3, att **generic.movement_speed 0 0.1",eff skewering 1 5,,6,ichor_crystal,25
+Diopside,Tnc 1.5,blue_skies,§aDiopside§r,"16, 18, 19, 20","double, single, sword",714,1,1,00cd15,default,att **generic.attack_damage 0 0.2,,,2,diopside_gem,10
+Echo of the Ship Graveyard,Tnc 1.5,aquamirae,§bEcho of the Ship Graveyard§r,"16, 18, 19, 20","double, single, sword",714,1,1,6df8fe,pristine,"att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.1, att generic.armor 0 2","eff workable 15 0, eff stabilizing 20 0",,4,ship_graveyard_echo,30
+Endium,Tnc 1.5,organics,§dEndium§r,"16, 18, 19, 20","double, single, sword",1024,1,2,c35ad1,default,"att **generic.attack_damage 0 0.3, att **generic.attack_speed 0 0.1",,1,5,endium_gem,30
+Eternal Crystal,Tnc,betterendforge,§dEternal Crystal§f,16,"double, single, sword",1024,1,2,00fbf8,pristine,,eff intuit 4 0,1,4,eternal_crystal,30
+Eternium Nugget,Tnc 1.5,l2complements,§9Eternium Nugget§r,"19, 20","double, single, sword",714,1,1,696ef7,default,att generic.armor 0 2,eff unbreaking 1 0,,,eternium_nugget,15
+Fluorite Crystal,Tnc 1.5,deep_dark_regrowth,§sFluorite Crystal§r,"19, 20","double, single, sword",512,1,1,66ffe0,default,att **generic.attack_damage 0 0.3,"eff intuit 1 0, eff backstab 2 0",,2,fluorite_crystal,20
+Frozen Quartz,Tnc 1.5,organics,§bFrozen Quartz§r,"16, 18, 19, 20","double, single, sword",512,1,1,abc6f8,default,att generic.armor 0 2,eff earthbind 4 0,,,frozen_quartz,5
+Glacium,Tnc 1.5,enlightened_end,§bGlacium§r,"16, 18, 19, 20","double, single, sword",714,1,1,5693f9,default,"att **generic.attack_damage 0 0.2, att **generic.movement_speed 0 -0.1, att generic.armor 0 4",,,2,glacium,20
+Glinted Allurite Cluster,Tnc 1.5,galosphere,§bGlinted Allurite Cluster§r,"18, 19, 20","double, single, sword",512,1,1,24f6d8,pristine,"att generic.armor 0 4, att generic.armor_toughness 0 4",,,2,glinted_allurite_cluster,10
+Glinted Amethyst Cluster,Tnc 1.5,galosphere,§uGlinted Amethyst Cluster§r,18,"double, single, sword",,1,1,8d6acc,pristine,,eff criticalStrike 20 3,,,glinted_amethyst_cluster,10
+Glinted Amethyst Cluster,Tnc 1.5,galosphere,§uGlinted Amethyst Cluster§r,"19, 20","double, single, sword",,1,1,8d6acc,pristine,"att forge:reach_distance 0 1.5, att forge:attack_distance 0 1.5",eff reaching 15 0.7,,,glinted_amethyst_cluster,10
+Glinted Lumiere Cluster,Tnc 1.5,galosphere,§eGlinted Lumiere Cluster§r,"18, 19, 20","double, single, sword",714,1,1,eba138,pristine,,eff stabilizing 25 0,,4,glinted_lumiere_cluster,10
+Godshard,Tnc,atum,§bGodshard§r,16,"double, single, sword",1024,1,2,,,"att **generic.attack_damage 0 0.5, att **generic.attack_speed 0 0.1, att **generic.movement_speed 0 0.2",,,6,tag!godshards,50
+Heliodor,Tnc 1.5,silentgems,§eHeliodor§r,"16, 18, 19, 20","double, single, sword",,1,1,ddcf17,default,,,,5,heliodor,10
+Hellfire,Tnc 1.5,ms,§mHellfire§r,"16; 18, 19, 20","double, single, sword",448,1,1,5203cb,default,att **generic.attack_damage 0 0.2,eff fierySelf 1 0.04,,2,"gem/hellfirecrystal, gem/hellfire_crystal",10
+Iolite,Tnc 1.5,silentgems,§9Iolite§r,"16, 18, 19, 20","double, single, sword",,1,1,4f1edb,default,att **generic.attack_damage 0 0.1,eff crushing 2 0,,,iolite,4
+Iridite,Tnc 1.5,organics,§6Iridite§r,"16, 18, 19, 20","double, single, sword",714,1,1,e5ad06,default,att **generic.attack_damage 0 0.2,,,4,iridite_gem,10
+Jade,Tnc 1.5,epicsamurai,§aJade§r,"18, 19, 20","double, single, sword",,1,1,6cd49d,default,att generic.armor 0 2,eff criticalStrike 15 2,,,jade,4
+Jade,Tnc 1.5,ms,§qJade§r,"16, 18, 19, 20","double, single, sword",,1,1,38851d,default,att generic.armor 0 2,eff criticalStrike 20 2,,,gem/jade,6
+Kuko,Tnc 1.5,organics,§dKuko§r,"16, 18, 19, 20","double, single, sword",1024,1,1,f03eff,default,att **generic.attack_damage 0 0.3,,,5,kuko_gem,20
+Kyanite,Tnc 1.5,silentgems,§bKyanite§r,"16, 18, 19, 20","double, single, sword",512,1,1,17a9dd,default,att **generic.attack_damage 0 0.15,,,4,kyanite,10
+Lumiere Shard,Tnc 1.5,galosphere,§eLumiere Shard§r,"18, 19, 20","double, single, sword",512,1,1,ffc559,default,,eff stabilizing 15 0,,2,lumiere_shard,5
+Malachite,Tnc 1.5,enlightened_end,§aMalachite§r,"16, 18, 19, 20","double, single, sword",714,1,1,57d996,default,"att **generic.movement_speed 0 0.05, att **generic.attack_speed 0 0.1",eff criticalStrike 20 2,,4,malachite,20
+Mint Crystal,Tnc,outer_end,§aMint Crystal§r,16,"double, single, sword",640,1,1,6fc39c,default,,,,3,mint_crystal_shard,15
+Moldavite,Tnc 1.5,silentgems,§aMoldavite§r,"16, 18, 19, 20","double, single, sword",,1,1,6f9a1e,default,att **generic.attack_damage 0 0.2,,,4,moldavite,8
+Moonstone,Tnc 1.5,blue_skies,§fMoonstone§r,"16, 18, 19, 20","double, single, sword",,1,1,c4e3f1,default,,eff stabilizing 20 0,,,moonstone,10
+Netherite Opal,Tnc 1.5,oresabovediamonds,§5Netherite Opal§r,"16, 18, 19, 20","double, single, sword",1024,1,1,210a2d,default,att **generic.attack_damage 0 0.3,,,6,tetranomicon:netherite_opal,40
+Occult Gem,Tnc 1.5,alexscaves,§4Occult Gem§r,20,"double, single, sword",,1,1,ee0000,default,att generic.max_health 0 -4,"eff bleeding 2 0, eff backstab 2 0, eff severing 20 2",,2,occult_gem,20
+Olivine,Tnc 1.5,ms,§aOlivine§r,"16, 18, 19, 20","double, single, sword",,1,1,5aff4f,default,att **generic.movement_speed 0 0.1,,,,gem/olivine,10
+Onyx,Tnc 1.5,epicsamurai,§hOnyx§r,"18, 19, 20","double, single, sword",512,1,1,eed4bf,default,,eff ArmorPenetration 20 0,,2,onyx,10
+Onyx,Tnc 1.5,ms,§0Onyx§r,"16, 18, 19, 20","double, single, sword",512,1,1,212121,default,,,,2,gem/onyx,4
+Opal,Tnc 1.5,ms,§fOpal§r,"16, 18, 19, 20","double, single, sword",,1,1,f7d1f8,default,,eff intuit 1 0,,,gem/opal,4
+Pearl,Tnc 1.5,alexscaves,§fPearl§r,20,"double, single, sword",,1,1,f2e3f3,default,,eff stabilizing 15 0,,,pearl,10
+Peridot,Tnc 1.5,silentgems,§aPeridot§r,"16, 18, 19, 20","double, single, sword",,1,1,4ef341,default,att **generic.attack_damage 0 0.15,,,,peridot,4
+Poseidite Nugget,Tnc 1.5,l2complements,§sPoseidite Nugget§r,"19, 20","double, single, sword",512,1,1,71b7c4,default,att **generic.movement_speed 0 0.1,,,,poseidite_nugget,15
+Prismarite Cluster,Tnc 1.5,regions_unexplored,§cPr§6ism§ear§aite §9Cl§1ust§5er§r,"18, 19, 20","double, single, sword",256,1,1,abff6b,default,att **generic.movement_speed 0 0.05,eff intuit 2 0,,4,prismarite_cluster,15
+Purified Titanite Shard,Tnc 1.5,voidscape,§sPurified Titanite Shard§r,"16, 18, 19, 20","double, single, sword",714,1,1,00c2a5,default,att **generic.attack_damage 0 0.3,,,5,titanite_shard,15
+Purple Geode,Tnc,wyrmroost,§5Purple Geode§r,16,"double, single, sword",768,1,1,9b0dbf,default,att **generic.attack_damage 0 0.25,,,6,purple_geode,30
+Pyrope,Tnc 1.5,blue_skies,§cPyrope§r,"16, 18, 19, 20","double, single, sword",714,1,1,d62438,default,att **generic.attack_damage 0 0.25,,,2,pyrope_gem,20
+Red Geode,Tnc,wyrmroost,§4Red Geode§r,16,"double, single, sword",640,1,1,8d2e2f,default,att **generic.attack_damage 0 0.15,,,4,red_geode,10
+Reinforced Echo Shard,Tnc 1.5,deeperdarker,§3Reinforced Echo Shard§r,"19, 20","double, single, sword",512,1,1,74553,default,att **generic.attack_damage 0 0.3,eff enderReverb 1 0.1,,5,reinforced_echo_shard,10
+Riftite Shard,Tnc 1.5,endlessbiomes,§3Riftite Shard§r,"18, 19, 20","double, single, sword",,1,1,50c9a7,default,"att **generic.movement_speed 0 0.1, att **generic.attack_speed 0 0.1, att **generic.attack_knockback 0 1",,,,riftite_shard,20
+Rose Crystal,Tnc,outer_end,§cRose Crystal§r,16,"double, single, sword",0,1,1,c56eb9,default,att **generic.attack_damage 0 0.25,,,,rose_crystal_shard,15
+Rose Quartz,Tnc 1.5,silentgems,§dRose Quartz§r,"16, 18, 19, 20","double, single, sword",,1,1,ff6bbd,default,att **generic.attack_damage 0 0.15,eff criticalStrike 20 3,,4,rose_quartz,10
+Ruby,Tnc 1.5,epicsamurai,§cRuby§r,"18, 19, 20","double, single, sword",,1,1,b71643,default,att **generic.attack_damage 0 0.1,,,2,ruby,4
+Ruby,Tnc 1.5,ms,§cRuby§r,"16, 18, 19, 20","double, single, sword",,1,1,f90606,default,,eff criticalStrike 20 2,,2,gem/ruby,4
+Ruby,Tnc 1.5,silentgems,§4Ruby§r,"16, 18, 19, 20","double, single, sword",,1,1,aa0004,default,,eff criticalStrike 20 2,,,ruby,2
+Sapphire,Tnc 1.5,ms,§9Sapphire§r,"16, 18, 19, 20","double, single, sword",,1,1,8c79ff,default,,eff intuit 1 0,,,gem/sapphire,4
+Sapphire,Tnc 1.5,silentgems,§9Sapphire§r,"16, 18, 19, 20","double, single, sword",,1,1,1849db,default,,eff intuit 1 0,,,sapphire,2
+Sapphire Shard,Tnc 1.5,nature_arise,§9Sapphire Shard§r,20,"double, single, sword",512,1,1,4691bb,default,,eff intuit 1 0,,2,sapphire_shard,10
+Scarlet Emerald,Tnc 1.5,ms,§cScarlet Emerald§r,"16; 18, 19, 20","double, single, sword",448,1,1,a00025,default,att **generic.attack_damage 0 0.2,,,,"gem/scarletemerald, gem/scarlet_emerald",20
+Sculkium Nugget,Tnc 1.5,l2complements,§3Sculkium Nugget§r,"19, 20","double, single, sword",512,1,1,034150,default,"att **generic.attack_damage 0 0.1, att **generic.attack_speed 0 0.1",eff backstab 2 0,,,sculkium_nugget,20
+Shulkerate Nugget,Tnc 1.5,l2complements,§uShulkerate Nugget§r,"19, 20","double, single, sword",714,1,1,976997,default,"att forge:reach_distance 0 1, att forge:attack_distance 0 1","eff unbreaking 1 0, eff reaching 5 0.2",,,shulkerate_nugget,15
+Smaragdant,Tnc,betterendforge,§3Smaragdant§r,16,"double, single, sword",250,1,1,00cca6,default,,eff criticalStrike 25 2.5,,,smaragdant_crystal_shard,30
+Soul Crystal,Tnc 1.5,deeperdarker,§3Soul Crystal§r,"19, 20","double, single, sword",512,1,1,00534e,default,,eff enderReverb -2 0,,2,soul_crystal,5
+Sunstone Crystal,Tnc 1.5,blue_skies,§6Sunstone Crystal§r,"16, 18, 19, 20","double, single, sword",512,1,1,ef9a7e,default,"att **generic.attack_damage 0 0.2, att generic.max_health 0 2",,,,sunstone_crystal,10
+Tanzanite,Tnc 1.5,ms,§1Tanzanite§r,"16, 18, 19, 20","double, single, sword",,1,1,9064ee,default,att **generic.attack_damage 0 0.2,eff criticalStrike 25 2,,,gem/tanzanite,20
+Topaz,Tnc 1.5,ms,§pTopaz§r,"16, 18, 19, 20","double, single, sword",714,1,1,ffd350,default,att **generic.attack_damage 0 0.2,,,4,gem/topaz,10
+Topaz,Tnc 1.5,silentgems,§6Topaz§r,"16, 18, 19, 20","double, single, sword",,1,1,dd7d17,default,att **generic.movement_speed 0 0.05,,,2,topaz,2
+Topaz Shard,Tnc 1.5,nature_arise,§Topaz Shard§r,20,"double, single, sword",512,1,1,e9b92e,default,att **generic.attack_damage 0 0.2,,,,topaz_shard,10
+Totemic Gold Nugget,Tnc 1.5,l2complements,§eTotemic Gold Nugget§r,"19, 20","double, single, sword",,1,1,00aa2c,default,att generic.max_health 0 4,eff stabilizing 15 0,,,totemic_gold_nugget,15
+Trio,Tnc 1.5,ms,§cT§qr§9io§r,"16, 18, 19, 20","double, single, sword",714,1,1,62ff62,default,att **generic.attack_damage 0 0.1,,,6,gem/trio,20
+Turquoise,Tnc 1.5,silentgems,§sTurquoise§r,"16, 18, 19, 20","double, single, sword",512,1,1,3df4bd,default,att **generic.attack_damage 0 0.1,,,2,turquoise,6
+Tyrian Steel Nugget,Tnc 1.5,silentgear,§5Tyrian Steel Nugget§r,"16, 18, 19, 20","double, single, sword",512,1,1,b01080,default,"att **generic.attack_damage 0 0.3, att generic.armor 0 2","eff unbreaking 2 0, eff armorPenetration 30 0",,4,tyrian_steel_nugget,30
+Unbreakability Seal,Tnc 1.5,deep_dark_regrowth,§uUnbreakability Seal§r,"19, 20","double, single, sword",,1,-5,343434,default,,eff unbreaking 50 0,,,unbreakability_seal,60
+Uranium,Tnc 1.5,alexscaves,§aUranium§r,20,"double, single, sword",512,1,1,00ff00,default,"att **generic.attack_damage 0 0.25, att generic.max_health 0 -4","eff fierySelf 1 0.02, eff bleeding 4 0, eff severing 20 5",,4,uranium,30
+Void Crystal Shard,Tnc 1.5,phantasm,§uVoid Crystal Shard§r,"16, 18, 19, 20","double, single, sword",512,1,1,c99bc4,default,att **generic.attack_damage 0 0.25,eff armorPenetration 20 0,,,void_crystal_shard,20
+Voidic Crystal,Tnc 1.5,voidscape,§uVoidic Crystal§r,"16, 18, 19, 20","double, single, sword",512,1,1,b03bd5,default,att **generic.attack_damage 0 0.2,,,4,voidic_crystal,10
+White Diamond,Tnc 1.5,silentgems,§fWhite Diamond§r,"16, 18, 19, 20","double, single, sword",714,1,1,f6f1f5,default,att **generic.attack_damage 0 0.15,eff unbreaking 1 0,,4,white_diamond,10
+White Opal,Tnc 1.5,ms,§fWhite Opal§r,"16; 18, 19, 20","double, single, sword",,1,1,d3edfe,default,att **generic.attack_damage 0 0.1,eff intuit 2 0,,,"gem/whiteopal, gem/white_opal",10

@@ -370,8 +370,14 @@ class Socket:
             output["textures"] = [x for x in self.textures]
 
             output["experienceCost"] = self.xp_cost
+
             material_dict = OrderedDict()
-            material_dict["items"] = [f"{self.mod_id}:{self.item}"]
+            if self.craft_with_tag:
+                material_dict["tag"] = [f"{self.mod_id}:{self.item}"]
+            else:
+                item_id = f"{self.item}" if ":" in self.item else f"{self.mod_id}:{self.item}"
+                material_dict["items"] = [f"{item_id}"]
+
             output["material"] = material_dict
 
             util.add_mod_loaded_condition(output, self.mod_id)
@@ -390,10 +396,12 @@ class Socket:
 
         if self.craft_with_tag:
             output["material"] = {"tag": f"{self.mod_id}:{self.item}"}
-        elif legacy:
-            output["material"] = {"item": f"{self.mod_id}:{self.item}"}
         else:
-            output["material"] = {"items": [f"{self.mod_id}:{self.item}"]}
+            item_id = f"{self.item}" if ":" in self.item else f"{self.mod_id}:{self.item}"
+            if legacy:
+                output["material"] = {"item": f"{item_id}"}
+            else:
+                output["material"] = {"items": [f"{item_id}"]}
 
         output["experienceCost"] = self.xp_cost
         output["moduleKey"] = f"{mod_type.value}/socket"

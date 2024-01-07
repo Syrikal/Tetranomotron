@@ -17,11 +17,12 @@ def main():
 class Replacement:
     # Replacement_Type is axe, double_axe, hoe, knife, pick, shovel, or sword   TO ADD: Bow, Crossbow, Spear
     # Improvements is a list of lists of length 3: module, improvement, level
-    def __init__(self, itemid, modid, replacement_type, versions, material, handle_material, improvements):
+    def __init__(self, itemid, modid, replacement_type, versions, toolset, material, handle_material, improvements):
         self.item_id = itemid
         self.mod_id = modid
         self.replacement_type = ReplacementType(replacement_type)
         self.versions = [MinecraftVersion.get_version(int(ver)) for ver in versions]
+        self.toolset = toolset
         self.material_key = material.lower()
         self.handle_material_key = handle_material.lower()
         self.improvements = improvements
@@ -31,10 +32,10 @@ class Replacement:
     # Creates a Replacement from a CSV row
     def create_from_csv(cls, csv_row):
         # print("Creating a replacement from a CSV row")
-        if len(csv_row) != 7:
+        if len(csv_row) != 8:
             raise ValueError(f"Failed attempt to create a replacement from csv row because row was wrong size: '{csv_row}'")
 
-        itemid, mod_id, replacement_type, versions, material_name, handle_material_name, improvements = csv_row
+        itemid, mod_id, replacement_type, versions, toolset, material_name, handle_material_name, improvements = csv_row
 
         # Turn comma-separated lists into actual lists
         versions = versions.split(", ")
@@ -43,7 +44,7 @@ class Replacement:
         if not improvements:
             improvements_new = []
 
-        rep = Replacement(itemid, mod_id, replacement_type, versions, material_name, handle_material_name, improvements_new)
+        rep = Replacement(itemid, mod_id, replacement_type, versions, toolset, material_name, handle_material_name, improvements_new)
         # print(f"Generated replacement from CSV: {rep.get_print_string()}")
         return rep
 
@@ -132,7 +133,9 @@ class Replacement:
                 level = value
                 improvements.append([module, imp_name, level])
 
-        output = Replacement(item_id, mod_id, replacement_type, versions, material, handle_material, improvements)
+        toolset = f"{mod_id}_{material}"
+
+        output = Replacement(item_id, mod_id, replacement_type, versions, toolset, material, handle_material, improvements)
         return output
 
     def check_valid(self):

@@ -12,14 +12,20 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 
 def main():
     # Create the output folder
-    generation_name = "aetheric-tetranomicon"
+    generation_name = "tetranomicon"
+    # generation_name = "aetheric-tetranomicon"
+
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
-    materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
-    replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
-    sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
+    # materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
+    # replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
+    # sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
+
+    materials_csv = "inputs/Tetranomicon Export - Materials.csv"
+    replacements_csv = "inputs/Tetranomicon Export - Replacements.csv"
+    sockets_csv = "inputs/Tetranomicon Export - Sockets.csv"
 
     try:
         materials = generate_materials(output_subfolder, materials_csv)
@@ -138,10 +144,10 @@ def generate_replacements(output_folder_path, input_csv):
         # Sort replacements by material
         replacements_dict = {}
         for replacement in version_dictionary[version]:
-            if replacement.material_key in replacements_dict.keys():
-                replacements_dict[replacement.material_key].append(replacement)
+            if replacement.toolset in replacements_dict.keys():
+                replacements_dict[replacement.toolset].append(replacement)
             else:
-                replacements_dict[replacement.material_key] = [replacement]
+                replacements_dict[replacement.toolset] = [replacement]
         print("Sorted replacements by material")
 
         # For each material, create a file and fill it
@@ -248,7 +254,7 @@ def generate_sockets(output_folder_path, input_csv):
             os.makedirs(ver_output_folder)
 
         # Create materials/sockets folder if not already
-        sockets_folder = os.path.join(ver_output_folder, "data/tetra/materials/sockets")
+        sockets_folder = os.path.join(ver_output_folder, "data/tetra/materials/socket")
         if not os.path.isdir(sockets_folder):
             os.makedirs(sockets_folder)
 

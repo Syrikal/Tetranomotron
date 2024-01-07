@@ -285,14 +285,13 @@ class Material:
 
         output["textures"] = self.textures
 
-        if self.item:
-            material_dict = OrderedDict()
-            item_id = f"{self.item}" if ":" in self.item else f"{self.mod_id}:{self.item}"
-            if legacy:
-                material_dict["item"] = f"{item_id}"
-            else:
-                material_dict["items"] = [f"{item_id}"]
-            output["material"] = material_dict
+        material_dict = OrderedDict()
+        item_id = f"{self.item}" if ":" in self.item else f"{self.mod_id}:{self.item}"
+        if legacy:
+            material_dict["item"] = f"{item_id}"
+        else:
+            material_dict["items"] = [f"{item_id}"]
+        output["material"] = material_dict
 
         output["requiredTools"] = self.required_tools.get_json_object(legacy)
 
