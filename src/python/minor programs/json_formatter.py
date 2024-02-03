@@ -1,7 +1,7 @@
 import os
 import json
 
-for root, dirs, files in os.walk("../resources/Tetra 1.20"):
+for root, dirs, files in os.walk("../../resources/Tetra 1.20"):
     for file in files:
         filename, file_extension = os.path.splitext(file)
         if file_extension == ".json":
