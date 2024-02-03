@@ -2,6 +2,8 @@ from collections import OrderedDict
 
 from classes.tool_properties import ToolLevel
 
+from src.python.classes.mc_version import MinecraftVersion
+
 
 class ToolRequirements:
     # Generates a ToolRequirements from three integers
@@ -46,27 +48,38 @@ class ToolRequirements:
         return output
 
     # Generates a JSON dict to be assigned as the value of the "requiredTools" key
-    def get_json_object(self, legacy):
+    def get_json_object(self, version):
         output = OrderedDict()
+        # print(f"             ...Generating a tool requirements for version {version}")
 
         if self.hammer != ToolLevel.ZERO:
-            if legacy:
+            if version.value == 16:
+                # print("triggered v16 hammer")
                 # Hammers are different numbers in 1.16
                 # Or rather, they're the only ones that are the same in both versions
                 output["hammer"] = self.hammer.get_legacy_hammer_int()
+            elif version.value == 18:
+                # print("triggered v18 hammer")
+                output["hammer_dig"] = self.hammer.get_18_string()
             else:
+                # print("triggered v19-20 hammer")
                 output["hammer_dig"] = self.hammer.get_modern_string()
         if self.axe != ToolLevel.ZERO:
-            if legacy:
+            if version.value == 16:
                 output["axe"] = self.axe.get_legacy_int()
+            elif version.value == 18:
+                output["axe_dig"] = self.axe.get_18_string()
             else:
                 output["axe_dig"] = self.axe.get_modern_string()
         if self.cut != ToolLevel.ZERO:
-            if legacy:
+            if version.value == 16:
                 output["cut"] = self.cut.get_legacy_int()
+            elif version.value == 18:
+                output["cut"] = self.cut.get_18_string()
             else:
                 output["cut"] = self.cut.get_modern_string()
 
+        # print(output)
         return output
 
     # Generates a string formatted for printing
