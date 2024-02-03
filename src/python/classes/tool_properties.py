@@ -50,6 +50,13 @@ class ToolLevel(Enum):
     def get_harvest_level(self):
         return max(self.value - 2, 0)
 
+    def get_18_string(self):
+        string_dict = {0: 0, 1: "minecraft:wood", 2: "minecraft:gold", 3: "minecraft:stone",
+                       4: "minecraft:iron", 5: "minecraft:diamond", 6: "minecraft:netherite",
+                       7: "tetranomicon:tier_seven", 8: "tetranomicon:tier_eight",
+                       9: "tetranomicon:tier_nine", 10: "tetranomicon:tier_ten", 11: "tetranomicon:tier_eleven"}
+        return string_dict[self.value]
+
     # Modern string tier
     def get_modern_string(self):
         string_dict = {0: 0, 1: "minecraft:wood", 2: "minecraft:gold", 3: "minecraft:stone",
