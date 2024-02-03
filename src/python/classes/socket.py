@@ -301,7 +301,7 @@ class Socket:
             if self.tool_level_boost or self.tool_efficiency_boost:
                 tool_dict = OrderedDict()
                 for tooltype in ToolType:
-                    tool_dict[f"{tooltype}"] = [self.tool_level_boost, self.tool_efficiency_boost]
+                    tool_dict[f"{tooltype.value}"] = [self.tool_level_boost, self.tool_efficiency_boost]
                 output["tools"] = tool_dict
 
             glyph = OrderedDict()
@@ -542,6 +542,7 @@ class ModularType(Enum):
     DOUBLE = "double"
     SINGLE = "single"
     SWORD = "sword"
+    BOW = "bow"
 
 
 def test():
