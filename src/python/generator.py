@@ -19,11 +19,11 @@ def main():
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
-    if generation_name is "tetranomicon":
+    if generation_name == "tetranomicon":
         materials_csv = "inputs/Tetranomicon Export - Materials.csv"
         replacements_csv = "inputs/Tetranomicon Export - Replacements.csv"
         sockets_csv = "inputs/Tetranomicon Export - Sockets.csv"
-    elif generation_name is "aetheric_tetranomicon":
+    elif generation_name == "aetheric_tetranomicon":
         materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
         replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
         sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"

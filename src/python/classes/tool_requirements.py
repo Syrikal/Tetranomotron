@@ -1,9 +1,6 @@
 from collections import OrderedDict
 
-from classes.tool_properties import ToolLevel
-
-from src.python.classes.mc_version import MinecraftVersion
-
+from .tool_properties import ToolLevel
 
 class ToolRequirements:
     # Generates a ToolRequirements from three integers

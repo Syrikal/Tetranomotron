@@ -1,11 +1,11 @@
 from collections import OrderedDict
 from enum import Enum
 
-from classes.mc_version import MinecraftVersion, get_versions_csv_string
+from .mc_version import MinecraftVersion, get_versions_csv_string
 import json
 from jsondiff import diff
 
-from classes.socket import ModularType
+from .socket import ModularType
 from src.python.classes import util
 
 

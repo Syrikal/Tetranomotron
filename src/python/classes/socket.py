@@ -4,10 +4,10 @@ import json
 
 from jsondiff import diff
 
-from classes.mc_version import MinecraftVersion, get_versions_csv_string
+from .mc_version import MinecraftVersion, get_versions_csv_string
 from src.python.classes import util
-from classes.tool_properties import ToolType
-from classes.trait import gen_traits_from_string, get_traits_csv_string
+from .tool_properties import ToolType
+from .trait import gen_traits_from_string, get_traits_csv_string
 
 
 def main():
