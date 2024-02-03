@@ -245,8 +245,11 @@ class Material:
         '''
 
     # Generates a JSON object
-    def get_json(self, legacy):
+    def get_json(self, version):
         output = OrderedDict()
+
+        legacy = version == MinecraftVersion.SIXTEEN
+        # print(f"Legacy: {legacy}")
 
         # print(f"Getting JSON for material {self.material_key}")
 
@@ -260,7 +263,12 @@ class Material:
         output["integrityGain"] = self.integrity_gain
         output["magicCapacity"] = self.magic_capacity
         # print(f"Material's tool level is {self.tool_level}")
-        output["toolLevel"] = self.tool_level.get_legacy_int() if legacy else self.tool_level.get_modern_string()
+        if version == MinecraftVersion.SIXTEEN:
+            output["toolLevel"] = self.tool_level.get_legacy_int()
+        elif version == MinecraftVersion.EIGHTEEN:
+            output["toolLevel"] = self.tool_level.get_18_string()
+        else:
+            output["toolLevel"] = self.tool_level.get_modern_string()
         output["toolEfficiency"] = self.tool_efficiency
 
         if self.improvements:
@@ -293,7 +301,9 @@ class Material:
             material_dict["items"] = [f"{item_id}"]
         output["material"] = material_dict
 
-        output["requiredTools"] = self.required_tools.get_json_object(legacy)
+        # print(f"Generating required tools for version {version}")
+        # print(f"Version == 16: {version == MinecraftVersion.SIXTEEN}")
+        output["requiredTools"] = self.required_tools.get_json_object(version)
 
         util.add_mod_loaded_condition(output, self.mod_id)
 
