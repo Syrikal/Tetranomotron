@@ -1,0 +1,11 @@
+{
+    "type": "aether:enchanting",
+    "cookingtime": 1500,
+    "ingredient": {
+        "item": "aether:phoenix_helmet"
+    },
+    "result": {
+        "item": "aetheric_tetranomicon:phoenix_scrap",
+        "count": 3
+    }
+}

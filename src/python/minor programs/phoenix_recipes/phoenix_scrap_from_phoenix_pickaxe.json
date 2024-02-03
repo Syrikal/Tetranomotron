@@ -1,0 +1,11 @@
+{
+    "type": "aether:enchanting",
+    "cookingtime": 1500,
+    "ingredient": {
+        "item": "lost_aether_content:phoenix_pickaxe"
+    },
+    "result": {
+        "item": "aetheric_tetranomicon:phoenix_scrap",
+        "count": 3
+    }
+}
