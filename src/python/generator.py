@@ -13,19 +13,24 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 def main():
     # Create the output folder
     generation_name = "tetranomicon"
-    # generation_name = "aetheric-tetranomicon"
+    # generation_name = "aetheric_tetranomicon"
 
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
-    # materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
-    # replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
-    # sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
-
-    materials_csv = "inputs/Tetranomicon Export - Materials.csv"
-    replacements_csv = "inputs/Tetranomicon Export - Replacements.csv"
-    sockets_csv = "inputs/Tetranomicon Export - Sockets.csv"
+    if generation_name is "tetranomicon":
+        materials_csv = "inputs/Tetranomicon Export - Materials.csv"
+        replacements_csv = "inputs/Tetranomicon Export - Replacements.csv"
+        sockets_csv = "inputs/Tetranomicon Export - Sockets.csv"
+    elif generation_name is "aetheric_tetranomicon":
+        materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
+        replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
+        sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
+    else:
+        materials_csv = ""
+        replacements_csv = ""
+        sockets_csv = ""
 
     try:
         materials = generate_materials(output_subfolder, materials_csv)
@@ -88,8 +93,7 @@ def generate_materials(output_folder_path, input_csv):
             # Create material JSON
             mat_json_filepath = os.path.join(category_folder, f"{material.material_key}.json")
             with open(mat_json_filepath, 'w') as jsonfile:
-                legacy = version == MinecraftVersion.SIXTEEN
-                material_json = material.get_json(legacy)
+                material_json = material.get_json(version)
                 jsonfile.write(json.dumps(material_json, indent=4))
 
     return materials
@@ -110,7 +114,7 @@ def generate_replacements(output_folder_path, input_csv):
         for row in reader:
             row = [row[i] for i in important_columns]
             # print(f"Reading CSV row about {row[0]}")
-            replacements.append(Replacement.create_from_csv(row))
+            replacements.extend(Replacement.create_from_csv(row))
 
     if not replacements:
         print("No replacements provided. Ending run.")
@@ -156,6 +160,7 @@ def generate_replacements(output_folder_path, input_csv):
             filepath = os.path.join(reps_output_folder, f"{material}_replacements.json")
             with open(filepath, 'w') as jsonfile:
                 legacy = version == MinecraftVersion.SIXTEEN
+                replacements_dict[material].sort(key=lambda replacement: replacement.replacement_type.value)
                 replacements_json = get_json_file(replacements_dict[material], legacy)
                 jsonfile.write(json.dumps(replacements_json, indent=4))
 
@@ -229,6 +234,7 @@ def generate_sockets(output_folder_path, input_csv):
             os.makedirs(folder)
             filepath = os.path.join(folder, "socket.json")
             with open(filepath, 'w') as jsonfile:
+                modular_type_dict[modular_type].sort(key=lambda socket: socket.mod_id + socket.variant_key)
                 replacements_json = generate_sockets_json(modular_type_dict[modular_type], version, modular_type)
                 jsonfile.write(json.dumps(replacements_json, indent=4))
 
