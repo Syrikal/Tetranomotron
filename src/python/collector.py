@@ -172,11 +172,11 @@ def replacements():
     print("Gathering 1.16 replacements...")
     folder = "../resources/Tetranomicon 1.16/data/tetra/replacements"
 
-    replacements = []
+    replacements_list = []
 
     for file in os.listdir(folder):
         filepath = os.path.join(folder, file)
-        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.SIXTEEN))
+        replacements_list.extend(gen_replacements_from_json(filepath, MinecraftVersion.SIXTEEN))
 
     # 1.18
     print("Gathering 1.18 replacements...")
@@ -184,7 +184,7 @@ def replacements():
 
     for file in os.listdir(folder):
         filepath = os.path.join(folder, file)
-        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.EIGHTEEN))
+        replacements_list.extend(gen_replacements_from_json(filepath, MinecraftVersion.EIGHTEEN))
 
     # 1.19
     print("Gathering 1.19 replacements...")
@@ -192,11 +192,11 @@ def replacements():
 
     for file in os.listdir(folder):
         filepath = os.path.join(folder, file)
-        replacements.extend(gen_replacements_from_json(filepath, MinecraftVersion.NINETEEN))
+        replacements_list.extend(gen_replacements_from_json(filepath, MinecraftVersion.NINETEEN))
 
     merged_replacements = []
 
-    for rep in replacements:
+    for rep in replacements_list:
         if not merged_replacements:
             merged_replacements.append(rep)
             continue

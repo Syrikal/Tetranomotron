@@ -5,7 +5,8 @@ from collections import OrderedDict
 tool_improvements = ["levitator_tool", "tenacity_tool", "ambrosia_seeker_tool", "harvester"]
 weapon_improvements = ["levitator_weapon", "tenacity_weapon", "ambrosia_seeker_weapon"]
 
-tool_modules = ["double/adze", "double/basic_axe", "double/basic_hammer", "double/basic_pickaxe", "double/claw", "double/hoe", "double/sickle", "single/basic_shovel", "sword/machete"]
+tool_modules = ["double/adze", "double/basic_axe", "double/basic_hammer", "double/basic_pickaxe",
+                "double/claw", "double/hoe", "double/sickle", "single/basic_shovel", "sword/machete"]
 weapon_modules = ["single/spearhead", "single/trident", "sword/basic_blade", "sword/heavy_blade", "sword/short_blade", "sword/throwing_knife"]
 
 

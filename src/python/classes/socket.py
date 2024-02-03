@@ -91,11 +91,10 @@ class Socket:
             new_versions = [MinecraftVersion.get_version(int(ver)) for ver in vers2]
 
             soc = Socket(name, mod_id, lang_name, new_versions, new_modular_types, durability, durability_multiplier,
-                     integrity, tint, textures, new_attributes, new_effects, tool_level_boost, tool_efficiency_boost,
-                     item, xp_cost)
+                         integrity, tint, textures, new_attributes, new_effects, tool_level_boost, tool_efficiency_boost,
+                         item, xp_cost)
             outputs.append(soc)
         return outputs
-
 
     @classmethod
     # Generates a Socket from a JSON object
@@ -142,9 +141,9 @@ class Socket:
                 modular_types = "sword"
 
         durability = json_object["durability"] if "durability" in json_object.keys() else 0
-        durability_multiplier = json_object["durabilityMultiplier"]\
+        durability_multiplier = json_object["durabilityMultiplier"] \
             if "durabilityMultiplier" in json_object.keys() else 1
-        integrity_cost = -1*int(json_object["integrity"]) if "integrity" in json_object.keys() else 0
+        integrity_cost = -1 * int(json_object["integrity"]) if "integrity" in json_object.keys() else 0
         tint = json_object["glyph"]["tint"] if "glyph" in json_object.keys() else ""
         textures = "default"
         attributes = json_object["attributes"] if "attributes" in json_object.keys() else {}
@@ -273,7 +272,6 @@ class Socket:
     def get_socket_json(self, version, mod_type):
         # For 1.16 and 1.18, designed to go in a modules file.
         if version in [MinecraftVersion.SIXTEEN, MinecraftVersion.EIGHTEEN]:
-            legacy = version == MinecraftVersion.SIXTEEN
 
             output = OrderedDict()
             util.add_mod_loaded_condition(output, self.mod_id)

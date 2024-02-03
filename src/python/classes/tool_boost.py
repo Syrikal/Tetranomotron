@@ -58,18 +58,18 @@ def create_boosts_from_csv(csv_entry):
 
 def get_toolboosts_csv_string(list_of_boosts):
     # Check if it's an 'all x y' situation
-    all = True
+    all_tools = True
     first_boost = list_of_boosts[0]
     x, y = first_boost.level, first_boost.efficiency
     # print(f"Level and efficiency: {x}, {y}")
     for tool in ToolType:
         seeking = ToolBoost(tool, x, y)
         if not any([seeking.matches(x) for x in list_of_boosts]):
-            all = False
+            all_tools = False
             # print(f"{tool.value} did not have a matching boost present")
             break
 
-    if all:
+    if all_tools:
         # print("Returning all!")
         return f"all {x} {y}"
     else:

@@ -2,8 +2,9 @@ from collections import OrderedDict
 
 from .tool_properties import ToolLevel
 
+
 class ToolRequirements:
-    # Generates a ToolRequirements from three integers
+    # Generates a ToolRequirements from three integers.
     # Integers refer to tier level
     def __init__(self, hammer, axe, cut):
         self.hammer = ToolLevel.get_tool_level(hammer)

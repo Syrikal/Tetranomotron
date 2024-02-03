@@ -176,7 +176,7 @@ def test():
     effects = [intuit, fiery_self]
     attributes = [toughness, damage]
     improvements = [fire_aspect]
-    bad_list = [intuit, toughness, fire_aspect]
+    # bad_list = [intuit, toughness, fire_aspect]
 
     for trait_list in [effects, attributes, improvements]:
         print("Generating JSON block for trait list...")

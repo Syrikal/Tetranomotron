@@ -1,5 +1,5 @@
 
-input = '''bluebright/blue_skies/16, 18, 19, 20/blue_skies_bluebright/
+input_string = '''bluebright/blue_skies/16, 18, 19, 20/blue_skies_bluebright/
 starlit/blue_skies/16, 18, 19, 20/blue_skies_starlit_wood/
 frostbright/blue_skies/16, 18, 19, 20/blue_skies_frostbright/
 lunar/blue_skies/16, 18, 19, 20/blue_skies_lunar_wood/

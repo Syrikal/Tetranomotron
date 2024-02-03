@@ -178,7 +178,7 @@ class Replacement:
         print("Saving and restoring from CSV...")
         csvified = self.get_csv_row()
         restored = Replacement.create_from_csv(csvified)
-        restored_json = restored.get_json(legacy)
+        restored_json = restored[0].get_json(legacy)
         print("Difference between restored and originally created:")
         print(diff(jsonified, restored_json))
 

@@ -237,7 +237,8 @@ class Material:
         Versions: {[ver.get_print_string() for ver in self.versions]}.
         Material category: {self.category}
         Base Stats: Hardness {self.primary}, Density {self.secondary}, Flexibility {self.tertiary}.
-        Other Stats: Durability {self.durability}, Integrity cost/gain {self.integrity_cost}/{self.integrity_gain}, Magic Capacity {self.magic_capacity}, Tool Level/Efficiency {self.tool_level.value}/{self.tool_efficiency}.
+        Other Stats: Durability {self.durability}, Integrity cost/gain {self.integrity_cost}/{self.integrity_gain},
+        Magic Capacity {self.magic_capacity}, Tool Level/Efficiency {self.tool_level.value}/{self.tool_efficiency}.
         Visual: Tint '{self.tint}', Textures {self.textures}
         Effects: {[eff.get_print_string() for eff in self.effects]}
         Improvements: {[imp.get_print_string() for imp in self.improvements]}

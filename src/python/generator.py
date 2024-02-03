@@ -160,7 +160,7 @@ def generate_replacements(output_folder_path, input_csv):
             filepath = os.path.join(reps_output_folder, f"{material}_replacements.json")
             with open(filepath, 'w') as jsonfile:
                 legacy = version == MinecraftVersion.SIXTEEN
-                replacements_dict[material].sort(key=lambda replacement: replacement.replacement_type.value)
+                replacements_dict[material].sort(key=lambda rep: rep.replacement_type.value)
                 replacements_json = get_json_file(replacements_dict[material], legacy)
                 jsonfile.write(json.dumps(replacements_json, indent=4))
 
@@ -234,7 +234,7 @@ def generate_sockets(output_folder_path, input_csv):
             os.makedirs(folder)
             filepath = os.path.join(folder, "socket.json")
             with open(filepath, 'w') as jsonfile:
-                modular_type_dict[modular_type].sort(key=lambda socket: socket.mod_id + socket.variant_key)
+                modular_type_dict[modular_type].sort(key=lambda soc: soc.mod_id + socket.variant_key)
                 replacements_json = generate_sockets_json(modular_type_dict[modular_type], version, modular_type)
                 jsonfile.write(json.dumps(replacements_json, indent=4))
 
@@ -332,7 +332,7 @@ def generate_lang(output_folder_path, materials, sockets):
                 lang_rows.append("")
 
             for socket in mod_sockets:
-                post_119 = int(version.value) > 18
+                post_119 = version.value > 18
                 lang_rows.extend(socket.get_socket_lang_lines(post_119))
 
             if mod_id != last_mod:
