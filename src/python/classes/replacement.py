@@ -29,24 +29,44 @@ class Replacement:
         # print(f"Generating Replacement with improvements {improvements}")
 
     @classmethod
-    # Creates a Replacement from a CSV row
+    # Creates Replacement from a CSV row
     def create_from_csv(cls, csv_row):
         # print("Creating a replacement from a CSV row")
         if len(csv_row) != 8:
             raise ValueError(f"Failed attempt to create a replacement from csv row because row was wrong size: '{csv_row}'")
 
-        itemid, mod_id, replacement_type, versions, toolset, material_name, handle_material_name, improvements = csv_row
+        itemids_raw, mod_id, replacement_type, versions_raw, toolsets_raw, material_names_raw, handle_material_names_raw, improvements = csv_row
 
-        # Turn comma-separated lists into actual lists
-        versions = versions.split(", ")
-        individual_improvements = improvements.split(", ")
-        improvements_new = [x.split(" ") for x in individual_improvements]
-        if not improvements:
-            improvements_new = []
+        item_ids = itemids_raw.split(", ")
+        version_lists = versions_raw.split("; ")
+        toolsets = toolsets_raw.split(", ")
+        material_names = material_names_raw.split(", ")
+        handle_material_names = handle_material_names_raw.split(", ")
 
-        rep = Replacement(itemid, mod_id, replacement_type, versions, toolset, material_name, handle_material_name, improvements_new)
-        # print(f"Generated replacement from CSV: {rep.get_print_string()}")
-        return rep
+        lengths = [len(item_ids), len(version_lists), len(toolsets), len(material_names), len(handle_material_names)]
+        number_of_replacements = max(lengths)
+
+        outputs = []
+        for i in range(number_of_replacements):
+            itemid = item_ids[i] if len(item_ids) > 1 else item_ids[0]
+            vers = version_lists[i] if len(version_lists) > 1 else version_lists[0]
+            toolset = toolsets[i] if len(toolsets) > 1 else toolsets[0]
+            material_name = material_names[i] if len(material_names) > 1 else material_names[0]
+            handle_material_name = handle_material_names[i] if len(handle_material_names) > 1 else handle_material_names[0]
+
+            if not vers:
+                print("Error in versions for " + itemid)
+
+            versions = vers.split(", ")
+            individual_improvements = improvements.split(", ")
+            improvements_new = [x.split(" ") for x in individual_improvements]
+            if not improvements:
+                improvements_new = []
+            rep = Replacement(itemid, mod_id, replacement_type, versions, toolset, material_name, handle_material_name, improvements_new)
+
+            outputs.append(rep)
+
+        return outputs
 
     @classmethod
     # Creates a Replacement from a JSON object (*not* a file!)
@@ -142,7 +162,7 @@ class Replacement:
         complaint_string = ""
         valid = True
         # Check whether category is acceptable
-        if self.replacement_type not in ["axe", "hoe", "knife", "pick", "shovel", "sword"]:
+        if self.replacement_type not in ["axe", "hoe", "knife", "pick", "shovel", "sword", "bow"]:
             valid = False
             complaint_string += f"\n      '{self.replacement_type}' is not a valid replaceable tool type"
 
@@ -188,7 +208,8 @@ class Replacement:
 
         modules = OrderedDict()
         material_key = self.material_key
-        handle_material = self.handle_material_key if self.handle_material_key else "stick"
+        default_handle_material = "string" if self.replacement_type == ReplacementType.BOW else "stick"
+        handle_material = self.handle_material_key if self.handle_material_key else default_handle_material
         match self.replacement_type:
             case ReplacementType.AXE:
                 modules["double/head_left"] = ["double/basic_axe_left", f"basic_axe/{material_key}"]
@@ -222,6 +243,9 @@ class Replacement:
                 modules["sword/hilt"] = ["sword/basic_hilt", f"basic_hilt/{handle_material}"]
                 modules["sword/pommel"] = ["sword/decorative_pommel", f"decorative_pommel/{material_key}"]
                 modules["sword/guard"] = ["sword/makeshift_guard", f"makeshift_guard/{material_key}"]
+            case ReplacementType.BOW:
+                modules["bow/stave"] = ["bow/straight_stave", f"straight_stave/{material_key}"]
+                modules["bow/string"] = ["bow/basic_string", f"basic_string/{handle_material}"]
         output["modules"] = modules
 
         if self.improvements:
@@ -308,6 +332,7 @@ class ReplacementType(Enum):
     GREATSWORD = "greatsword"
     KNIFE = "knife"
     SPEAR = "spear"
+    BOW = "bow"
 
     def second_module(self):
         if self in [ReplacementType.AXE, ReplacementType.HOE]:
@@ -320,6 +345,8 @@ class ReplacementType(Enum):
             return "basic_handle"
         elif self in [ReplacementType.SWORD, ReplacementType.GREATSWORD, ReplacementType.KNIFE]:
             return "basic_hilt"
+        elif self in [ReplacementType.BOW]:
+            return "basic_string"
 
     def get_modular_type(self):
         if self in [ReplacementType.AXE, ReplacementType.DOUBLE_AXE, ReplacementType.PICK, ReplacementType.HOE]:
@@ -328,6 +355,8 @@ class ReplacementType(Enum):
             return ModularType.SINGLE
         elif self in [ReplacementType.SWORD, ReplacementType.GREATSWORD, ReplacementType.KNIFE]:
             return ModularType.SWORD
+        elif self in [ReplacementType.BOW]:
+            return ModularType.BOW
 
 
 def test():
