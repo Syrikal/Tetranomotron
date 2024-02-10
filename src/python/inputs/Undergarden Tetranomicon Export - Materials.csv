@@ -1,0 +1,14 @@
+  Name,ignore  Add-On,ignore  Fixed,ignore  Rarity,ignore  Niche,  Adjective,  Mod ID,  Versions,  Category,  Prim,  Sec,  Tert,  Dur,  iCost,  iGain,  magic,  tlevel,  teff,  tint,  textures,  item,  effects,  improvements,  reqTools
+Cloggrum,TUGP,Yes,3,,Cloggrum,undergarden,16,metal,7,2.9,2,286,2,2,60,5,5,7b6959,"metal, default",cloggrum_ingot,,,hammer 3
+Cloggrum,TUGP,Yes,3,,Cloggrum,undergarden,"18, 19, 20",metal,6,2.9,2,286,2,2,48,4,6,7b6959,"metal, default",cloggrum_ingot,,,hammer 3
+Depthrock,TUGP,Yes,2,,Depthrock,undergarden,"16, 18, 19, 20",stone,4,3.5,0,180,1,4,90,3,4.5,2a3627,"grainy, crude, default",depthrock,,,hammer 1
+Forgotten Metal,TUGP,Yes,5,Sword/Tool A+,Forgotten,undergarden,16,metal,9,4.3,3,1565,2,7,1,6,10,28ab8a,"metal, default",forgotten_ingot,,"imp undergardenpatch/threnody 0 0, imp undergardenpatch/undermine 0 0",hammer 4
+Forgotten Metal,TUGP,Yes,5,Sword/Tool A+,Forgotten,undergarden,"18, 19, 20",metal,6,4.3,3,1876,2,7,12,6,8,28ab8a,"metal, default",forgotten_ingot,,"imp undergardenpatch/threnody 0 0, imp undergardenpatch/undermine 0 0",hammer 4
+Froststeel,TUGP,Yes,4,,Froststeel,undergarden,16,metal,6,4,2.5,575,2,6,90,5,6,6988b0,"metal, default",froststeel_ingot,,"imp undergardenpatch/frostbite 0 0, imp undergardenpatch/frostnip 0 0",hammer 3
+Froststeel,TUGP,Yes,4,,Froststeel,undergarden,"18, 19, 20",metal,5,4,2.5,575,2,6,120,4,7,90b9e0,"metal, default",froststeel_ingot,,"imp undergardenpatch/frostbite 0 0, imp undergardenpatch/frostnip 0 0",hammer 3
+Grongle,TUGP,Yes,3,Bow B,Grongle,undergarden,"16, 18, 19, 20",wood,2.6,1.4,6.9,250,1,5,102,1,3,1f7f1d,"crude, wooden",grongle_planks,,,axe 3
+Shiverstone,TUGP,Yes,2,,Shiverstone,undergarden,"16, 18, 19, 20",stone,4.2,4,0,250,2,5,90,3,4.5,4f6264,"grainy, crude, default",shiverstone,,,hammer 2
+Smogstem,TUGP,Yes,3,Handle B,Smogstem,undergarden,"16, 18, 19, 20",wood,3,2.3,6,512,2,6,90,3,4,484f4e,"crude, wooden",smogstem_planks,,,axe 4
+Utherium,TUGP,Yes,4,Sword/Tool A,Utherium,undergarden,16,metal,6.5,3.5,3.2,1279,2,6,78,6,8,9c3832,"shiny, crude",utherium_ingot,,imp undergardenpatch/rotbane 0 0,hammer 3
+Utherium,TUGP,Yes,4,Sword/Tool A,Utherium,undergarden,"18, 19, 20",gem,6.5,3.5,3.2,1279,2,6,102,5,8.5,c3434c,"shiny, metal, default",utherium_crystal,,imp undergardenpatch/rotbane 0 0,hammer 3
+Wigglewood,TUGP,Yes,3,,Wigglewood,undergarden,"16, 18, 19, 20",wood,3,1.5,6.4,59,1,4,108,1,3,44392d,"crude, wooden",wigglewood_planks,,,axe 1

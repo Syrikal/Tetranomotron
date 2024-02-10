@@ -1,0 +1,4 @@
+ Name,ignore Add-On, Mod ID, Colored String, Versions, Item Types, Durability, Durability Mod, Integrity, Tint, Textures, Attributes, Effects, Tool Level, Tool Efficiency, Item, XP Cost
+Utherium,TUGP,undergarden,§cUtherium§f,"16, 18, 19, 20","double, single, sword",,1,1,9c3832,default,,eff undergardenpatch:rotbane_lite 1 0,,,utheric_shard,3
+Forgotten,TUGP,undergarden,§3Forgotten§f,"16, 18, 19, 20","double, single, sword",,1,1,28ab8a,default,,"eff undergardenpatch:threnody_lite 1 0, eff undergardenpatch:undermine_lite 1 0",,,forgotten_nugget,5
+Froststeel,TUGP,undergarden,§9Froststeel§f,"16, 18, 19, 20","double, single, sword",,1,1,6988b0,default,,eff undergardenpatch:frostnip 1 0,,,froststeel_nugget,2

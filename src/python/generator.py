@@ -12,8 +12,10 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 
 def main():
     # Create the output folder
-    generation_name = "tetranomicon"
+    # generation_name = "tetranomicon"
     # generation_name = "aetheric_tetranomicon"
+    # generation_name = "undergarden"
+    generation_name = "toolbooster"
 
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
@@ -27,16 +29,29 @@ def main():
         materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
         replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
         sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
+    elif generation_name == "undergarden":
+        materials_csv = "inputs/Undergarden Tetranomicon Export - Materials.csv"
+        replacements_csv = "inputs/Undergarden Tetranomicon Export - Replacements.csv"
+        sockets_csv = "inputs/Undergarden Tetranomicon Export - Sockets.csv"
+    elif generation_name == "toolbooster":
+        sockets_csv = "inputs/Toolbooster Export - Sockets.csv"
+        materials_csv = ""
+        replacements_csv = ""
     else:
         materials_csv = ""
         replacements_csv = ""
         sockets_csv = ""
 
     try:
-        materials = generate_materials(output_subfolder, materials_csv)
-        generate_replacements(output_subfolder, replacements_csv)
-        sockets = generate_sockets(output_subfolder, sockets_csv)
-        generate_lang(output_subfolder, materials, sockets)
+        materials, replacements, sockets = "", "", ""
+        if materials_csv:
+            materials = generate_materials(output_subfolder, materials_csv)
+        if replacements_csv:
+            generate_replacements(output_subfolder, replacements_csv)
+        if sockets_csv:
+            sockets = generate_sockets(output_subfolder, sockets_csv)
+        if materials and sockets:
+            generate_lang(output_subfolder, materials, sockets)
     except Exception as exc:
         print(traceback.format_exc())
         print(exc)

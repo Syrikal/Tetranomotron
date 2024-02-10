@@ -1,0 +1,23 @@
+ Item ID,ignore Add-On, Mod ID, Replacement Type, Versions, Tool Set, Material, Handle Material, Improvements
+cloggrum_battleaxe,TUGP,undergarden,double_axe,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,"double/handle undergardenpatch/cloggrum_battleaxe 0, double/handle basic_handle/sturdy_haft 0"
+cloggrum_axe,TUGP,undergarden,axe,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,double/handle basic_handle/sturdy_grip 0
+cloggrum_hoe,TUGP,undergarden,hoe,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,double/handle basic_handle/sturdy_grip 0
+cloggrum_pickaxe,TUGP,undergarden,pick,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,double/handle basic_handle/sturdy_grip 0
+cloggrum_shovel,TUGP,undergarden,shovel,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,single/handle basic_handle/sturdy_grip 0
+cloggrum_sword,TUGP,undergarden,sword,"16, 18, 19, 20",undergarden_cloggrum,undergarden_cloggrum,undergarden_smogstem,sword/hilt basic_hilt/sturdy_grip 0
+froststeel_axe,TUGP,undergarden,axe,"16, 18, 19, 20",undergarden_froststeel,undergarden_froststeel,undergarden_smogstem,"double/head_left undergardenpatch/frostbite 0, double/handle basic_handle/frosted_grip 0"
+froststeel_hoe,TUGP,undergarden,hoe,"16, 18, 19, 20",undergarden_froststeel,undergarden_froststeel,undergarden_smogstem,double/handle basic_handle/frosted_grip 0
+froststeel_pickaxe,TUGP,undergarden,pick,"16, 18, 19, 20",undergarden_froststeel,undergarden_froststeel,undergarden_smogstem,"double/head_left undergardenpatch/frostnip 0, double/head_right undergardenpatch/frostnip 0, double/handle basic_handle/frosted_grip 0"
+froststeel_shovel,TUGP,undergarden,shovel,"16, 18, 19, 20",undergarden_froststeel,undergarden_froststeel,undergarden_smogstem,"single/head undergardenpatch/frostnip 0, single/handle basic_handle/frosted_grip 0"
+froststeel_sword,TUGP,undergarden,sword,"16, 18, 19, 20",undergarden_froststeel,undergarden_froststeel,undergarden_smogstem,"sword/blade undergardenpatch/frostbite 0, sword/hilt basic_hilt/frosted_grip 0"
+utherium_axe,TUGP,undergarden,axe,"16, 18, 19, 20",undergarden_utherium,undergarden_utherium,undergarden_smogstem,"double/head_left undergardenpatch/rotbane 0, double/handle basic_handle/corroded_grip 0"
+utherium_hoe,TUGP,undergarden,hoe,"16, 18, 19, 20",undergarden_utherium,undergarden_utherium,undergarden_smogstem,double/handle basic_handle/corroded_grip 0
+utherium_pickaxe,TUGP,undergarden,pick,"16, 18, 19, 20",undergarden_utherium,undergarden_utherium,undergarden_smogstem,double/handle basic_handle/corroded_grip 0
+utherium_shovel,TUGP,undergarden,shovel,"16, 18, 19, 20",undergarden_utherium,undergarden_utherium,undergarden_smogstem,single/handle basic_handle/corroded_grip 0
+utherium_sword,TUGP,undergarden,sword,"16, 18, 19, 20",undergarden_utherium,undergarden_utherium,undergarden_smogstem,"sword/blade undergardenpatch/rotbane 0, sword/hilt basic_hilt/corroded_grip 0"
+forgotten_battleaxe,TUGP,undergarden,double_axe,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"double/handle undergardenpatch/forgotten_battleaxe 0, double/handle basic_handle/echoing_haft 0, double/head_left undergardenpatch/threnody 0, double/head_left undergardenpatch/undermine 0, double/head_right undergardenpatch/threnody 0, double/head_right undergardenpatch/undermine 0"
+forgotten_axe,TUGP,undergarden,axe,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"double/head_left undergardenpatch/threnody 0, double/head_left undergardenpatch/undermine 0, double/handle basic_handle/echoing_grip 0"
+forgotten_hoe,TUGP,undergarden,hoe,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"double/head_left undergardenpatch/undermine 0, double/handle basic_handle/echoing_grip 0"
+forgotten_pickaxe,TUGP,undergarden,pick,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"double/head_left undergardenpatch/undermine 0, double/head_right undergardenpatch/undermine 0, double/handle basic_handle/echoing_grip 0"
+forgotten_shovel,TUGP,undergarden,shovel,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"single/head undergardenpatch/undermine 0, single/handle basic_handle/echoing_grip 0"
+forgotten_sword,TUGP,undergarden,sword,"16, 18, 19, 20",undergarden_forgotten,undergarden_forgotten_metal,undergarden_smogstem,"sword/blade undergardenpatch/threnody 0, sword/hilt basic_hilt/echoing_grip 0"

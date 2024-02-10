@@ -1,0 +1,5 @@
+ Name,ignore Add-On, Mod ID, Colored String, Versions, Item Types, Durability, Durability Mod, Integrity, Tint, Textures, Attributes, Effects, Tool Level, Tool Efficiency, Item, XP Cost
+Toolbooster,Toolbooster,toolbooster,§eToolbooster§f,"16, 18, 19, 20","double, single, sword",,1,0,,,,,1,,toolbooster,10
+Legendary Toolbooster,Toolbooster,toolbooster,§bLegendary Toolbooster§f,"16, 18, 19, 20","double, single, sword",,1,0,,,,,2,,legend_toolbooster,30
+Hammer Toolbooster,Toolbooster,toolbooster,§bHammer Toolbooster§f,"16, 18, 19, 20","double, single, sword",,1,0,,,,,,,hammer_toolbooster,30
+Creative Toolbooster,Toolbooster,toolbooster,§dCreative Toolbooster§f,"16, 18, 19, 20","double, single, sword",,1,0,,,,,10,,creative_toolbooster,1
