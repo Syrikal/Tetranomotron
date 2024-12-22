@@ -3,6 +3,7 @@ Abyssmarine,Tnc 1.5,,,,Abyssmarine,alexscaves,20,stone,4.5,4.5,0,512,1,3,102,3,5
 Adamantite,Tnc 1.5,Yes,,Sword/Tool A+,Adamantine,enlightened_end,"18, 19, 20",metal,8,3.6,3,1561,2,6,90,7,14,4c7fff,"heavy, metal, default",adamantite_ingot,,,hammer 5
 Aeronos,Tnc 1.5,,,,Aeronos,ad_astra,"18, 19, 20",wood,2.8,1.1,7.5,59,1,4,102,3,4,55536f,"crude, wooden",aeronos_planks,,,axe 4
 Aeternium,Tnc,Yes,6,Sword/Tool S,Aeternium,betterendforge,16,metal,7.5,3.7,4.5,2196,2,7,108,7,10,6c8c84,"heavy, metal, default",aeternium_ingot,,,hammer 6
+Aeternium,Tnc 1.6,Yes,6,Sword/Tool S,Aeternium,betterend,"16, 18, 19, 20",metal,7.5,3.7,4.5,2196,2,7,108,7,10,6c8c84,"heavy, metal, default",aeternium_ingot,,,hammer 6
 Agate,Tnc 1.5,Yes,,,Agate,silentgems,16,gem,6,2.9,0,384,1,2,84,4,8,ab00c5,"shiny, crude",agate,,,hammer 3
 Alabaster,Tnc,,1,,Alabaster,atum,16,stone,3,3.5,0,192,1,4,90,3,4,efe3d1,"crude, default",alabaster,,,hammer 2
 Alexandrite,Tnc 1.5,Yes,,,Alexandrite,silentgems,"18, 19, 20",gem,6,2.7,0,1024,2,2,90,5,9,9e17dd,"shiny, crude",alexandrite,,,hammer 3
@@ -11,41 +12,49 @@ Alpha Oak,Tnc 1.5,,,,Alpha Oak,regions_unexplored,"18, 19, 20",wood,3,1.7,6,59,1
 Aluminium,Tnc 1.5,Yes,,,Aluminium,nature_arise,"19, 20",metal,5,3.2,3,324,1,4,72,4,6,9cc2c5,"shiny, metal, default",aluminium_ingot,,,hammer 1
 Amber,Tnc 1.5,Yes,,,Amber,silentgems,16,gem,5,2.9,0,256,1,2,108,4,5,f79415,"shiny, crude",amber,,,hammer 2
 Amethyst,Tnc 1.5,Yes,,,Amethyst,ms,"16; 18, 19, 20",gem,3.95,2.9,0,331,2,2,72,4,7.3,8d6acc,"shiny, crude","gem/amethyst, gem/refined_amethyst_ingot",,,hammer 3
-Amethyst,Tnc 1.5,Yes,,Sword/Tool A+,Amethyst,oresabovediamonds,"16, 18, 19, 20",gem,7,2.9,0,2625,2,2,210,6,12,c25fdf,"crude, default",amethyst,,imp arrested 0 0,hammer 5
 Amethyst,Tnc 1.5,Yes,,,Amethyst,silentgems,16,gem,6,2.9,0,512,2,2,72,4,9,6a03c7,"shiny, crude",amethyst,,,hammer 3
-Amethyst Steel,Tnc 1.5,,,,Amethyst Steel,epicsamurai,"18, 19, 20",metal,8,3.5,2,2031,2,6,90,5,12,d4b5e9,"metal, default",amethyst_ingot,eff criticalStrike 20 2,,hammer 4
+Amethyst,Tnc 1.5,Yes,,Sword/Tool A+,Amethyst,oresabovediamonds,"16, 18, 19, 20",gem,7,2.9,0,2625,2,2,210,6,12,c25fdf,"crude, default",amethyst,,imp arrested 0 0,hammer 5
+Amethyst Steel,Tnc 1.5,,,,Amethyst Steel,epicsamurai,"18, 19, 20",metal,8,3.5,2,2031,2,6,90,5,12,d4b5e9,"metal, default",amethyst_ingot,eff criticalStrike 5 2,,hammer 4
 Ametrine,Tnc 1.5,Yes,,,Ametrine,silentgems,16,gem,7,2.9,0,512,2,2,90,4,8,98004c,"shiny, crude",ametrine,,,hammer 4
+Ametrine Gems,Tnc 1.5,,7,Crafting S,Ametrine,byg,"16, 18, 19",gem,5.2,2,0,5,8,1,42,8,4,d399d1,"grainy, crude, default",ametrine_gems,eff unstable 25 0,imp arrested 0 0,hammer 7
 Ammolite,Tnc 1.5,Yes,,,Ammolite,silentgems,"18, 19, 20",gem,5,2.5,0,1024,1,2,72,5,8,b834f9,"shiny, crude",ammolite,,,hammer 3
 Ammolite,Tnc 1.5,Yes,,,Ammolite,silentgems,16,gem,7,2.5,0,512,2,2,66,4,12,b834f9,"shiny, crude",ammolite,,,hammer 4
 Ancient Wood,Tnc,,2,,Ancient Wood,quark,19,wood,4.5,1.6,5.5,250,2,6,84,1,4,e3ede9,"crude, wooden",ancient_planks,,,axe 2
 Andesite Alloy,Tnc,,,,Andesite Alloy,create,"16, 18, 19, 20",metal,5.3,3.7,0.8,198,2,4,96,4,5.5,928f97,"metal, default",andesite_alloy,,,hammer 1
+Antarctopelta Plate,Tnc 1.6,,,Greatsword B,Antarctopelta Plate,unusualprehistory,20,bone,6,7,2.4,1024,2,7,60,4,6,BFBAAA,"crude, default",antarcto_plate,eff crushing 2 0,,hammer 4
 Apatite,Tnc 1.5,Yes,,,Apatite,silentgems,16,gem,6,2.9,0,512,2,2,66,4,10,40ffe2,"shiny, crude",apatite,,,hammer 3
 Aquamarine,Tnc 1.5,Yes,,,Aquamarine,ms,"16, 18, 19, 20",gem,6.45,2.9,0,375,2,2,60,4,7.1,55f4ff,"shiny, crude",gem/aquamarine,,,hammer 4
 Aquamarine,Tnc 1.5,Yes,,,Aquamarine,silentgems,16,gem,6,2.9,0,512,2,2,72,4,10,17cadd,"shiny, crude",aquamarine,,,hammer 3
 Aquiris Ember Rod,Tnc 1.5,,,,Aquiris Ember,ms,"18, 19, 20",rod,5,0.4,1,111,2,6,102,0,0,517f7d,"crude, default",materials/aquiris_ember_rod,,,hammer 2
 Aquite,Tnc 1.5,Yes,,,Aquite,blue_skies,"16; 18, 19, 20",gem,5,2.9,0,270,2,2,192,4,6,62bee3,"shiny, crude","aquite_gem, aquite",eff unstable 25 0,,hammer 3
+Arcane Crystal,Tnc 1.6,,,Crafting A,Arcane Crystal,forbidden_arcanus,20,gem,4.6,3.5,0,5,5,1,150,7,4,A7BBFA,"shiny, crude",arcane_crystal,,,hammer 5
 Archaic Vine,Tnc 1.5,,,Binding B,Archaic Vine,alexscaves,20,fibre,5,2.8,4,1280,1,6,102,0,0,6c9f20,"crude, default",archaic_vine,,,cut 3
 Argillite,Tnc 1.5,,0,,Argillite,regions_unexplored,"19, 20",stone,4,3,0,131,1,2,78,3,4,a06140,"grainy, crude, default",argillite,,,hammer 1
-Aspen,Tnc,,1,,Aspen,byg,"16, 18, 19",wood,2.8,1.6,6,48,1,4,96,1,2,bf8c6d,"crude, wooden",aspen_planks,,,axe 1
 Aspen,Tnc,,1,,Aspen,atmospheric,"16, 18, 19",wood,2.8,1.6,6,48,1,4,96,1,2,c19a54,"crude, wooden",aspen_planks,,,axe 1
+Aspen,Tnc,,1,,Aspen,byg,"16, 18, 19",wood,2.8,1.6,6,48,1,4,96,1,2,bf8c6d,"crude, wooden",aspen_planks,,,axe 1
 Astral Crystal,Tnc 1.5,Yes,7,Sword/Tool S++,Astral,voidscape,"16, 18, 19, 20",gem,12,2.6,0,4550,3,2,150,11,11.5,c24cab,"shiny, crude",astral_crystal,eff skewering 3 10,,hammer 7
 Asurine,Tnc,,1,,Asurine,create,"19, 20",stone,3.5,3,0,131,1,4,90,3,4,4c5c7c,"grainy, crude, default",asurine,,,hammer 1
+Auric,Tnc 1.6,Yes,,,Auric,oreandmore,20,metal,11,2.4,4.2,4862,2,6,150,6,15,dc9247,"shiny, metal, default",auric_bar,,,hammer 5
 Aurora Crystal,Tnc,,6,Tool A,Aurora Crystal,betterendforge,16,gem,5,2,0,131,2,1,150,7,6,862ec0,"shiny, crude",crystal_shards,eff intuit 1 0,imp arrested 0 0,hammer 6
+Aurora Crystal,Tnc 1.6,,6,Tool A,Aurora Crystal,betterend,"16, 18, 19, 20",gem,5,2,0,131,2,1,150,7,6,862ec0,"shiny, crude",crystal_shards,eff intuit 1 0,imp arrested 0 0,hammer 6
+Aurum,Tnc 1.6,,,Bow A (Enchant),Aurum,forbidden_arcanus,20,wood,4,2.7,8,768,1,4,102,2,4,A75F17,"crude, wooden",aurum_planks,eff stabilizing 10 0,,axe 4
 Azalea,Tnc,,1,,Azalea,quark,"18, 19",wood,3,1.5,6,59,1,5,102,1,2,bfc664,"crude, wooden",azalea_planks,,,axe 1
 Azalea,Tnc 1.5,,,Handle C+,Azalea,ecologics,"18, 19, 20",wood,3,1.7,6.6,384,1,5,132,1,2,d58a7b,"crude, wooden",azalea_planks,,,axe 2
 Azure Electrum,Tnc 1.5,Yes,6,Sword/Tool S,Azure Electrum,silentgear,"16, 18, 19, 20",metal,10,2.2,2,1259,3,5,222,7,29,4575e3,"metal, default",azure_electrum_ingot,eff stabilizing 15 0,imp workable 1 0,hammer 7
 Azure Jadestone,Tnc,,4,,Azure Jadestone,betterendforge,16,stone,4,3.8,0,2031,2,4,102,3,4,396e67,"grainy, crude, default",azure_jadestone,,,hammer 5
+Azure Jadestone,Tnc 1.6,,4,,Azure Jadestone,betterend,"16, 18, 19, 20",stone,4,3.8,0,2031,2,4,102,3,4,396e67,"grainy, crude, default",azure_jadestone,,,hammer 5
 Azure Silver,Tnc 1.5,Yes,,Tool A+,Azure Silver,silentgear,"16, 18, 19, 20",metal,8,2.5,2,197,3,4,174,5,19,d09ef6,"shiny, metal, default",azure_silver_ingot,eff stabilizing 10 0,imp workable 1 0,hammer 6
+Azure Vines,Tnc 1.5,,5,Binding A,Azure Vine,outer_end,"16, 20",fibre,4,3.2,3,1280,2,8,90,0,0,3a6e9d,"crude, default",azure_vines,,,cut 4
 Azure Wood,Tnc,,5,Handle A+,Azure,outer_end,"16, 20",wood,4.7,1.3,6,768,2,7,102,4,6,343c64,"crude, wooden",azure_planks,,,axe 6
-Bamboo,Tnc 1.5,,,,Bamboo,ms,"16; 18, 19",wood,2.2,1.4,7.2,48,2,2,90,1,3,a58e2a,"crude, wooden","nature/bamboo_plank, nature/bamboo_planks",,,axe 1
 Bamboo,Tnc,,1,,Bamboo,bamboo_blocks,16,wood,2.2,1.4,7.2,48,2,2,90,1,3,bb9a4c,"crude, wooden",bamboo_planks,,,axe 1
+Bamboo,Tnc 1.5,,,,Bamboo,ms,"16; 18, 19",wood,2.2,1.4,7.2,48,2,2,90,1,3,a58e2a,"crude, wooden","nature/bamboo_plank, nature/bamboo_planks",,,axe 1
 Baobab,Tnc,,1,,Baobab,byg,"16, 18, 19",wood,3,2.2,5.5,192,2,5,78,1,4,ad9b5c,"crude, wooden",baobab_planks,,,axe 2
 Baobab,Tnc 1.5,,,,Baobab,regions_unexplored,"18, 19, 20",wood,3,2.2,5.5,192,2,5,78,1,4,d5ac91,"crude, wooden",baobab_planks,,,axe 3
 Beige Limestone,Tnc 1.5,,1,,Beige Limestone,unearthed,"16, 18, 19",stone,4.2,3.5,0,96,1,4,90,3,4,ead4a9,"grainy, crude, default",beige_limestone,,,hammer 1
 Benitoite,Tnc 1.5,Yes,,,Benitoite,silentgems,16,gem,8,2.9,0,768,2,2,102,5,9,001bb6,"shiny, crude",benitoite,,,hammer 4
 Black Diamond,Tnc 1.5,Yes,,,Black Diamond,silentgems,"18, 19, 20",gem,7,2.9,0,1792,2,2,72,6,9,5f524c,"shiny, crude",black_diamond,eff unbreaking 1 0,,hammer 4
-Black Diamond,Tnc 1.5,Yes,,,Black Diamond,ms,"16; 18, 19, 20",gem,8.2,2.9,0,2143,3,2,72,5,8.2,562980,"shiny, crude","gem/blackdiamond, gem/black_diamond",,,hammer 5
 Black Diamond,Tnc 1.5,Yes,,,Black Diamond,silentgems,16,gem,6,2.9,0,1792,2,2,72,5,10,2d2d2d,"shiny, crude",black_diamond,,,hammer 3
+Black Diamond,Tnc 1.5,Yes,,,Black Diamond,ms,"16; 18, 19, 20",gem,8.2,2.9,0,2143,3,2,72,5,8.2,562980,"shiny, crude","gem/blackdiamond, gem/black_diamond",,,hammer 5
 Black Opal,Tnc 1.5,Yes,,Sword/Tool S-,Black Opal,oresabovediamonds,"16, 18, 19, 20",gem,8,2.9,0,5250,2,2,90,7,16,3b2361,"crude, default",black_opal,,,hammer 5
 Blackwood,Tnc 1.5,,2,Handle C+,Blackwood,regions_unexplored,"18, 19, 20",wood,3.7,1.5,6,512,1,5,108,1,3,130f0c,"crude, wooden",blackwood_planks,,,axe 4
 Blaze,Tnc 1.5,Yes,,,Blaze,ms,"16; 18, 19, 20",metal,5.1,3.2,3,352,2,5,54,4,5.5,fff32d,"shiny, metal, default","gem/blazeingot, gem/blaze_ingot",eff fierySelf 2 0.06,,hammer 3
@@ -60,8 +69,8 @@ Bluebright Vine,Tnc 1.5,,,,Bluebright Vine,blue_skies,"16, 18, 19, 20",fibre,3,1
 Bound Leather,Tnc 1.5,,,,Bound Leather,ms,"18, 19, 20",skin,5,3,1,400,1,5,90,0,0,c65c35,"crude, default",materials/bound_leather,,,cut 3
 Brass,Tnc,,,,Brass,create,"16, 18, 19, 20",metal,5.5,4,3.2,462,2,6,87,4,6.5,ffc940,"metal, default",brass_ingot,,,hammer 2
 Brimwood,Tnc 1.5,,3,Handle B,Brimwood,regions_unexplored,"19, 20",wood,4.5,1.7,5.5,512,2,6,84,3,4,3d2b20,"crude, wooden",brimwood_planks,,,axe 4
-Bronze,Tnc 1.5,Yes,,,Bronze,silentgear,"19, 20",metal,5.5,3.8,3,300,1,5,72,4,6,d6903b,"metal, default",bronze_ingot,,,hammer 2
 Bronze,Tnc 1.5,Yes,,,Bronze,ms,"16; 18, 19, 20",metal,4.8,3.8,3,237,1,5,60,4,5.4,a26622,"metal, default","gem/bronzeingot, gem/bronze_ingot",,imp workable 1 0,hammer 1
+Bronze,Tnc 1.5,Yes,,,Bronze,silentgear,"19, 20",metal,5.5,3.8,3,300,1,5,72,4,6,d6903b,"metal, default",bronze_ingot,,,hammer 2
 Brown Bear Hide,Tnc 1.5,,,,Brown Bear Hide,ms,"16, 18, 19; 20",skin,6,3,1,200,1,5,105,0,0,493e27,"crude, default","entity/brown_bear_hide, materials/brown_bear_hide",,,cut 4
 Brumble Vine,Tnc 1.5,,,,Brumble Vine,blue_skies,"16, 18, 19, 20",fibre,4,1.5,3,320,1,5,96,0,0,b5553c,"crude, default",brumble_vine_top,,,cut 2
 Bulbis,Tnc,,5,,Bulbis,byg,"16, 18, 19",wood,3,1.7,6,59,1,4,114,4,4,8e57ae,"crude, wooden",bulbis_planks,,,axe 4
@@ -74,22 +83,23 @@ Cerulean,Tnc 1.5,,,Handle S,Cerulean,enlightened_end,"18, 19, 20",wood,5,1.4,5,1
 Cerulean Vines,Tnc 1.5,,,Binding S,Cerulean Vines,enlightened_end,"18, 19, 20",fibre,4,3.2,3,1280,2,8,72,0,0,3c8892,"crude, default",cerulean_vine,,,cut 5
 Chalk,Tnc 1.5,,1,,Chalk,regions_unexplored,"18, 19, 20",stone,3.6,3.5,0,96,1,4,90,3,4,d1d1d1,"grainy, crude, default",chalk,,,hammer 1
 Charoite,Tnc 1.5,Yes,,,Charoite,blue_skies,"16, 18, 19, 20",gem,6,2.6,0,1561,2,2,60,5,8,9d71c3,"shiny, crude",charoite,,imp arrested 0 0,hammer 3
-Cherry,Tnc,,1,,Cherry,byg,"16, 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,531814,"crude, wooden",cherry_planks,,,axe 2
 Cherry,Tnc,,1,,Cherry,biomesoplenty,"16, 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,7a2723,"crude, wooden",cherry_planks,,,axe 2
-Cherry,Tnc 1.5,,1,,Cherry,ms,"16; 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,7b3a27,"crude, wooden","nature/cherryplank, nature/cherry_planks",,,axe 2
+Cherry,Tnc,,1,,Cherry,byg,"16, 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,531814,"crude, wooden",cherry_planks,,,axe 2
 Cherry,Tnc,,1,,Cherry,environmental,"16, 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,7c342c,"crude, wooden",cherry_planks,,,axe 2
+Cherry,Tnc 1.5,,1,,Cherry,ms,"16; 18, 19",wood,3.5,2,6.5,96,1,5,72,3,4,7b3a27,"crude, wooden","nature/cherryplank, nature/cherry_planks",,,axe 2
 Cherry,Tnc 1.5,,1,,Cherry,regions_unexplored,18,wood,3.5,2,6.5,96,1,5,72,3,4,b34d4d,"crude, wooden",cherry_planks,,,axe 2
 Cherry,Tnc 1.5,Yes,,,Cherry Wood,blue_skies,"16, 18, 19",wood,3.5,1.4,6,100,1,7,90,3,3,91424f,"crude, wooden",cherry_planks,,,axe 2
+Chlorophyte,Tnc 1.6,Yes,,,Chlorophyte,oreandmore,20,metal,11,3,4,5421,2,6,168,6,18,245633,"metal, default",chlorophyte_ingot,,,hammer 6
 Chorundum,Tnc,Yes,7,Sword/Tool S,Chorundum,stalwart_dungeons,"16, 18, 19, 20",gem,7,3.3,0,2021,2,5,168,6,10,b38ef3,"shiny, crude",chorundum,eff unstable 40 0,imp arrested 0 0,hammer 5
 Chromite,Tnc 1.5,Yes,,,Chromite,ms,"16; 18, 19, 20",metal,5.2,4.3,3,550,2,5,66,4,6.4,ff4040,"shiny, metal, default","gem/chromiteingot, gem/chromite_ingot",,,hammer 3
 Chrysoprase,Tnc 1.5,Yes,,,Chrysoprase,silentgems,16,gem,7,2.9,0,768,2,2,60,4,8,65e530,"shiny, crude",chrysoprase,,,hammer 3
 Cika,Tnc,,1,,Cika,byg,"16, 18, 19",wood,2.6,1.5,6,48,1,3,108,1,3,936331,"crude, wooden",cika_planks,,,axe 1
 Cinderstone,Tnc 1.5,,,,Cinderstone,blue_skies,"16, 18, 19, 20",stone,4.6,4.3,0,512,1,4,90,4,6.5,3d2b29,"grainy, crude, default",cinderstone,eff fierySelf 1 0.05,,hammer 2
 Citrine,Tnc 1.5,Yes,,,Citrine,ms,"16, 18, 19, 20",gem,6.2,2.9,0,642,2,2,132,4,6.2,cda21b,"shiny, crude",gem/citrine,eff stabilizing 15 0,,hammer 4
-Citrine,Tnc 1.5,Yes,,,Citrine,silentgems,16,gem,7,2.9,0,768,2,2,96,4,10,985900,"shiny, crude",citrine,,,hammer 3
 Citrine,Tnc 1.5,Yes,,,Citrine,silentgems,"18, 19, 20",gem,6,2.9,0,768,1,2,60,4,10,c48f17,"shiny, crude",citrine,,,hammer 2
-Cobalt,Tnc 1.5,,3,Handle B,Cobalt,regions_unexplored,"19, 20",wood,4,2.6,5.5,384,2,5,132,3,4,0f1f4f,"crude, wooden",cobalt_planks,eff stabilizing 10 0,,axe 4
+Citrine,Tnc 1.5,Yes,,,Citrine,silentgems,16,gem,7,2.9,0,768,2,2,96,4,10,985900,"shiny, crude",citrine,,,hammer 3
 Cobalt,Tnc 1.5,Yes,,,Cobalt,ms,"16; 18, 19, 20",metal,5.45,3.8,3,481,2,5,60,4,7,2266a5,"metal, default","gem/cobaltingot, gem/cobalt_ingot",,,hammer 3
+Cobalt,Tnc 1.5,,3,Handle B,Cobalt,regions_unexplored,"19, 20",wood,4,2.6,5.5,384,2,5,132,3,4,0f1f4f,"crude, wooden",cobalt_planks,eff stabilizing 10 0,,axe 4
 Cobalt Obsidian,Tnc 1.5,,3,,Cobalt Obsidian,regions_unexplored,"18, 19, 20",stone,6.5,5.7,0,640,3,1,114,5,10,0e1459,"grainy, crude, default",cobalt_obsidian,,,hammer 5
 Coconut,Tnc 1.5,,,,Coconut,ecologics,"18, 19, 20",wood,2.1,1.4,6,131,1,4,108,1,3,c5ac5b,"crude, wooden",coconut_planks,,,axe 1
 Comet,Tnc 1.5,Yes,,,Comet Wood,blue_skies,20,wood,3.5,1.4,6,100,1,7,90,3,3,91424f,"crude, wooden",comet_planks,,,axe 2
@@ -98,58 +108,73 @@ Coral,Tnc 1.5,Yes,,,Coral,silentgems,16,gem,7,2.9,0,512,2,2,60,4,10,f3203f,"shin
 Crimsite,Tnc,,1,,Crimsite,create,"19, 20",stone,3.5,3,0,131,1,4,90,3,4,54242c,"grainy, crude, default",crimsite,,,hammer 1
 Crimson Iron,Tnc 1.5,Yes,,,Crimson Iron,silentgear,"16, 18, 19, 20",metal,6,3.8,3,420,2,4,84,5,10,f3476f,"shiny, metal, default",crimson_iron_ingot,,imp workable 1 0,hammer 4
 Crimson Steel,Tnc 1.5,Yes,,Sword/Tool S,Crimson Steel,silentgear,"16, 18, 19, 20",metal,9,4.2,3.5,2400,2,7,114,6,15,dc143c,"metal, default",crimson_steel_ingot,,imp workable 1 0,hammer 6
-Cypress,Tnc 1.5,,1,,Cypress,regions_unexplored,"18, 19, 20",wood,3.5,1.7,6,131,1,4,90,1,2.5,737143,"crude, wooden",cypress_planks,,,axe 1
 Cypress,Tnc,,,,Cypress,bayou_blues,16,wood,3.5,1.7,6,131,1,4,90,1,2.5,857e24,"crude, wooden",cypress_planks,,,axe 1
 Cypress,Tnc,,,,Cypress,byg,"16, 18, 19",wood,3.5,1.7,6,131,1,4,90,1,2.5,b4b37b,"crude, wooden",cypress_planks,,,axe 1
+Cypress,Tnc 1.5,,1,,Cypress,regions_unexplored,"18, 19, 20",wood,3.5,1.7,6,131,1,4,90,1,2.5,737143,"crude, wooden",cypress_planks,,,axe 1
 Dacite,Tnc,,1,,Dacite,byg,"16, 18, 19",stone,4,3.5,0,192,1,4,90,3,4.5,bab1a9,"grainy, crude, default",dacite,,,hammer 1
 Dark Scoria,Tnc,,,,Dark Scoria,create,16,stone,3.5,2.4,0,96,1,4,102,3,4,712f25,"grainy, crude, default",dark_scoria,,,hammer 1
+Darkstone,Tnc 1.6,,,Sword A / Greatsword S,Darkstone,forbidden_arcanus,20,stone,6,7,0,1024,2,2,102,3,5,2C333B,"heavy, grainy, crude, default",darkstone,eff crushing 2 0,,hammer 4
 Darkwood,Tnc,,,,Dark,twilightforest,"16, 18, 19, 20",wood,4,2.5,6,768,2,5,90,3,7,82512e,"crude, wooden",dark_planks,,,axe 2
-Deadwood,Tnc 1.5,,2,Handle C+,Deadwood,regions_unexplored,"18, 19, 20",wood,4,1.8,4.5,250,1,6,102,3,5,6b5e59,"crude, wooden",dead_planks,,,axe 3
-Deadwood,Tnc,,2,Handle C+,Deadwood,biomesoplenty,"16, 18, 19, 20",wood,4,1.8,4.5,250,1,6,102,3,5,807a72,"crude, wooden",dead_planks,,,axe 2
 Deadwood,Tnc,,2,Handle C+,Deadwood,atum,16,wood,4,1.8,4.5,250,1,6,102,3,5,8d8460,"crude, wooden",deadwood_planks,,,axe 2
+Deadwood,Tnc,,2,Handle C+,Deadwood,biomesoplenty,"16, 18, 19, 20",wood,4,1.8,4.5,250,1,6,102,3,5,807a72,"crude, wooden",dead_planks,,,axe 2
+Deadwood,Tnc 1.5,,2,Handle C+,Deadwood,regions_unexplored,"18, 19, 20",wood,4,1.8,4.5,250,1,6,102,3,5,6b5e59,"crude, wooden",dead_planks,,,axe 3
 Demonite,Tnc 1.5,Yes,,,Demonite,ms,"16; 18, 19, 20",metal,6,3.8,2.6,350,2,5,60,4,5,5203cb,"shiny, crude","gem/demoniteingot, gem/demonite_ingot",,,hammer 4
+Demonite,Tnc 1.6,Yes,,,Demonite,oreandmore,"16, 18, 19, 20",metal,19,3.4,3.8,15000,2,6,180,6,40,d90303,"metal, default",demonite_ingot,,,hammer 7
 Dense Vine,Tnc,,5,Binding S,Dense Vine,betterendforge,16,fibre,4,3.6,3,1561,2,9,66,0,0,29bfb5,"crude, default",dense_vine,eff enderReverb -3 0.2,,cut 6
+Dense Vine,Tnc 1.6,,5,Binding S,Dense Vine,betterend,"16, 18, 19, 20",fibre,4,3.6,3,1561,2,9,66,0,0,29bfb5,"crude, default",dense_vine,eff enderReverb -3 0.2,,cut 6
 Desh,Tnc 1.5,,,,Desh,ad_astra,"18, 19, 20",metal,6,4.6,3.5,1561,2,5,60,5,8,d68d4d,"heavy, metal, default",desh_ingot,eff stun 5 1,,hammer 4
 Diopside,Tnc 1.5,Yes,,,Diopside,blue_skies,"16, 18, 19, 20",gem,8,4.3,0,1661,3,2,84,5,6,00cd15,"shiny, crude",diopside_gem,,,hammer 5
 Dolerite,Tnc 1.5,,1,,Dolerite,unearthed,"16, 18, 19",stone,4.2,3.8,0,192,2,3,90,3,4.5,6c6965,"grainy, crude, default",dolerite,,,hammer 1
 Dolomite,Tnc,,,,Dolomite,create,16,stone,4.2,3.5,0,96,1,4,90,3,4,908b77,"grainy, crude, default",dolomite,,,hammer 1
+Draco Arcanus,Tnc 1.6,Yes,,,Draco Arcanus,forbidden_arcanus,20,metal,10,3.8,3.5,2661,2,6,120,6,12,3D1460,"heavy, metal",dragon_scale,,,hammer 6
 Dragon Tree,Tnc,,5,Bow S,Draconic,betterendforge,16,wood,4,2.2,9.2,768,2,4,108,3,2,302242,"crude, wooden",dragon_tree_planks,,,axe 7
+Dragon Tree,Tnc 1.6,,5,Bow S,Draconic,betterend,"16, 18, 19, 20",wood,4,2.2,9.2,768,2,4,108,3,2,302242,"crude, wooden",dragon_tree_planks,,,axe 7
 Drake Backplate,Tnc,,2,,Drake Backplate,wyrmroost,16,scale,6,3.2,2,384,2,5,54,0,0,3c5d45,"crude, default",drake_backplate,,,cut 3
 Driftwood,Tnc,,1,,Driftwood,upgrade_aquatic,"16, 18, 19",wood,3,1.4,4,48,1,4,96,1,2,625c53,"crude, wooden",driftwood_planks,,,axe 1
 Dropleaf,Tnc 1.5,,,,Dropleaf,regions_unexplored,"19, 20",fibre,5,1.8,3,131,1,5,120,0,0,577b32,"crude, default",dropleaf,,,cut 2
+Dryophyllum,Tnc 1.6,,,Handle A (enchantable),Dryophyllum,unusualprehistory,20,wood,4,2.6,3,768,2,6,156,3,5,D3C0DA,"crude, wooden",dryo_planks,,,axe 4
 Dusk,Tnc 1.5,Yes,,,Dusk Wood,blue_skies,"16, 18, 19, 20",wood,3,1.7,6,59,1,4,60,1,2,492a61,"crude, wooden",dusk_planks,,,axe 1
 Dusk Vine,Tnc 1.5,,,,Dusk Vine,blue_skies,"16, 18, 19, 20",fibre,4,1.5,3,320,1,5,90,0,0,c98ece,"crude, default",dusk_vine,,,cut 2
-Ebony,Tnc,,1,Handle C,Ebony,byg,"16, 18, 19",wood,4,2.6,3,512,2,5,84,3,5,161616,"crude, wooden",ebony_planks,,,axe 2
 Ebony,Tnc 1.5,,5,Bow S,Ebony,phantasm,"16, 18, 19",wood,4,2.2,9,768,2,4,96,3,2,332439,"crude, wooden",ebony_planks,,,axe 6
+Ebony,Tnc,,1,Handle C,Ebony,byg,"16, 18, 19",wood,4,2.6,3,512,2,5,84,3,5,161616,"crude, wooden",ebony_planks,,,axe 2
 Echo Wood,Tnc 1.5,,,Handle S,Echoing,deeperdarker,"19, 20",wood,5,1.6,5,2031,2,8,120,3,5,b0ba99,"crude, wooden",echo_planks,eff enderReverb 2 0.2,,axe 7
+Edelwood,Tnc 1.6,,,Handle B (Enchant),Edelwood,forbidden_arcanus,20,wood,4,2.8,5.5,512,2,6,144,3,4,522800,"crude, wooden",edelwood_planks,eff stabilizing 10 0,,axe 4
 Embur,Tnc,,3,Bow B,Embur,byg,"16, 18, 19",wood,2.8,1.2,6.8,96,1,4,90,3,4,463527,"crude, wooden",embur_planks,,,axe 4
 Embur vine,Tnc,,3,,Embur vine,byg,"16, 18, 19",fibre,5,3,3,320,1,5,96,0,0,c0911e,"crude, default",embur_gel_vines,,,cut 2
 End Lotus,Tnc,,5,,End Lotus,betterendforge,16,wood,2,1.3,6,192,1,4,90,3,5,7bd1ea,"crude, wooden",end_lotus_planks,,,axe 5
+End Lotus,Tnc 1.6,,5,,End Lotus,betterend,"16, 18, 19, 20",wood,2,1.3,6,192,1,4,90,3,5,7bd1ea,"crude, wooden",end_lotus_planks,,,axe 5
 Enderite,Tnc,Yes,6,Sword/Tool S,Enderite,enderitemod,16,metal,8,2.9,4,4096,2,6,102,6,15,144038,"heavy, metal, default",enderite_ingot,,imp enderite_void_floating_innate 3 0,hammer 6
 Enderite,Tnc,Yes,6,Sword/Tool S,Enderite,enderitemod,"18, 19, 20",metal,8,2.9,4,4096,2,6,102,6,15,144038,"heavy, metal, default",enderite_ingot,,,hammer 6
 Endium,Tnc 1.5,Yes,,Sword/Tool S,Endium,organics,"16, 18, 19, 20",gem,11,2.5,0,3200,3,2,12,10,16,c35ad1,"shiny, crude",endium_gem,eff enderReverb 1 0.05,,hammer 7
 Eternal Crystal,Tnc,,7,Crafting S,Eternal Crystal,betterendforge,16,gem,7.6,1.2,0,5,8,1,180,8,10,8ffff6,"shiny, crude",eternal_crystal,eff intuit 3 0,imp arrested 0 0,hammer 7
+Eternal Crystal,Tnc 1.6,,7,Crafting S,Eternal Crystal,betterend,"16, 18, 19, 20",gem,7.6,1.2,0,5,8,1,180,8,10,8ffff6,"shiny, crude",eternal_crystal,eff intuit 3 0,imp arrested 0 0,hammer 7
 Eternal Flavolite,Tnc,,6,Tool A,Eternal Flavolite,betterendforge,16,stone,4,4,0,24576,1,4,90,3,4,bfa175,"grainy, crude, default",flavolite_runed_eternal,,,hammer 6
+Eternal Flavolite,Tnc 1.6,,6,Tool A,Eternal Flavolite,betterend,"16, 18, 19, 20",stone,4,4,0,24576,1,4,90,3,4,bfa175,"grainy, crude, default",flavolite_runed_eternal,,,hammer 6
 Eternium,Tnc 1.5,Yes,,,Eternium,l2complements,"19, 20",metal,6,2.9,4,9999,2,6,6,6,8,696ef7,"shiny, metal, default",eternium_ingot,,,hammer 6
 Ether,Tnc,,5,Bow A+,Ether,byg,"16, 18, 19",wood,4.2,1.4,8.6,1024,1,4,96,4,6,5f9584,"crude, wooden",ether_planks,,,axe 6
 Ether Stone,Tnc,,4,,Ether Stone,byg,"16, 18, 19",stone,4,4,0,1561,1,2,90,3,6,859898,"grainy, crude, default",ether_stone,,,hammer 5
 Eucalyptus,Tnc 1.5,,,,Eucalyptus,regions_unexplored,"18, 19, 20",wood,3,1.7,6.5,59,1,4,90,1,2,aa6a4c,"crude, wooden",eucalyptus_planks,,,axe 1
 Euclase,Tnc 1.5,Yes,,,Euclase,silentgems,16,gem,6,2.9,0,1024,2,2,90,5,10,003550,"shiny, crude",euclase,,,hammer 3
+Eudialyte,Tnc 1.6,Yes,,,Eudialyte,tropicraft,20,gem,5,2.9,0,750,2,2,84,4,6.5,8D4C5C,"shiny, crude",eudialyte_gem,,,hammer 2
 Fiery Metal,Tnc,Yes,,,Fiery,twilightforest,16,metal,7,4,3,1024,2,5,60,6,9,dc7404,"shiny, metal, default",fiery_ingot,eff fierySelf 3 0.1,imp enchantment/fire_aspect 1 0,hammer 3
 Fiery Metal,Tnc,Yes,,,Fiery,twilightforest,"18, 19, 20",metal,7,4,3,1024,2,5,60,6,9,dc7404,"shiny, metal, default",fiery_ingot,eff fierySelf 3 0.1,,hammer 3
 Fine Silk,Tnc 1.5,Yes,1,Binding B,Silken,silentgear,"16, 18, 19, 20",fibre,3,1,3,448,1,5,90,0,0,faf2ff,"crude, default",fine_silk,,,cut 3
-Fir,Tnc 1.5,,,,Fir,nature_arise,20,wood,2.6,1.5,6,48,1,3,108,1,3,957339,"crude, wooden",fir_planks,,,axe 1
-Fir,Tnc,,1,,Fir,biomesoplenty,"16, 18, 19, 20",wood,2.6,1.5,6,48,1,3,108,1,3,988f77,"crude, wooden",fir_planks,,,axe 1
 Fir,Tnc,,1,,Fir,byg,"16, 18, 19",wood,2.6,1.5,6,48,1,3,108,1,3,9f8361,"crude, wooden",fir_planks,,,axe 1
+Fir,Tnc,,1,,Fir,biomesoplenty,"16, 18, 19, 20",wood,2.6,1.5,6,48,1,3,108,1,3,988f77,"crude, wooden",fir_planks,,,axe 1
+Fir,Tnc 1.5,,,,Fir,nature_arise,20,wood,2.6,1.5,6,48,1,3,108,1,3,957339,"crude, wooden",fir_planks,,,axe 1
+Fire Amber,Tnc 1.6,Yes,,,Fire Amber,oreandmore,"16, 18, 19, 20",gem,4.5,2.9,0,250,2,2,84,4,6,d8993a,"shiny, crude",fire_amber,,,hammer 2
 "Fire Dragonsteel, Ice Dragonsteel, Lightning Dragonsteel",Tnc,Yes,7,Sword/Tool S,"Fire Dragonsteel, Ice Dragonsteel, Lightning Dragonsteel",iceandfire,"16, 18, 19, 20",metal,24,4.5,2,8000,4,6,60,7,10,"c09396, aed4ea, 856fb5","metal, default","dragonsteel_fire_ingot, dragonsteel_ice_ingot, dragonsteel_lightning_ingot",,,hammer 7
 Flavolite,Tnc,,4,,Flavolite,betterendforge,16,stone,4,4,0,1561,1,4,90,3,4,d4c098,"grainy, crude, default",flavolite,,,hammer 5
+Flavolite,Tnc 1.6,,4,,Flavolite,betterend,"16, 18, 19, 20",stone,4,4,0,1561,1,4,90,3,4,d4c098,"grainy, crude, default",flavolite,,,hammer 5
 Flax,Tnc 1.5,Yes,1,,Flaxen,silentgear,"16, 18, 19, 20",fibre,5,0.9,3,200,1,3,90,0,0,c4b9af,"crude, default",flax_string,,,cut 1
 Flood Basalt,Tnc 1.5,,,,Flood Basalt,alexscaves,20,stone,4,3.5,0,180,1,4,90,3,4.5,28180c,"grainy, crude, default",flood_basalt,,,hammer 1
 Flowering Azalea,Tnc 1.5,,,Handle C+,Flowering Azalea,ecologics,"18, 19, 20",wood,3,1.6,6.8,384,1,6,144,1,2,e26e84,"crude, wooden",flowering_azalea_planks,,,axe 3
 Fluffy String,Tnc 1.5,Yes,1,,Fluffy String,silentgear,"16, 18, 19, 20",fibre,5,0.6,3,180,1,3,78,0,0,f7f7f7,"crude, default",fluffy_string,,,cut 1
 Fluorite,Tnc 1.5,Yes,,,Fluorite,silentgems,16,gem,5,2.9,0,512,2,2,72,4,9,47e1f4,"shiny, crude",fluorite,,,hammer 3
+Foxii,Tnc 1.6,,,Handle A,Foxii,unusualprehistory,20,wood,4.5,1.5,5.5,1024,2,7,132,3,4,401E15,"crude, wooden",foxxi_planks,,,axe 5
 Frostbright,Tnc 1.5,Yes,,,Frostbright Wood,blue_skies,"16, 18, 19, 20",wood,3,1.7,6,59,1,4,60,1,2,5d4339,"crude, wooden",frostbright_planks,,,axe 1
 Frostbright Vine,Tnc 1.5,,,,Frostbright Vine,blue_skies,"16, 18, 19, 20",fibre,3,1.4,3,200,1,4,84,0,0,acb9bf,"crude, default",frostbright_vine,,,cut 1
+Fungyss,Tnc 1.6,,,,Fungyss,forbidden_arcanus,20,wood,2.4,1.8,6.5,96,1,4,138,2,4,BEBFC1,"crude, wooden",fungyss_planks,,,axe 2
 Gabbro,Tnc,,1,,Gabbro,create,16,stone,4,3.8,0,192,2,3,90,3,4.5,979795,"grainy, crude, default",gabbro,,,hammer 1
 Gabbro,Tnc,,1,,Gabbro,unearthed,"16, 18, 19",stone,4,3.8,0,192,2,3,90,3,4.5,979795,"grainy, crude, default",gabbro,,,hammer 1
 Galena,Tnc 1.5,,,,Galena,alexscaves,20,stone,4.7,5.5,0,512,2,4,90,3,5,443c4c,"heavy, grainy, crude, default",galena,,imp arrested 0 0,hammer 3
@@ -167,9 +192,10 @@ Grey Limestone,Tnc 1.5,,1,,Grey Limestone,unearthed,"16, 18, 19",stone,4.2,3.5,0
 Grimwood,Tnc,,2,Handle C+,Grim,atmospheric,"16, 18, 19",wood,3.5,1.6,6.5,512,1,5,102,3,6,211414,"crude, wooden",grimwood_planks,,,axe 4
 Guanostone,Tnc 1.5,,,,Guanostone,alexscaves,20,stone,3,3.7,0,131,1,2,66,2,3,a08365,"grainy, crude, default",guanostone,,,hammer 1
 Heavy Bone,Tnc 1.5,,,,Heavy Bone,alexscaves,20,bone,5.5,2.4,4.3,512,2,6,120,3,5,dddac3,"bone, crude",heavy_bone,,,hammer 3
-Heliodor,Tnc 1.5,Yes,,,Heliodor,silentgems,"18, 19, 20",gem,5,2.9,0,1024,2,2,60,5,14,ddcf17,"shiny, crude",heliodor,,,hammer 3
 Heliodor,Tnc 1.5,Yes,,,Heliodor,silentgems,16,gem,7,2.9,0,384,2,2,60,4,12,ddcf17,"shiny, crude",heliodor,,,hammer 4
+Heliodor,Tnc 1.5,Yes,,,Heliodor,silentgems,"18, 19, 20",gem,5,2.9,0,1024,2,2,60,5,14,ddcf17,"shiny, crude",heliodor,,,hammer 3
 Helix,Tnc,,5,Tool A,Helix,betterendforge,16,wood,5,1.6,7,768,2,5,108,5,7.5,c87d20,"crude, wooden",helix_tree_planks,eff stabilizing 15 0,,axe 6
+Helix,Tnc 1.6,,5,Tool A,Helix,betterend,"16, 18, 19, 20",wood,5,1.6,7,768,2,5,108,5,7.5,c87d20,"crude, wooden",helix_tree_planks,eff stabilizing 15 0,,axe 6
 Hellbark,Tnc,,3,Handle B,Hellbark,biomesoplenty,"16, 18, 19, 20",wood,4.5,1.7,5.5,512,2,6,84,3,4,372c2d,"crude, wooden",hellbark_planks,,,axe 4
 Hellfire,Tnc 1.5,Yes,,,Hellfire,ms,"16; 18, 19, 20",gem,3.1,2.9,0,1136,2,2,66,5,8,a51800,"shiny, crude","gem/hellfire, gem/hellfire_ingot","eff unstable 30 0, eff fierySelf 2 0.02",,hammer 3
 Hellwood,Tnc 1.5,,3,Handle B,Hellwood,ms,"16; 18, 19, 20",wood,4.5,1.7,5.5,512,2,6,84,3,4,3d1937,"crude, wooden","nature/hellwood_plank, nature/hellwood_planks",,,axe 4
@@ -177,23 +203,26 @@ Hoaky,Tnc 1.5,,2,Handle C+ (Enchantable),Hoaky,organics,"16, 18, 19, 20",wood,3,
 Holly,Tnc,,1,Handle C,Holly,byg,"16, 18, 19",wood,3,1.7,6,384,1,5,90,1,2,bca980,"crude, wooden",holly_planks,,,axe 2
 Horizonite,Tnc 1.5,Yes,,,Horizonite,blue_skies,"16, 18, 19, 20",metal,5,3.8,3,250,2,5,60,5,8,ff8533,"shiny, metal",horizonite_ingot,,,hammer 3
 Ichor,Tnc 1.5,Yes,7,Sword/Tool S+,Ichor,voidscape,"16, 18, 19, 20",gem,11,3.8,0,4047,3,2,138,10,11,fda14b,"shiny, crude",ichor_crystal,eff skewering 2 5,,hammer 7
+Iguana Leather,Tnc 1.6,,,,Iguana Leather,tropicraft,20,skin,5,2,1,250,1,5,90,0,0,317B18,"crude, default",iguana_leather,,,cut 2
 Imparius,Tnc 1.5,,5,Handle A+,Imparius,byg,"16, 18, 19",wood,5,1.6,5,1561,2,7,132,3,4,69a3a8,"crude, wooden",imparius_planks,,,axe 5
 Imparius vine,Tnc,,5,Binding S,Imparius vine,byg,"16, 18, 19",fibre,4,3.3,3,1561,2,8,66,0,0,15868d,"crude, default",imparius_vine,eff stabilizing 10 0,,cut 5
 Indigo,Tnc 1.5,,,,Indigo,enlightened_end,"18, 19, 20",wood,4,2.2,8.8,1024,2,4,102,3,2,984fa9,"crude, wooden",indigo_planks,,,axe 6
-Iolite,Tnc 1.5,Yes,,,Iolite,silentgems,16,gem,5,2.7,0,768,1,2,66,4,6,7000bd,"shiny, crude",iolite,,,hammer 3
 Iolite,Tnc 1.5,Yes,,,Iolite,silentgems,"18, 19, 20",gem,6,2.7,0,768,1,2,60,4,7,4f1edb,"shiny, crude",iolite,,,hammer 2
+Iolite,Tnc 1.5,Yes,,,Iolite,silentgems,16,gem,5,2.7,0,768,1,2,66,4,6,7000bd,"shiny, crude",iolite,,,hammer 3
 Iridite,Tnc 1.5,Yes,,,Iridite,organics,"16, 18, 19, 20",gem,7,2.6,0,2045,2,2,12,8,14,e5ad06,"shiny, crude",iridite_gem,,,hammer 7
 Ironwood,Tnc,Yes,,,Ironwood,twilightforest,16,metal,5,3.8,3,512,2,5,150,4,6.5,979283,"metal, default",ironwood_ingot,,"imp ironwood_innate_efficiency 1 0, imp ironwood_innate_unbreaking 1 0, imp ironwood_innate_fortune 1 0, imp ironwood_innate_knockback 1 0",hammer 2
 Ironwood,Tnc,Yes,,,Ironwood,twilightforest,"18, 19, 20",metal,5,3.8,3,512,2,5,150,4,6.5,979283,"metal, default",ironwood_ingot,,,hammer 2
 Jacaranda,Tnc,,1,,Jacaranda,byg,"16, 18, 19",wood,2.6,1.5,6,48,1,3,108,1,3,966b6a,"crude, wooden",jacaranda_planks,,,axe 1
 Jacaranda,Tnc,,1,,Jacaranda,biomesoplenty,"16, 18, 19, 20",wood,2.6,1.5,6,48,1,3,108,1,3,baa39a,"crude, wooden",jacaranda_planks,,,axe 1
-Jade,Tnc 1.5,Yes,,,Jade,silentgems,16,gem,8,2.9,0,512,2,2,84,4,7,b2e25d,"shiny, crude",jade,,,hammer 4
 Jade,Tnc 1.5,Yes,,,Jade,ms,"16, 18, 19, 20",gem,2.8,2.9,0,467,2,2,60,4,6.1,38851d,"shiny, crude",gem/jade,,,hammer 3
-Jasper,Tnc 1.5,Yes,,,Jasper,silentgems,16,gem,6,2.9,0,512,2,2,96,4,7,877100,"shiny, crude",jasper,,,hammer 3
+Jade,Tnc 1.5,Yes,,,Jade,silentgems,16,gem,8,2.9,0,512,2,2,84,4,7,b2e25d,"shiny, crude",jade,,,hammer 4
 Jasper,Tnc,,1,Tool C,Jasper,quark,"16, 18, 19",stone,4.7,3,0,512,1,3,102,4,6,6a3e32,"grainy, crude, default",jasper,,,hammer 2
+Jasper,Tnc 1.5,Yes,,,Jasper,silentgems,16,gem,6,2.9,0,512,2,2,96,4,7,877100,"shiny, crude",jasper,,,hammer 3
 Jellyshroom,Tnc,,5,,Jellyshroom,betterendforge,16,wood,4,3,7,192,2,6,120,3,8,7ea0a8,"crude, wooden",jellyshroom_planks,,,axe 5
+Jellyshroom,Tnc 1.6,,5,,Jellyshroom,betterend,"16, 18, 19, 20",wood,4,3,7,192,2,6,120,3,8,7ea0a8,"crude, wooden",jellyshroom_planks,,,axe 5
 Joshua,Tnc 1.5,,,,Joshua,regions_unexplored,"18, 19, 20",wood,2.2,1.4,6,59,1,3,108,1,3,9f8367,"crude, wooden",joshua_planks,,,axe 1
 Jungle Vine,Tnc,,5,Bowstring A,Jungle Vine,betterendforge,16,fibre,4,2.8,3,1280,2,7,102,0,0,1f6c7f,"crude, default",jungle_vine,,,cut 5
+Jungle Vine,Tnc 1.6,,5,Bowstring A,Jungle Vine,betterend,"16, 18, 19, 20",fibre,4,2.8,3,1280,2,7,102,0,0,1f6c7f,"crude, default",jungle_vine,,,cut 5
 Kapok,Tnc 1.5,,,,Kapok,regions_unexplored,"19, 20",wood,3.2,1.4,5,131,1,5,108,1,3,9c7559,"crude, wooden",kapok_planks,,,axe 1
 Kapok Vine,Tnc 1.5,,,,Kapok Vine,regions_unexplored,"19, 20",fibre,5,1.6,3,180,1,4,86,0,0,1e3917,"crude, default",kapok_vines,,,cut 2
 Khnumite,Tnc,Yes,,,Stoneguard,atum,16,stone,4.1,3.5,0,192,1,4,60,3,6,998b59,"grainy, crude, default",khnumite,,imp brutal 0 0,hammer 1
@@ -202,22 +231,24 @@ Knightmetal,Tnc,Yes,,,Knightly,twilightforest,"16, 18, 19, 20",metal,6,2.9,3.5,5
 Kousa,Tnc,,1,,Kousa,atmospheric,"16, 18, 19",wood,4,2.4,2.8,192,2,5,72,3,5,728778,"crude, wooden",kousa_planks,,,axe 2
 Kuko,Tnc 1.5,Yes,,,Kuko,organics,"16, 18, 19, 20",gem,7.5,2.9,0,2468,2,2,12,8,12,f03eff,"shiny, crude",kuko_gem,,,hammer 7
 Kunzite,Tnc 1.5,Yes,,,Kunzite,silentgems,16,gem,9,2.9,0,768,2,2,60,4,8,ce29d3,"shiny, crude",kunzite,,,hammer 5
-Kyanite,Tnc 1.5,Yes,,,Kyanite,silentgems,"18, 19, 20",gem,7,3.2,0,1280,2,2,102,6,12,17a9dd,"shiny, crude",kyanite,,,hammer 4
 Kyanite,Tnc 1.5,Yes,,,Kyanite,silentgems,16,gem,8,3.2,0,1536,2,2,84,5,14,416dff,"shiny, crude",kyanite,,,hammer 4
+Kyanite,Tnc 1.5,Yes,,,Kyanite,silentgems,"18, 19, 20",gem,7,3.2,0,1280,2,2,102,6,12,17a9dd,"shiny, crude",kyanite,,,hammer 4
 Lacugrove,Tnc,,5,Tool A (Enchantable),Lacugrove,betterendforge,16,wood,2.8,1.4,6,768,2,4,138,3,8,dae1a7,"crude, wooden",lacugrove_planks,eff stabilizing 15 0,,axe 6
+Lacugrove,Tnc 1.6,,5,Tool A (Enchantable),Lacugrove,betterend,"16, 18, 19, 20",wood,2.8,1.4,6,768,2,4,138,3,8,dae1a7,"crude, wooden",lacugrove_planks,eff stabilizing 15 0,,axe 6
 Lament,Tnc,,3,Handle B (Enchant),Lamenting,byg,"16, 18, 19",wood,4,2.6,5.5,384,2,5,132,3,4,554f9a,"crude, wooden",lament_planks,eff stabilizing 10 0,,axe 4
 Lament Vine,Tnc,,3,Binding B,Lament Vine,byg,"16, 18, 19",fibre,5,3.5,3,448,1,5,96,0,0,48386a,"crude, default",lament_vine,,,cut 2
 Larch,Tnc 1.5,,,,Larch,regions_unexplored,"18, 19, 20",wood,2.6,1.5,6,48,1,3,108,1,3,aa917c,"crude, wooden",larch_planks,,,axe 1
 Lepidolite,Tnc 1.5,Yes,,,Lepidolite,silentgems,16,gem,6,2.9,0,256,2,2,84,4,4,c710b2,"shiny, crude",lepidolite,,,hammer 3
 Lila,Tnc 1.5,Yes,,,Lila,ms,16,gem,4.5,2.7,0,127,2,2,156,4,6.5,ca00ca,"shiny, crude",gem/lila,eff stabilizing 20 0,,hammer 3
+Limestone,Tnc,,,,Limestone,quark,"16, 18, 19",stone,4.2,3.5,0,96,1,4,90,3,4,908b77,"grainy, crude, default",limestone,,,hammer 1
 Limestone,Tnc,,1,,Limestone,unearthed,"16, 18, 19",stone,4.2,3.5,0,96,1,4,90,3,4,7c776c,"grainy, crude, default",limestone,,,hammer 1
 Limestone,Tnc,,,,Limestone,create,"16, 18, 19, 20",stone,4.2,3.5,0,96,1,4,90,3,4,908b77,"grainy, crude, default",limestone,,,hammer 1
-Limestone,Tnc,,,,Limestone,quark,"16, 18, 19",stone,4.2,3.5,0,96,1,4,90,3,4,908b77,"grainy, crude, default",limestone,,,hammer 1
 Limestone,Tnc 1.5,,,,Limestone,alexscaves,20,stone,4.2,3.5,0,96,1,4,90,2,4,9f916d,"grainy, crude, default",limestone,,,hammer 1
 Limestone,Tnc 1.5,,,,Limestone,ms,"16; 18, 19, 20",stone,4.2,3.5,0,96,1,4,90,3,4,abae9f,"grainy, crude, default","limecobble, stone/limestone",,,hammer 1
 Limestone,Tnc,Yes,,,Limestone,atum,16,stone,4,3.5,0,131,1,4,36,3,4,c6a886,"grainy, crude, default",limestone,,,hammer 1
 Linium,Tnc 1.5,Yes,,,Linium,ms,"16; 18, 19, 20",metal,6.5,4.2,3,1967,2,7,72,5,10,e2e2e2,"shiny, metal, default","nether/liniumingot, gem/linium_ingot",,,hammer 5
 Lucernia,Tnc,,5,Bow A (Longbow S),Lucernia,betterendforge,16,wood,4.7,2,8.2,768,2,2,102,3,7,d46c64,"crude, wooden",lucernia_planks,,,axe 7
+Lucernia,Tnc 1.6,,5,Bow A (Longbow S),Lucernia,betterend,"16, 18, 19, 20",wood,4.7,2,8.2,768,2,2,102,3,7,d46c64,"crude, wooden",lucernia_planks,,,axe 7
 Lunar Stone,Tnc 1.5,,,,Lunar Stone,blue_skies,"16, 18, 19, 20",stone,4,3,0,131,1,4,30,3,4,343434,"crude, default",lunar_cobblestone,,,hammer 1
 Lunar Vine,Tnc 1.5,,,,Lunar Vine,blue_skies,"16, 18, 19, 20",fibre,5,1.6,4,200,1,5,102,0,0,a97cd8,"crude, default",lunar_vine,eff stabilizing 15 0,,cut 2
 Lunar Wood,Tnc 1.5,Yes,,,Lunar Wood,blue_skies,"16, 18, 19, 20",wood,3,1.7,6,59,1,4,60,1,2,6a327e,"crude, wooden",lunar_planks,,,axe 1
@@ -226,18 +257,21 @@ Magmatic Stone,Tnc,,3,,Magmatic Stone,byg,"16, 18, 19",stone,4.3,4.3,0,448,1,4,9
 Magnolia,Tnc 1.5,,,,Magnolia,regions_unexplored,"19, 20",wood,3,1.7,6.5,59,1,4,90,1,2,a6393f,"crude, wooden",magnolia_planks,,,axe 1
 Mahogany,Tnc,,1,Handle C,Mahogany,byg,"16, 18, 19",wood,4,2.6,3,512,2,5,84,3,5,8e6872,"crude, wooden",mahogany_planks,,,axe 2
 Mahogany,Tnc,,1,Handle C,Mahogany,biomesoplenty,"16, 18, 19, 20",wood,4,2.6,3,512,2,5,84,3,5,bb7c7a,"crude, wooden",mahogany_planks,,,axe 2
+Mahogany,Tnc 1.6,,,,Mahogany,tropicraft,20,wood,4,2.6,3,512,2,5,84,3,5,52210D,"crude, wooden",mahogany_planks,,,axe 2
+Majungasaurus Scute,Tnc 1.6,,,,Majungasaurus Scute,unusualprehistory,20,scale,5,3.2,2,384,2,5,54,0,0,6A9935,"crude, default",majunga_scute,,,cut 3
 Malachite,Tnc 1.5,Yes,,,Malachite,silentgems,16,gem,7,2.9,0,512,2,2,84,4,8,24da51,"shiny, crude",malachite,,,hammer 3
-Mangrove,Tnc,,,,Mangrove,twilightforest,"16, 18, 19, 20",wood,3.5,1.7,6,131,1,4,90,1,2.5,bfa16d,"crude, wooden",mangrove_planks,,,axe 1
 Mangrove,Tnc,,,,Mangrove,byg,"16, 18",wood,3.5,1.7,6,131,1,4,90,1,2.5,c7c0bb,"crude, wooden",mangrove_planks,,,axe 1
+Mangrove,Tnc,,,,Mangrove,twilightforest,"16, 18, 19, 20",wood,3.5,1.7,6,131,1,4,90,1,2.5,bfa16d,"crude, wooden",mangrove_planks,,,axe 1
+Mangrove,Tnc 1.6,,,,Mangrove,tropicraft,20,wood,3.5,1.7,6,131,1,4,90,1,2.5,8C4D40,"crude, wooden",mangrove_planks,,,axe 1
 Maple,Tnc 1.5,Yes,,,Maple Wood,blue_skies,"16, 18, 19, 20",wood,3,1.7,6,59,1,4,60,1,2,723a2d,"crude, wooden",maple_planks,,,axe 1
-Maple,Tnc 1.5,,1,Bow C,Maple,nature_arise,"19, 20",wood,4,2,7,512,2,5,96,1,4,653903,"crude, wooden",maple_planks,,,axe 4
-Maple,Tnc,,1,Bow C,Maple,byg,"16, 18, 19",wood,4,2,7,512,2,5,96,1,4,82786f,"crude, wooden",maple_planks,,,axe 4
 Maple,Tnc,,1,Bow C,Maple,autumnity,"16, 18, 19",wood,4,2,7,512,2,5,96,1,4,9c6134,"crude, wooden",maple_planks,,,axe 4
-Maple,Tnc 1.5,,1,Bow C,Maple,regions_unexplored,"18, 19, 20",wood,4,2,7,512,2,5,96,1,4,b08e44,"crude, wooden",maple_planks,,,axe 4
+Maple,Tnc,,1,Bow C,Maple,byg,"16, 18, 19",wood,4,2,7,512,2,5,96,1,4,82786f,"crude, wooden",maple_planks,,,axe 4
 Maple,Tnc 1.5,,1,Bow C,Maple,ms,"16; 18, 19, 20",wood,4,2,7,512,2,5,96,1,4,b6853d,"crude, wooden","nature/mapleplank, nature/maple_planks",,,axe 4
+Maple,Tnc 1.5,,1,Bow C,Maple,nature_arise,"19, 20",wood,4,2,7,512,2,5,96,1,4,653903,"crude, wooden",maple_planks,,,axe 4
+Maple,Tnc 1.5,,1,Bow C,Maple,regions_unexplored,"18, 19, 20",wood,4,2,7,512,2,5,96,1,4,b08e44,"crude, wooden",maple_planks,,,axe 4
 Maple Vine,Tnc 1.5,,,,Maple Vine,blue_skies,"16, 18, 19, 20",fibre,5,1.6,3,180,1,4,84,0,0,d05a54,"crude, default",maple_vine,,,cut 1
-Marble,Tnc,,1,,Marble,unearthed,16,stone,3,3.5,0,192,1,4,90,3,4,305f4e,"crude, default",marble,,,hammer 2
 Marble,Tnc,,1,,Marble,quark,16,stone,3,3.5,0,192,1,4,90,3,4,c0c2c4,"crude, default",marble,,,hammer 2
+Marble,Tnc,,1,,Marble,unearthed,16,stone,3,3.5,0,192,1,4,90,3,4,305f4e,"crude, default",marble,,,hammer 2
 Marble,Tnc 1.5,,,,Marble,ms,"16; 18, 19, 20",stone,3,3.5,0,192,1,4,90,3,4,f1f1f2,"crude, default","marblecobble, stone/marble",,,hammer 2
 Mars Stone,Tnc 1.5,,,,Mars Stone,ad_astra,"18, 19, 20",stone,4.3,3.7,0,768,1,4,90,4,7,c98555,"grainy, crude, default",mars_cobblestone,,,hammer 4
 Mauve,Tnc 1.5,,1,,Mauve,regions_unexplored,"18, 19, 20",wood,3,1.5,6,250,2,5,132,1,3,7c6388,"crude, wooden",mauve_planks,,,axe 3
@@ -246,11 +280,12 @@ Mithril,Tnc 1.5,Yes,,,Mithril,ms,"16; 18, 19, 20",metal,5,2.6,3,620,2,6,120,4,7.
 Moldavite,Tnc 1.5,Yes,,,Moldavite,silentgems,16,gem,7,3.4,0,512,2,2,84,4,8,a3ab00,"shiny, crude",moldavite,,,hammer 3
 Moldavite,Tnc 1.5,Yes,,,Moldavite,silentgems,"18, 19, 20",gem,7,3.4,0,512,2,2,60,4,6,6f9a1e,"shiny, crude",moldavite,,,hammer 3
 Moon Stone,Tnc 1.5,,,,Moon Stone,ad_astra,"18, 19, 20",stone,4.5,3.2,0,500,1,4,102,4,5,4a5253,"grainy, crude, default",moon_cobblestone,,,hammer 3
-Moonstone,Tnc 1.5,Yes,,,Moonstone,silentgems,16,gem,6,2.9,0,768,2,2,120,4,8,cfcfcf,"shiny, crude",moonstone,,,hammer 4
 Moonstone,Tnc 1.5,,,,Moonstone,blue_skies,"16, 18, 19, 20",gem,4.5,2.7,0,250,1,2,120,3,6,c4e3f1,"shiny, crude, default",moonstone_shard,eff stabilizing 15 0,,hammer 2
+Moonstone,Tnc 1.5,Yes,,,Moonstone,silentgems,16,gem,6,2.9,0,768,2,2,120,4,8,cfcfcf,"shiny, crude",moonstone,,,hammer 4
 Morado,Tnc,,1,Bow C,Morado,atmospheric,"16, 18, 19",wood,4,2,7,512,2,5,102,1,5,7e3439,"crude, wooden",morado_planks,,,axe 4
 Morganite,Tnc 1.5,Yes,,,Morganite,silentgems,16,gem,7,2.9,0,512,2,2,72,4,9,ff91a4,"shiny, crude",morganite,,,hammer 4
 Mossy Glowshroom,Tnc,,5,,Mossy Glowshroom,betterendforge,16,wood,3.8,1.8,6.5,59,3,1,84,4,18,019c87,"crude, wooden",mossy_glowshroom_planks,eff unstable 15 0,,axe 6
+Mossy Glowshroom,Tnc 1.6,,5,,Mossy Glowshroom,betterend,"16, 18, 19, 20",wood,3.8,1.8,6.5,59,3,1,84,4,18,019c87,"crude, wooden",mossy_glowshroom_planks,eff unstable 15 0,,axe 6
 Myalite,Tnc,,5,Tool A (Enchantable),Myalite,quark,"16, 18, 19",stone,6,5,0,1024,2,2,132,4,10,592e9a,"grainy, crude, default",myalite,"eff stabilizing 15 0, eff enderReverb 3 0.2",,hammer 5
 Naga Scale,Tnc,,3,,Naga Scale,twilightforest,"16, 18, 19, 20",scale,6,0.6,2,448,1,5,108,0,0,3c5d45,"crude, default",naga_scale,,,cut 3
 Nebu,Tnc,,5,,Nebu,atum,16,metal,7,3.5,4.5,2250,2,7,132,6,9,d19607,"shiny, metal, default",nebu_ingot,eff stabilizing 15 0,,hammer 6
@@ -262,24 +297,26 @@ Oblivine,Tnc,,5,Binding S,Oblivine,phantasm,"16, 18, 19",fibre,5,3.5,3,1280,2,8,
 Obsidian,Tnc 1.5,Yes,,,Obsidian,ms,"16; 18, 19, 20",stone,7,5.8,0,1250,3,1,30,5,9,271e3d,"grainy, crude, default","gem/obsidianingot, gem/obsidian_ingot",,,hammer 6
 Ochrum,Tnc,,1,,Ochrum,create,"19, 20",stone,3.5,2.5,0,96,1,4,90,3,4,a68858,"grainy, crude, default",ochrum,,,hammer 1
 Olivine,Tnc 1.5,Yes,,,Olivine,ms,"16, 18, 19, 20",gem,4.6,2.9,0,228,2,2,60,3,5,5aff4f,"shiny, crude",gem/olivine,,,hammer 2
-Onyx,Tnc 1.5,Yes,,,Onyx,ms,"16, 18, 19, 20",gem,5.24,2.9,0,311,2,2,66,4,5.75,212121,"shiny, crude",gem/onyx,,,hammer 3
 Onyx,Tnc 1.5,Yes,,,Onyx,silentgems,16,gem,9,2.9,0,256,2,2,48,4,8,232323,"shiny, crude",onyx,,,hammer 4
-Opal,Tnc 1.5,Yes,,,Opal,silentgems,16,gem,6,2.9,0,384,2,2,78,4,8,9a9a9a,"shiny, crude",opal,,,hammer 3
+Onyx,Tnc 1.5,Yes,,,Onyx,ms,"16, 18, 19, 20",gem,5.24,2.9,0,311,2,2,66,4,5.75,212121,"shiny, crude",gem/onyx,,,hammer 3
 Opal,Tnc 1.5,Yes,,,Opal,ms,"16, 18, 19, 20",gem,5.34,2.9,0,419,2,2,156,4,6.4,f7d1f8,"shiny, crude",gem/opal,eff stabilizing 15 0,,hammer 4
+Opal,Tnc 1.5,Yes,,,Opal,silentgems,16,gem,6,2.9,0,384,2,2,78,4,8,9a9a9a,"shiny, crude",opal,,,hammer 3
 Ostrum,Tnc 1.5,,,Greatsword B,Ostrum,ad_astra,"18, 19, 20",metal,7,5.5,3.2,2031,2,6,54,5,9,925e64,"heavy, metal, default",ostrum_ingot,eff stun 10 2,,hammer 5
 Palerock,Tnc 1.5,,,Crafting S,Palerock,enlightened_end,"18, 19, 20",stone,3.7,5.5,0,5,8,1,42,8,2,919f8c,"shiny, crude, default",palerock,eff unstable 25 0,imp arrested 0 0,hammer 7
-Palm,Tnc,,1,,Palm,byg,"16, 18, 19",wood,2.2,1.4,6,59,1,3,108,1,3,a3906d,"crude, wooden",palm_planks,,,axe 1
 Palm,Tnc,,1,,Palm,atum,16,wood,2.2,1.4,6,59,1,3,108,1,3,ab8556,"crude, wooden",palm_planks,,,axe 1
+Palm,Tnc,,1,,Palm,byg,"16, 18, 19",wood,2.2,1.4,6,59,1,3,108,1,3,a3906d,"crude, wooden",palm_planks,,,axe 1
 Palm,Tnc,,1,,Palm,biomesoplenty,"16, 18, 19, 20",wood,2.2,1.4,6,59,1,3,108,1,3,ac7b39,"crude, wooden",palm_planks,,,axe 1
 Palm,Tnc 1.5,,1,,Palm,regions_unexplored,"18, 19, 20",wood,2.2,1.4,6,59,1,3,108,1,3,dbc48e,"crude, wooden",palm_planks,,,axe 1
+Palm,Tnc 1.6,,,,Palm,tropicraft,20,wood,2.2,1.4,6,59,1,3,108,1,3,533C36,"crude, wooden",palm_planks,,,axe 1
 Passion Vine,Tnc,,1,,Passion Vine,atmospheric,"16, 18, 19",fibre,5,2.6,3,320,1,5,78,0,0,56963a,"crude, default",passion_vine,,,cut 2
 Pearl,Tnc 1.5,Yes,,,Pearl,silentgems,16,gem,7,2.9,0,512,2,2,102,4,8,a4b6d2,"shiny, crude",pearl,,,hammer 3
 Pendorite,Tnc,Yes,3,Tool A,Pendorite,byg,"16, 18, 19",metal,7,6,3,2500,2,6,90,7,10,723770,"heavy, metal, default",pendorite_ingot,,,hammer 6
 Penumbra Wood,Tnc 1.5,,5,Handle S,Penumbral,endlessbiomes,"18, 19, 20",wood,5,1.4,5,1561,2,8,120,4,5,452f8f,"crude, wooden",penumbra_planks,,,axe 7
 Penumbral Vine,Tnc 1.5,,,Bowstring S,Penumbral Vine,endlessbiomes,"18, 19, 20",fibre,4,3,3,1024,2,7,120,0,0,38257d,"crude, default",penumbral_vines,eff stabilizing 10 0,,cut 4
-Peridot,Tnc 1.5,Yes,,,Peridot,silentgems,16,gem,7,2.9,0,512,2,2,84,4,6,83cc16,"shiny, crude",peridot,,,hammer 3
 Peridot,Tnc 1.5,Yes,,,Peridot,silentgems,"18, 19, 20",gem,6,2.9,0,512,1,2,72,4,6,4ef341,"shiny, crude",peridot,,,hammer 2
+Peridot,Tnc 1.5,Yes,,,Peridot,silentgems,16,gem,7,2.9,0,512,2,2,84,4,6,83cc16,"shiny, crude",peridot,,,hammer 3
 Peridotite,Tnc 1.5,,,,Peridotite,ms,"18, 19, 20",stone,4,3.5,0,180,1,4,90,3,4.5,566250,"grainy, crude, default",stone/peridotite,,,hammer 1
+Petrified Wood,Tnc 1.6,,,,Petrified,unusualprehistory,20,wood,4.5,3.5,3,500,1,4,90,4,5,77584F,"crude, wooden",petrified_planks,,,hammer 3
 Pewen,Tnc 1.5,,,,Pewen,alexscaves,20,wood,2.1,1.4,6,48,1,2,108,1,3,ab7e38,"crude, wooden",pewen_planks,,,axe 1
 Phosphophyllite,Tnc 1.5,Yes,,,Phosphophyllite,silentgems,16,gem,5,2.9,0,384,2,2,120,4,11,18db8a,"shiny, crude",phosphophyllite,,,hammer 3
 Phyllite,Tnc,,1,,Phyllite,unearthed,"16, 18, 19",stone,4.7,3,0,192,1,2,78,3,4,767676,"grainy, crude, default",phyllite,,,hammer 1
@@ -288,18 +325,20 @@ Pine,Tnc 1.5,,1,,Pine,regions_unexplored,"18, 19, 20",wood,2.6,1.5,6,48,1,3,108,
 Pink Bioshroom,Tnc 1.5,,,,Pink Bioshroom,regions_unexplored,"19, 20",wood,2.8,1.5,5.5,48,1,5,114,1,2,ce6ac6,"crude, wooden",pink_bioshroom_planks,,,axe 3
 Plasma,Tnc 1.5,Yes,,Tool A,Plasma,deep_dark_regrowth,"19, 20",metal,1,0.4,0,16384,1,6,1,6,20,a3ffff,"shiny, default",plasma,eff unbreaking 100 0,imp arrested 0 0,hammer 6
 Platinum,Tnc,Yes,1,,Platinum,wyrmroost,16,metal,5,4.8,1,645,2,1,114,5,5.5,dedede,"shiny, metal, default",platinum_ingot,,,hammer 2
-Platinum,Tnc 1.5,Yes,,Greatsword B,Platinum,ms,"16; 18, 19, 20",metal,11.5,4.4,2.5,1125,3,6,48,4,11.05,c0c0c0,"shiny, metal, default","gem/platinumingot, gem/platinum_ingot",,,hammer 6
-Poise,Tnc,,5,Handle S,Poise,endergetic,16,wood,4.5,1,5,1561,1,7,102,3,5,6e3c6f,"crude, wooden",poise_planks,,,axe 7
+Platinum,Tnc 1.5,Yes,,Greatsword A,Platinum,ms,"16; 18, 19, 20",metal,11.5,4.4,2.5,1125,3,6,48,4,11.05,c0c0c0,"shiny, metal, default","gem/platinumingot, gem/platinum_ingot",,,hammer 6
+Poise,Tnc,,5,Handle S,Poise,endergetic,"16, 19",wood,4.5,1,5,1561,1,7,102,3,5,6e3c6f,"crude, wooden",poise_planks,,,axe 7
 Polar Bear Hide,Tnc 1.5,,,,Polar Bear Hide,ms,"16, 18, 19; 20",skin,6,3,1,200,1,5,120,0,0,f2f2f2,"crude, default","entity/polar_bear_hide, materials/polar_bear_hide",,,cut 4
 Porphyry,Tnc,,2,Tool B / Greatsword A,Porphyry,atum,16,stone,6,5,0,1024,2,4,90,5,8,232024,"grainy, crude, default",porphyry,eff sweeping 3 1,imp arrested 0 0,hammer 5
 Poseidite,Tnc 1.5,Yes,,,Poseidite,l2complements,"19, 20",metal,6,3.5,3,1500,2,6,84,5,8,71b7c4,"crude, default",poseidite_ingot,,,hammer 4
 Pream,Tnc 1.5,,5,Handle S,Pream,phantasm,"16, 18, 19, 20",wood,5.5,1.9,5,1561,2,8,90,4,5,dbb254,"crude, wooden",pream_planks,,,axe 6
+Prehistoric Ginkgo,Tnc 1.6,,,Bow A,Ginkgo,unusualprehistory,20,wood,4,1.6,8.3,768,1,4,96,4,5,B67B3A,"crude, wooden",ginkgo_planks,,,axe 4
 Primordial Wood,Tnc 1.5,,5,Handle A+,Primordial,eldritch_end,20,wood,5.2,1.6,8.5,1561,1,7,96,2,4,705f64,"crude, wooden",primordial_planks,,,axe 7
 Purple Geode,Tnc,Yes,6,Sword/Tool S,Purple Geode,wyrmroost,16,gem,8,4,0,4214,3,4,168,8,15,9b0dbf,"shiny, crude",purple_geode,"eff unstable 30 0, eff enderReverb 4 0.1",imp arrested 0 0,hammer 7
 Pyridium,Tnc 1.5,Yes,4,,Pyridium,ms,"16; 18, 19, 20",metal,6,3.8,3,1561,2,7,60,5,8,cc8303,"metal, default","nether/pyridiumingot, gem/pyridium_ingot",,,hammer 4
 Pyrope,Tnc 1.5,Yes,,,Pyrope,silentgems,16,gem,10,2.9,0,1024,2,2,72,4,9,ff415e,"shiny, crude",pyrope,,,hammer 5
 Pyrope,Tnc 1.5,Yes,,,Pyrope,blue_skies,"16, 18, 19, 20",gem,4.5,3.2,0,200,2,2,60,3,11,d62438,"shiny, crude",pyrope_gem,,,hammer 2
 Pythadendron,Tnc,,5,Handle S+,Pythadendron,betterendforge,16,wood,5.5,1.7,5,2031,2,9,90,4,7,6b546b,"crude, wooden",pythadendron_planks,,,axe 7
+Pythadendron,Tnc 1.6,,5,Handle S+,Pythadendron,betterend,"16, 18, 19, 20",wood,5.5,1.7,5,2031,2,9,90,4,7,6b546b,"crude, wooden",pythadendron_planks,,,axe 7
 Quartz,Tnc 1.5,Yes,,,Quartz,ms,"16; 18, 19, 20",stone,4.78,3.2,0,196,1,1,48,4,5,d4caba,"grainy, crude, default","gem/quartzingot, gem/refined_quartz_ingot",,,hammer 3
 Quartz Steel,Tnc 1.5,,,,Quartz Steel,epicsamurai,"18, 19, 20",metal,8,3.5,2,2031,2,6,90,6,9,d9cfc3,"metal, default",quartz_ingot,eff intuit 1 0,,hammer 4
 Quartzite,Tnc,,1,,Quartzite,unearthed,"16, 18, 19",stone,4.7,3.8,0,250,1,4,90,3,5,f2ece4,"grainy, crude, default",quartzite,,,hammer 2
@@ -310,31 +349,37 @@ Red Geode,Tnc,Yes,4,Sword/Tool B+,Red Geode,wyrmroost,16,gem,6.5,3.5,0,3264,3,3,
 Red Rock,Tnc,,0,,Red Rock,byg,"16, 18, 19",stone,3.8,3,0,192,1,4,90,3,4,914d2d,"grainy, crude, default",red_rock,,,hammer 1
 Redstone,Tnc 1.5,Yes,,,Redstone,ms,"16; 18, 19, 20",stone,4.5,3.5,0,127,1,1,72,4,6.5,d10000,"shiny, crude","gem/redstoneingot, gem/redstone_ingot",,,hammer 3
 Redwood,Tnc,,1,,Redwood,byg,"16, 18, 19",wood,3.2,1.4,5,131,1,5,108,1,3,934931,"crude, wooden",redwood_planks,,,axe 1
-Redwood,Tnc 1.5,,1,,Redwood,regions_unexplored,"18, 19, 20",wood,3.2,1.4,5,131,1,5,108,1,3,8f402b,"crude, wooden",redwood_planks,,,axe 1
 Redwood,Tnc,,1,,Redwood,biomesoplenty,"16, 18, 19, 20",wood,3.2,1.4,5,131,1,5,108,1,3,904b2f,"crude, wooden",redwood_planks,,,axe 1
+Redwood,Tnc 1.5,,1,,Redwood,regions_unexplored,"18, 19, 20",wood,3.2,1.4,5,131,1,5,108,1,3,8f402b,"crude, wooden",redwood_planks,,,axe 1
 Refined Radiance,Tnc,,,,Refined Radiance,create,"16, 18, 19, 20",metal,5.8,2.8,3.5,876,2,6,124,5,7,ffffff,"metal, default",refined_radiance,eff stabilizing 8 0,,hammer 4
+Reinforced Deorum,Tnc 1.6,Yes,,,Reinforced Deorum,forbidden_arcanus,20,metal,6.5,4.4,3,2561,2,6,156,5,9,EBB02F,"shiny, metal, default",stellarite_piece,,,hammer 5
+Rex Tooth,Tnc 1.6,,,,Rex Tooth,unusualprehistory,20,bone,6.5,2.4,3.2,512,2,4,120,3,5,CDBEAF,"bone, crude",rex_tooth,,,hammer 3
 Rhyolite,Tnc,,1,,Rhyolite,unearthed,"16, 18, 19",stone,4,3.5,0,192,1,4,90,3,4.5,ac7c6c,"grainy, crude, default",rhyolite,,,hammer 1
 Rimestone,Tnc 1.5,,,,Rimestone,blue_skies,"16, 18, 19, 20",stone,4.5,4.5,0,500,1,4,90,4,5,88abdc,"grainy, crude, default",rimestone,,,hammer 3
 Riverwood,Tnc,,1,,Riverwood,upgrade_aquatic,"16, 18, 19",wood,2.8,1.8,6,96,1,4,90,1,2,735844,"crude, wooden",river_planks,,,axe 1
 Rocky Stone,Tnc,,0,,Rocky Stone,byg,"16, 18, 19",stone,4,3,0,131,1,4,90,3,4,787777,"grainy, crude, default",rocky_stone,,,hammer 1
-Rose Quartz,Tnc 1.5,Yes,,Sword A+,Rose Quartz,silentgems,"18, 19, 20",gem,9,2.8,0,1024,2,2,72,6,14,ff6bbd,"shiny, crude",rose_quartz,eff criticalStrike 10 2,,hammer 4
-Rose Quartz,Tnc 1.5,Yes,,,Rose Quartz,silentgems,16,gem,8,2.8,0,1024,2,2,120,4,10,ff4eab,"shiny, crude",rose_quartz,eff criticalStrike 10 2,,hammer 4
+Rose Quartz,Tnc 1.5,Yes,,,Rose Quartz,silentgems,16,gem,8,2.8,0,1024,2,2,120,4,10,ff4eab,"shiny, crude",rose_quartz,eff criticalStrike 5 2,,hammer 4
+Rose Quartz,Tnc 1.5,Yes,,Sword A+,Rose Quartz,silentgems,"18, 19, 20",gem,9,2.8,0,1024,2,2,72,6,14,ff6bbd,"shiny, crude",rose_quartz,eff criticalStrike 5 2,,hammer 4
+Rose Quartz,Tnc 1.6,Yes,,,Rose Quartz,oreandmore,"16, 18, 19, 20",gem,5,2.9,0,300,2,2,84,4,6,ed657c,"shiny, crude",rose_quartz,,,hammer 2
 Rosewood,Tnc,,1,Bow C,Rosewood,atmospheric,"16, 18, 19",wood,4,2,7,512,2,5,102,1,5,735a5b,"crude, wooden",rosewood_planks,,,axe 4
 Ruby,Tnc 1.5,Yes,,,Ruby,silentgems,"18, 19, 20",gem,5,2.9,0,1024,1,2,72,4,6,aa0004,"shiny, crude",ruby,,,hammer 2
 Ruby,Tnc 1.5,Yes,,,Ruby,ms,"16, 18, 19, 20",gem,5.5,2.9,0,400,2,2,66,4,7.6,f90606,"shiny, crude",gem/ruby,,,hammer 4
 Ruby,Tnc 1.5,Yes,,,Ruby,silentgems,16,gem,8,2.9,0,1024,2,2,60,4,8,dd2a17,"shiny, crude",ruby,,,hammer 4
+Ruby,Tnc 1.6,Yes,,,Ruby,oreandmore,"18, 19, 20",gem,6,2.9,0,1561,2,2,60,5,8,bd272c,"shiny, crude",ruby,,,hammer 3
 Samurai Steel,Tnc 1.5,Yes,,,Samurai Steel,epicsamurai,"18, 19, 20",metal,8,3.8,3,1561,2,5,72,5,12,8c8e98,"metal, default",steel_ingot,,,hammer 4
 Sandy Jadestone,Tnc,,4,,Sandy Jadestone,betterendforge,16,stone,4,3.8,0,2031,2,4,102,3,4,879d57,"grainy, crude, default",sandy_jadestone,,,hammer 5
+Sandy Jadestone,Tnc 1.6,,4,,Sandy Jadestone,betterend,"16, 18, 19, 20",stone,4,3.8,0,2031,2,4,102,3,4,879d57,"grainy, crude, default",sandy_jadestone,,,hammer 5
 Sapphire,Tnc 1.5,Yes,,,Sapphire,silentgems,"18, 19, 20",gem,5,2.9,0,512,1,2,72,4,6,1849db,"shiny, crude",sapphire,,,hammer 3
 Sapphire,Tnc 1.5,Yes,,,Sapphire,ms,"16, 18, 19, 20",gem,5.45,2.9,0,450,2,2,66,4,7.4,8c79ff,"shiny, crude",gem/sapphire,,imp arrested 0 0,hammer 3
 Sapphire,Tnc 1.5,Yes,,,Sapphire,silentgems,16,gem,7,2.9,0,1024,2,2,60,4,8,2415c6,"shiny, crude",sapphire,,,hammer 3
+Sapphire,Tnc 1.6,Yes,,,Sapphire,oreandmore,20,gem,6,2.9,0,1661,2,2,60,5,8,0741d5,"shiny, crude",sapphire,,,hammer 3
 Scarlet Emerald,Tnc 1.5,Yes,,,Scarlet Emerald,ms,"16; 18, 19, 20",gem,8.5,2.9,0,1254,2,2,60,5,7.26,a00025,"shiny, crude","gem/scarletemerald, gem/scarlet_emerald",,imp arrested 0 0,hammer 5
 Schist,Tnc,,1,,Schist,unearthed,"16, 18, 19",stone,4,3.5,0,192,1,4,90,3,4.5,6b6864,"grainy, crude, default",schist,,,hammer 1
 Scorchia,Tnc,,,,Scorchia,create,"18, 19, 20",stone,4,3,0,192,1,4,90,3,4.5,2d2f35,"grainy, crude, default",scorchia,,,hammer 1
 Scoria,Tnc,,,,Scoria,byg,"16, 18, 19",stone,3.5,2.4,0,96,1,4,102,3,4,712f25,"grainy, crude, default",scoria_cobblestone,,,hammer 1
 Scoria,Tnc,,,,Scoria,create,"16, 18, 19, 20",stone,3.5,2.4,0,96,1,4,102,3,4,712f25,"grainy, crude, default",scoria,,,hammer 1
-Sculk Bone,Tnc 1.5,,,Crafting S,Sculk Bone,deeperdarker,"19, 20",bone,6.4,3.5,3.5,5,8,1,54,8,3,cbceb3,"bone, crude",sculk_bone,eff enderReverb 2 0.2,imp arrested 0 0,hammer 7
 Sculk Bone,Tnc 1.5,,,,Sculk Bone,deep_dark_regrowth,"19, 20",bone,7,3.5,3.5,1561,2,6,108,6,8,819988,"bone, crude",sculk_bone,eff enderReverb 2 0.2,imp arrested 0 0,hammer 3
+Sculk Bone,Tnc 1.5,,,Crafting S,Sculk Bone,deeperdarker,"19, 20",bone,6.4,3.5,3.5,5,8,1,54,8,3,cbceb3,"bone, crude",sculk_bone,eff enderReverb 2 0.2,imp arrested 0 0,hammer 7
 Sculk Stone,Tnc 1.5,,,,Sculk Stone,deeperdarker,"19, 20",stone,7.4,7.8,0,1561,3,2,72,3,5,0a242d,"crude, default",sculk_stone,"eff crushing 2 0, eff enderReverb 6 0.4",,hammer 5
 Sculk Vine,Tnc 1.5,,,Binding S,Sculk Vine,deeperdarker,"19, 20",fibre,3,2.6,3,1280,2,8,54,0,0,042c34,"crude, default",sculk_vines,"eff enderReverb -6 0.4, eff stabilizing 10 0",,cut 5
 Sculkium,Tnc 1.5,Yes,,Sword/Tool A+,Sculkium,l2complements,"19, 20",metal,8,4,5,2000,2,6,90,6,8,034150,"shiny, metal, default",sculkium_ingot,eff backstab 3 0,,hammer 6
@@ -344,14 +389,15 @@ Shale,Tnc,,1,,Shale,quark,"18, 19",stone,4,3,0,131,1,2,78,3,4,5a7177,"grainy, cr
 Shulkerate,Tnc 1.5,Yes,,Sword/Tool A+,Shulkerate,l2complements,"19, 20",metal,6,2.7,4,4000,2,6,84,5,8,976997,"crude, default",shulkerate_ingot,"eff unbreaking 1 0, eff reaching 10 0.45",,hammer 6
 Shulkren Vine,Tnc,,5,Bowstring/Binding A+,Shulkren Vine,byg,"16, 18, 19",fibre,3,1.2,3.5,768,1,6,114,0,0,007e3e,"crude, default",shulkren_vine,,,cut 3
 Silk,Tnc,,6,Bowstring S,Silk,betterendforge,16,fibre,3,1,3,1280,1,7,108,0,0,dad7da,"crude, default",silk_fiber,,,cut 5
+Silk,Tnc 1.6,,6,Bowstring S,Silk,betterend,"16, 18, 19, 20",fibre,3,1,3,1280,1,7,108,0,0,dad7da,"crude, default",silk_fiber,,,cut 5
 Silver,Tnc 1.5,Yes,,,Silver,ms,"16; 18, 19, 20",metal,4.9,4.2,1,121,2,1,60,4,8.9,b9c8cc,"shiny, metal, default","gem/silveringot, gem/silver_ingot",eff stabilizing 30 0,,hammer 2
 Silverbell,Tnc 1.5,,,,Silverbell,ms,"16; 18, 19, 20",wood,3,1.5,6,96,1,4,90,1,2,c5bea2,"crude, wooden","nature/silverbell_plank, nature/silverbell_planks",eff stabilizing 10 0,,axe 3
 Sinew,Tnc 1.5,Yes,2,,Sinew,silentgear,"16, 18, 19, 20",fibre,3,1.3,3.5,448,1,5,60,0,0,bf958e,"crude, default",sinew_fiber,,,cut 3
 Sky Stone,Tnc 1.5,,,,Sky Stone,ad_astra,"18, 19, 20",stone,4.7,3,0,384,1,3,102,5,10,5a3d3d,"grainy, crude, default",sky_stone,,,hammer 3
 Skyris,Tnc,,2,,Skyris,byg,"16, 18, 19",wood,2.8,1,6,59,1,2,90,1,3,57798c,"crude, wooden",skyris_planks,,,axe 2
 Skyris Vine,Tnc,,2,,Skyris Vine,byg,"16, 18, 19",fibre,3,0.7,2.8,131,1,2,90,0,0,f1a9a9,"crude, default",skyris_vine,,,cut 2
-Slate,Tnc,,1,,Slate,unearthed,"16, 18, 19",stone,4.5,3,0,131,1,2,78,3,4,626262,"grainy, crude, default",slate,,,hammer 1
 Slate,Tnc,,1,,Slate,quark,16,stone,4.5,3,0,131,1,2,78,3,4,4a5c5e,"grainy, crude, default",slate,,,hammer 1
+Slate,Tnc,,1,,Slate,unearthed,"16, 18, 19",stone,4.5,3,0,131,1,2,78,3,4,626262,"grainy, crude, default",slate,,,hammer 1
 Soapstone,Tnc,,0,,Soapstone,byg,"16, 18, 19",stone,3,3.5,0,320,1,4,84,3,3.5,3f3f3f,"grainy, crude, default",soapstone,,,hammer 1
 Socotra,Tnc 1.5,,,,Socotra,regions_unexplored,"19, 20",wood,3,1.7,6,131,1,4,90,1,2,9d7243,"crude, wooden",socotra_planks,,,axe 1
 Sodalite,Tnc 1.5,Yes,,,Sodalite,silentgems,16,gem,7,2.9,0,768,2,2,84,4,9,8588ff,"shiny, crude",sodalite,,,hammer 4
@@ -360,15 +406,15 @@ Spire Stone,Tnc 1.5,,,,Spire Stone,eldritch_end,20,stone,5,5.4,0,1024,2,2,132,5,
 Stalk Wood,Tnc 1.5,,5,Handle S,Stalk,nourished_end,16,wood,5,1.4,6,1280,2,8,90,3,4,c3b4da,"crude, wooden",stalk_planks,,,axe 6
 Starlit Vine,Tnc 1.5,,,,Starlit Vine,blue_skies,"16, 18, 19, 20",fibre,5,1.6,3,320,1,4,108,0,0,7f6afc,"crude, default",starlit_vine,eff stabilizing 15 0,,cut 2
 Starlit Wood,Tnc 1.5,Yes,,,Starlit Wood,blue_skies,"16, 18, 19, 20",wood,3,1.7,6,59,1,4,60,1,2,647f84,"crude, wooden",starlit_planks,,,axe 1
-Tenebrium,Tnc 1.5,Yes,1,,Tenebrium,enlightened_end,18,metal,6.5,2.4,3.8,1756,2,6,72,5,8,12697d,"metal, default",minecraft:barrier,,,hammer 4
 Starsteel,Tnc 1.5,Yes,1,,Starsteel,enlightened_end,18,metal,6.5,2.4,3.8,1756,2,6,72,5,8,b65ffd,"metal, default",starsteel_ingot,,,hammer 4
-Steel,Tnc 1.5,,,,Steel,ad_astra,"18, 19, 20",metal,6,3.8,3,650,2,5,72,4,8,747175,"heavy, metal, default",steel_ingot,,,hammer 3
 Steel,Tnc 1.5,Yes,,,Steel,ms,"16; 18, 19, 20",metal,5.6,3.8,3,349,2,5,78,4,6.24,484848,"metal, default","gem/steelingot, gem/steel_ingot",,,hammer 3
+Steel,Tnc 1.5,,,,Steel,ad_astra,"18, 19, 20",metal,6,3.8,3,650,2,5,72,4,8,747175,"heavy, metal, default",steel_ingot,,,hammer 3
 Steeleaf,Tnc,Yes,,,Steeleaf,twilightforest,16,metal,6,2.5,3,131,2,4,54,5,8,385e2b,"metal, default",steeleaf_ingot,,"imp steeleaf_innate_efficiency 1 0, imp steeleaf_innate_efficiency_two 2 0, imp steeleaf_innate_looting 2 0, imp steeleaf_innate_fortune 1 0",hammer 3
 Steeleaf,Tnc,Yes,,,Steeleaf,twilightforest,"18, 19, 20",metal,6,2.5,3,131,2,4,54,5,8,385e2b,"metal, default",steeleaf_ingot,,,hammer 3
 Stellium,Tnc 1.5,Yes,5,,Stellium,phantasm,"16, 18, 19",metal,8,3.4,1,1337,2,5,102,4,7.5,9bc2db,"shiny, metal, default",stellium_ingot,,,hammer 4
 Strophar,Tnc 1.5,,,,Strophar,ad_astra,"18, 19, 20",wood,3.5,1.6,6.5,512,1,6,102,3,4,968c7d,"crude, wooden",strophar_planks,,,axe 4
 Sulfuric Rock,Tnc,,5,,Sulfuric,betterendforge,16,stone,4.5,4.3,0,1561,1,4,90,3,5.4,644c4c,"grainy, crude, default",sulphuric_rock,eff fierySelf 1 0.02,,hammer 4
+Sulfuric Rock,Tnc 1.6,,5,,Sulfuric,betterend,"16, 18, 19, 20",stone,4.5,4.3,0,1561,1,4,90,3,5.4,644c4c,"grainy, crude, default",sulphuric_rock,eff fierySelf 1 0.02,,hammer 4
 Sunstone,Tnc 1.5,Yes,,,Sunstone,silentgems,16,gem,9,2.9,0,768,2,2,96,5,8,ff5f4a,"shiny, crude",sunstone,,,hammer 4
 Sythian,Tnc,,3,,Sythian,byg,"16, 18, 19",wood,2,1.2,5,59,1,2,90,3,4,938126,"crude, wooden",sythian_planks,,,axe 4
 Tanned Leather,Tnc 1.5,,,,Tanned Leather,ms,"18, 19, 20",skin,5,2.5,1,300,1,5,90,0,0,963c30,"crude, default",materials/tanned_leather,,,cut 3
@@ -377,11 +423,15 @@ Tanzanite,Tnc 1.5,Yes,,,Tanzanite,ms,"16, 18, 19, 20",gem,10,2.9,0,850,3,2,60,5,
 Taratite,Tnc 1.5,,,,Taratite,blue_skies,"16, 18, 19, 20",stone,4.2,4,0,250,2,5,90,3,4.5,97bdbd,"grainy, crude, default",taratite,,,hammer 2
 Tektite,Tnc 1.5,Yes,,,Tektite,silentgems,16,gem,8,2.9,0,768,2,2,78,4,9,b3a496,"shiny, crude",tektite,,,hammer 4
 Tenanea,Tnc,,5,Bow A (Recurve S),Tenanea,betterendforge,16,wood,5.4,2,8.8,1024,2,2,96,4,6.5,944f86,"crude, wooden",tenanea_planks,eff enderReverb 6 0.6,,axe 7
+Tenanea,Tnc 1.6,,5,Bow A (Recurve S),Tenanea,betterend,"16, 18, 19, 20",wood,5.4,2,8.8,1024,2,2,96,4,6.5,944f86,"crude, wooden",tenanea_planks,eff enderReverb 6 0.6,,axe 7
 Tenanea Flowers,Tnc,,5,Binding A,Flowered,betterendforge,16,fibre,4,1,3,96,2,4,78,0,0,a362b2,"crude, default",tenanea_flowers,eff enderReverb -6 -0.6,,cut 3
+Tenanea Flowers,Tnc 1.6,,5,Binding A,Flowered,betterend,"16, 18, 19, 20",fibre,4,1,3,96,2,4,78,0,0,a362b2,"crude, default",tenanea_flowers,eff enderReverb -6 -0.6,,cut 3
+Tenebrium,Tnc 1.5,Yes,1,,Tenebrium,enlightened_end,18,metal,6.5,2.4,3.8,1756,2,6,72,5,8,12697d,"metal, default",minecraft:barrier,,,hammer 4
 Terminite,Tnc,Yes,5,Sword/Tool B+,Terminite,betterendforge,16,metal,6,3,3.5,1230,2,5,84,5,8.5,7aada6,"metal, default",terminite_ingot,,,hammer 3
+Terminite,Tnc 1.6,Yes,5,Sword/Tool B+,Terminite,betterend,"16, 18, 19, 20",metal,6,3,3.5,1230,2,5,84,5,8.5,7aada6,"metal, default",terminite_ingot,,,hammer 3
 Thallasium,Tnc,Yes,5,Sword/Tool B,Thallasium,betterendforge,16,metal,4.5,3.6,2.8,320,2,5,72,4,7,98e3d8,"metal, default",thallasium_ingot,,,hammer 2
+Thallasium,Tnc 1.6,Yes,5,Sword/Tool B,Thallasium,betterend,"16, 18, 19, 20",metal,4.5,3.6,2.8,320,2,5,72,4,7,98e3d8,"metal, default",thallasium_ingot,,,hammer 2
 Therium,Tnc,,6,,Therium,byg,"16, 18, 19",stone,5.5,2,0,131,2,4,54,5,6,b5e3df,"grainy, crude, default",therium_shard,eff unstable 25 0,,hammer 3
-Ametrine Gems,Tnc 1.5,,7,Crafting S,Ametrine,byg,"16, 18, 19",gem,5.2,2,0,5,8,1,42,8,4,d399d1,"grainy, crude, default",ametrine_gems,eff unstable 25 0,imp arrested 0 0,hammer 7
 Thornwood,Tnc 1.5,,4,Handle A,Thorned,alexscaves,20,wood,4.7,1.8,4.8,768,1,7,108,3,5,332e26,"crude, wooden",thornwood_planks,,,axe 6
 Thunder,Tnc 1.5,Yes,,Handle S,Thunder,voidscape,"16, 18, 19, 20",wood,5.3,1.7,8,2031,2,9,90,4,6,51418f,"crude, wooden",thunder_planks,,,axe 7
 Thunder Vine,Tnc 1.5,,,Binding S,Thunder Vine,voidscape,"16, 18, 19, 20",fibre,4,3.4,3,1561,2,10,66,0,0,61167b,"crude, default",thunder_vines,,,cut 7
@@ -396,28 +446,35 @@ Totemic Gold,Tnc 1.5,Yes,,,Totemic Gold,l2complements,"19, 20",metal,6,4.6,1,100
 Tough Hide,Tnc 1.5,,,,Tough,alexscaves,20,skin,4.5,3,1,400,1,5,90,0,0,993811,"crude, default",tough_hide,,,cut 3
 Tower Wood,Tnc,,,,Tower Wood,twilightforest,16,wood,5.5,4,7,1024,3,6,90,4,7,9d6238,"crude, wooden",tower_wood,,,axe 6
 Towerwood,Tnc,,,,Towerwood,twilightforest,"18, 19, 20",wood,5.5,4,7,1024,3,6,90,4,7,9d6238,"crude, wooden",towerwood,,,axe 6
+Trike Horn,Tnc 1.6,,,,Trike Horn,unusualprehistory,20,bone,5.5,2.4,3.6,768,2,4,138,4,7,AFB17D,"bone, crude",trike_horn,,,hammer 2
 Trio,Tnc 1.5,Yes,,,Trio,ms,"16, 18, 19, 20",gem,5.9,2.9,0,1800,2,2,48,4,10,62ff62,"shiny, crude",gem/trio,,,hammer 5
 Tungsten,Tnc,Yes,5,Sword/Tool A,Tungsten,stalwart_dungeons,"16, 18, 19, 20",metal,7,4.5,3.5,750,2,6,12,5,11,aadb74,"heavy, metal, default",tungsten_ingot,,,hammer 5
 Tungsten,Tnc 1.5,Yes,,Greatsword S,Tungsten,ms,"16; 18, 19, 20",metal,12.2,5.8,3.5,2467,3,5,120,5,10.2,98b4a3,"heavy, metal","gem/tungsteningot, gem/tungsten_ingot",eff stabilizing 20 0,,hammer 7
-Turquoise,Tnc 1.5,Yes,,,Turquoise,silentgems,"18, 19, 20",gem,6,2.6,0,1536,2,2,90,5,8,3df4bd,"shiny, crude",turquoise,,,hammer 3
-Turquoise,Tnc 1.5,Yes,,,Turquoise,silentgems,16,gem,6,2.6,0,512,2,2,90,4,9,22d9a2,"shiny, crude",turquoise,,,hammer 3
 Turquoise,Tnc 1.5,Yes,,,Turquoise,ms,"16; 18, 19, 20",metal,7,3.8,2.3,198,2,4,60,4,6,48e6bb,"shiny, metal, default","gem/turquoiseingot, gem/turquoise_ingot",,,hammer 4
+Turquoise,Tnc 1.5,Yes,,,Turquoise,silentgems,16,gem,6,2.6,0,512,2,2,90,4,9,22d9a2,"shiny, crude",turquoise,,,hammer 3
+Turquoise,Tnc 1.5,Yes,,,Turquoise,silentgems,"18, 19, 20",gem,6,2.6,0,1536,2,2,90,5,8,3df4bd,"shiny, crude",turquoise,,,hammer 3
 Turquoise Stone,Tnc 1.5,,,,Turquoise Stone,blue_skies,"16, 18, 19, 20",stone,4,3,0,131,1,4,30,3,4,405976,"crude, default",turquoise_cobblestone,,,hammer 1
 Twilight Oak,Tnc,,,,Twilight Oak,twilightforest,"16, 18, 19, 20",wood,3.5,1.5,6.5,250,1,4,90,3,5,8c7254,"crude, wooden",twilight_oak_planks,,,axe 4
 Twisted Vine,Tnc,,5,Bowstring A+,Twisted Vine,betterendforge,16,fibre,1,0.8,5,1024,2,7,108,0,0,0a0a0a,"crude, default",twisted_vine,,,cut 5
+Twisted Vine,Tnc 1.6,,5,Bowstring A+,Twisted Vine,betterend,"16, 18, 19, 20",fibre,1,0.8,5,1024,2,7,108,0,0,0a0a0a,"crude, default",twisted_vine,,,cut 5
 Twisted Wood,Tnc 1.5,,,,Twisted,endlessbiomes,"18, 19, 20",wood,4,2.2,8.8,1024,2,4,102,3,2,2d7859,"crude, wooden",twisted_planks,,,axe 7
 Tyrian Steel,Tnc 1.5,Yes,,Sword/Tool S,Tyrian Steel,silentgear,"16, 18, 19, 20",metal,11,5,3.7,3652,3,7,96,7,18,b01080,"heavy, metal, default",tyrian_steel_ingot,"eff unbreaking 2 0, eff armorPenetration 20 0",,hammer 7
 Umber,Tnc 1.5,,,,Umber,blue_skies,"16, 18, 19, 20",stone,4,3,0,192,1,4,90,3,4.5,3e2c2a,"grainy, crude, default",umber,,,hammer 1
 Umbralith,Tnc,,5,Sword A / Greatsword S,Umbral,betterendforge,16,stone,7.2,8,0,1561,3,2,108,3,6,110f22,"heavy, grainy, crude, default",umbralith,eff crushing 2 0,,hammer 5
+Umbralith,Tnc 1.6,,5,Sword A / Greatsword S,Umbral,betterend,"16, 18, 19, 20",stone,7.2,8,0,1561,3,2,108,3,6,110f22,"heavy, grainy, crude, default",umbralith,eff crushing 2 0,,hammer 5
 Umbran,Tnc,,2,Handle B,Umbran,biomesoplenty,"16, 18, 19, 20",wood,3.5,1.6,5.2,512,2,6,132,3,6,655575,"crude, wooden",umbran_planks,,,axe 5
 Umbrella Tree,Tnc,,5,,Umbrella Tree,betterendforge,16,wood,4,2.4,6,640,2,6,114,3,10,04646c,"crude, wooden",umbrella_tree_planks,,,axe 6
+Umbrella Tree,Tnc 1.6,,5,,Umbrella Tree,betterend,"16, 18, 19, 20",wood,4,2.4,6,640,2,6,114,3,10,04646c,"crude, wooden",umbrella_tree_planks,,,axe 6
 Uranium,Tnc 1.5,Yes,,,Uranium,ms,"16; 18, 19, 20",metal,9.3,4.8,3,1132,2,6,66,5,5.45,2de102,"heavy, metal","gem/uraniumingot, gem/uranium_ingot","eff unstable 40 0, eff fierySelf 3 0.04",,hammer 6
 Venomite,Tnc 1.5,Yes,,,Venomite,organics,"16, 18, 19, 20",metal,9,3.4,3,3000,2,7,12,10,16,0d8400,"metal, default",venomite_ingot,,,hammer 7
 Venus Stone,Tnc 1.5,,,,Venus Stone,ad_astra,"18, 19, 20",stone,3.8,3.4,0,1024,2,4,114,4,5,b88143,"grainy, crude, default",venus_cobblestone,,,hammer 4
 Veridium,Tnc,,1,,Veridium,create,"19, 20",stone,3.5,3,0,131,1,4,90,3,4,1e5a44,"grainy, crude, default",veridium,,,hammer 1
 Violecite,Tnc,,5,Tool B+,Violecite,betterendforge,16,stone,4.5,7,0,1561,2,2,90,5,8,3b2f43,"grainy, crude, default",violecite,,imp violecite_density 0 0,hammer 5
+Violecite,Tnc 1.6,,5,Tool B+,Violecite,betterend,"16, 18, 19, 20",stone,4.5,7,0,1561,2,2,90,5,8,3b2f43,"grainy, crude, default",violecite,,imp violecite_density 0 0,hammer 5
+Violite,Tnc 1.5,,4,,Violite,outer_end,"16, 20",stone,6.7,7,0,1256,3,2,114,3,5,4b3651,"heavy, grainy, crude, default",violite,eff crushing 2 0,,hammer 5
 Violium,Tnc 1.5,Yes,,Sword/Tool S,Violium,ms,"18, 19, 20",metal,13.5,3.9,3,3891,4,6,180,5,13.8,853ce0,"metal, default",gem/violium_ingot,eff stabilizing 10 0,,hammer 7
 Virid Jadestone,Tnc,,4,,Virid Jadestone,betterendforge,16,stone,4,3.8,0,2031,2,4,102,3,4,305f4e,"grainy, crude, default",virid_jadestone,,,hammer 5
+Virid Jadestone,Tnc 1.6,,4,,Virid Jadestone,betterend,"16, 18, 19, 20",stone,4,3.8,0,2031,2,4,102,3,4,305f4e,"grainy, crude, default",virid_jadestone,,,hammer 5
 Void Crystal,Tnc 1.5,,5,,Crystalline,phantasm,"16, 18, 19, 20",gem,5,2.9,0,312,2,2,102,4,8,efd3f1,"shiny, crude, default",void_crystal_block,,imp arrested 0 0,hammer 3
 Void Crystal Shard,Tnc 1.5,,5,Crafting S,Void Crystal,phantasm,"16, 18, 19; 20",gem,4,2.4,0,5,8,1,48,8,3,efd3f1,"shiny, crude, default","void_crystal_spike_tip, void_crystal_shard",eff unstable 20 0,imp arrested 0 0,hammer 7
 Void Shale,Tnc 1.5,,5,Sword A / Greatsword S,Void Shale,enlightened_end,"18, 19, 20",stone,7.2,8,0,1561,3,2,102,3,7,2d3e49,"grainy, crude, default",void_shale,,,hammer 5
@@ -432,10 +489,10 @@ White Granite,Tnc 1.5,,1,,White Granite,unearthed,"16, 18, 19",stone,4,3.5,0,180
 White Mangrove,Tnc,,,,White Mangrove,byg,19,wood,3.5,1.7,6,131,1,4,90,1,2.5,c7c0bb,"crude, wooden",white_mangrove_planks,,,axe 1
 White Opal,Tnc 1.5,Yes,,,White Opal,ms,"16; 18, 19, 20",gem,6.34,2.9,0,549,2,2,90,4,6.4,d3edfe,"shiny, crude","gem/whiteopal, gem/white_opal",,,hammer 5
 Willow,Tnc,,1,,Willow,byg,"16, 18, 19",wood,2,1.2,7,48,1,2,108,1,3,576832,"crude, wooden",willow_planks,,,axe 1
-Willow,Tnc,,1,,Willow,biomesoplenty,"16, 18, 19, 20",wood,2,1.2,7,48,1,2,108,1,3,899470,"crude, wooden",willow_planks,,,axe 1
 Willow,Tnc,,1,,Willow,environmental,"16, 18, 19",wood,2,1.2,7,48,1,2,108,1,3,5c7444,"crude, wooden",willow_planks,,,axe 1
-Willow,Tnc 1.5,,1,,Willow,regions_unexplored,"18, 19, 20",wood,2,1.2,7,48,1,2,108,1,3,b6ac91,"crude, wooden",willow_planks,,,axe 1
+Willow,Tnc,,1,,Willow,biomesoplenty,"16, 18, 19, 20",wood,2,1.2,7,48,1,2,108,1,3,899470,"crude, wooden",willow_planks,,,axe 1
 Willow,Tnc 1.5,,,,Willow,ms,"16; 18, 19, 20",wood,2,1.2,7,48,1,2,108,1,3,c69b5b,"crude, wooden","nature/willowplank, nature/willow_planks",,,axe 1
+Willow,Tnc 1.5,,1,,Willow,regions_unexplored,"18, 19, 20",wood,2,1.2,7,48,1,2,108,1,3,b6ac91,"crude, wooden",willow_planks,,,axe 1
 Willow Vine,Tnc 1.5,,,Binding C,Willow Vine,biomesoplenty,"16, 18, 19, 20",fibre,3,0.7,2.8,131,1,2,90,0,0,1e4b0a,"crude, default",willow_vine,,,cut 1
 Wisteria,Tnc,,1,,Wisteria,environmental,"16, 18, 19",wood,2.8,2,5.7,96,1,4,102,1,2,e0d4b0,"crude, wooden",wisteria_planks,,,axe 1
 Witch Hazel,Tnc,,,,Witch Hazel,byg,"16, 18, 19",wood,3.5,1.7,6,131,1,4,90,1,2.5,276041,"crude, wooden",witch_hazel_planks,,,axe 1
@@ -446,5 +503,5 @@ Yucca,Tnc,,1,,Yucca,atmospheric,"16, 18, 19",wood,3,1.4,4,48,1,4,90,1,2,976253,"
 Zelkova,Tnc,,1,,Zelkova,byg,"16, 18, 19",wood,2.6,1.5,6,48,1,3,108,1,3,8c5d3a,"crude, wooden",zelkova_planks,,,axe 1
 Zinc,Tnc,,,,Zinc,create,"16, 18, 19, 20",metal,5,3.8,1,200,2,3,102,4,6,b9e9c1,"metal, default",zinc_ingot,,,hammer 2
 Zircon,Tnc 1.5,Yes,,,Zircon,silentgems,16,gem,6,2.9,0,768,2,2,78,4,9,b3b600,"shiny, crude",zircon,,,hammer 3
-Azure Vines,Tnc 1.5,,5,Binding A,Azure Vine,outer_end,"16, 20",fibre,4,3.2,3,1280,2,8,90,0,0,3a6e9d,"crude, default",azure_vines,,,cut 4
-Violite,Tnc 1.5,,4,,Violite,outer_end,"16, 20",stone,6.7,7,0,1256,3,2,114,3,5,4b3651,"heavy, grainy, crude, default",violite,eff crushing 2 0,,hammer 5
+Zircon,Tnc 1.6,Yes,,,Zircon,tropicraft,20,gem,4,2.9,0,200,1,2,84,4,4.5,651E23,"shiny, crude",zircon_gem,,,hammer 1
+Zirconium,Tnc 1.6,Yes,,,Zirconium,tropicraft,20,gem,6,3.2,0,1800,2,2,60,5,8.5,EFB3C8,"shiny, crude",zirconium_gem,,,hammer 4

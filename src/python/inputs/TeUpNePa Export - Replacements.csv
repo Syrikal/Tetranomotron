@@ -1,0 +1,70 @@
+ Item ID,ignore Add-On, Mod ID, Replacement Type, Versions, Tool Set, Material, Handle Material, Improvements
+corrupt_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_corrupt,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/corrupt 0, double/head_right upgradednetherite/aesthetic_corrupt 0"
+corrupt_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_corrupt,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/corrupt 0"
+corrupt_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_corrupt,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/corrupt 0, double/head_right upgradednetherite/aesthetic_corrupt 0"
+corrupt_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_corrupt,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/corrupt 0"
+corrupt_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_corrupt,netherite,,bow/stave upgradednetherite/corrupt 0
+corrupt_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_corrupt,netherite,,"crossbow/stock upgradednetherite/corrupt 0, crossbow/stock trigger/simple 1"
+corrupt_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_corrupt,netherite,,shield/plate upgradednetherite/corrupt 0
+ender_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_ender,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/ender 0, double/head_right upgradednetherite/aesthetic_ender 0"
+ender_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_ender,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/ender 0"
+ender_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_ender,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/ender 0, double/head_right upgradednetherite/aesthetic_ender 0"
+ender_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_ender,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/ender 0"
+ender_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_ender,netherite,,bow/stave upgradednetherite/ender 0
+ender_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_ender,netherite,,"crossbow/stock upgradednetherite/ender 0, crossbow/stock trigger/simple 1"
+ender_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_ender,netherite,,shield/plate upgradednetherite/ender 0
+feather_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_feather,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/feather 0, double/head_right upgradednetherite/aesthetic_feather 0"
+feather_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_feather,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/feather 0"
+feather_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_feather,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/feather 0, double/head_right upgradednetherite/aesthetic_feather 0"
+feather_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_feather,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/feather 0"
+feather_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_feather,netherite,,bow/stave upgradednetherite/feather 0
+feather_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_feather,netherite,,"crossbow/stock upgradednetherite/feather 0, crossbow/stock trigger/simple 1"
+feather_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_feather,netherite,,shield/plate upgradednetherite/feather 0
+fire_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_fire,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/fire 0, double/head_right upgradednetherite/aesthetic_fire 0"
+fire_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_fire,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/fire 0"
+fire_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_fire,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/fire 0, double/head_right upgradednetherite/aesthetic_fire 0"
+fire_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_fire,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/fire 0"
+fire_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_fire,netherite,,bow/stave upgradednetherite/fire 0
+fire_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_fire,netherite,,"crossbow/stock upgradednetherite/fire 0, crossbow/stock trigger/simple 1"
+fire_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_fire,netherite,,shield/plate upgradednetherite/fire 0
+gold_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_gold,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/gold 0, double/head_right upgradednetherite/aesthetic_gold 0"
+gold_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_gold,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/gold 0"
+gold_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_gold,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/gold 0, double/head_right upgradednetherite/aesthetic_gold 0"
+gold_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_gold,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/gold 0"
+gold_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_gold,netherite,,bow/stave upgradednetherite/gold 0
+gold_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_gold,netherite,,"crossbow/stock upgradednetherite/gold 0, crossbow/stock trigger/simple 1"
+gold_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_gold,netherite,,shield/plate upgradednetherite/gold 0
+phantom_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_phantom,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/phantom 0, double/head_right upgradednetherite/aesthetic_phantom 0"
+phantom_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_phantom,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/phantom 0"
+phantom_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_phantom,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/phantom 0, double/head_right upgradednetherite/aesthetic_phantom 0"
+phantom_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_phantom,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/phantom 0"
+phantom_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_phantom,netherite,,bow/stave upgradednetherite/phantom 0
+phantom_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_phantom,netherite,,"crossbow/stock upgradednetherite/phantom 0, crossbow/stock trigger/simple 1"
+phantom_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_phantom,netherite,,shield/plate upgradednetherite/phantom 0
+poison_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_poison,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/poison 0, double/head_right upgradednetherite/aesthetic_poison 0"
+poison_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_poison,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/poison 0"
+poison_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_poison,netherite,,bow/stave upgradednetherite/poison 0
+poison_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_poison,netherite,,"crossbow/stock upgradednetherite/poison 0, crossbow/stock trigger/simple 1"
+poison_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_poison,netherite,,shield/plate upgradednetherite/poison 0
+water_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_water,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/water 0, double/head_right upgradednetherite/aesthetic_water 0"
+water_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_water,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/water 0"
+water_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite,pick,16,upgraded_netherite_water,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/water 0, double/head_right upgradednetherite/aesthetic_water 0"
+water_upgraded_netherite_shovel,TeUpNePa,upgradednetherite,shovel,16,upgraded_netherite_water,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/water 0"
+water_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_water,netherite,,bow/stave upgradednetherite/water 0
+water_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_water,netherite,,"crossbow/stock upgradednetherite/water 0, crossbow/stock trigger/simple 1"
+water_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_water,netherite,,shield/plate upgradednetherite/water 0
+wither_upgraded_netherite_axe,TeUpNePa,upgradednetherite,axe,16,upgraded_netherite_wither,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/wither 0, double/head_right upgradednetherite/aesthetic_wither 0"
+wither_upgraded_netherite_sword,TeUpNePa,upgradednetherite,sword,16,upgraded_netherite_wither,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/wither 0"
+wither_upgraded_netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite_wither,netherite,,bow/stave upgradednetherite/wither 0
+wither_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite_wither,netherite,,"crossbow/stock upgradednetherite/wither 0, crossbow/stock trigger/simple 1"
+wither_upgraded_netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite_wither,netherite,,shield/plate upgradednetherite/wither 0
+ultimate_upgraded_netherite_axe,TeUpNePa,upgradednetherite_ultimate,axe,16,upgraded_netherite_ultimate,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/ultimate 0, double/head_right upgradednetherite/aesthetic_ultimate 0"
+ultimate_upgraded_netherite_sword,TeUpNePa,upgradednetherite_ultimate,sword,16,upgraded_netherite_ultimate,netherite,,"sword/hilt basic_hilt/soot 0, sword/blade upgradednetherite/ultimate 0"
+ultimate_upgraded_netherite_pickaxe,TeUpNePa,upgradednetherite_ultimate,pick,16,upgraded_netherite_ultimate,netherite,,"double/basic_handle basic_handle/soot 0, double/head_left upgradednetherite/ultimate 0, double/head_right upgradednetherite/aesthetic_ultimate 0"
+ultimate_upgraded_netherite_shovel,TeUpNePa,upgradednetherite_ultimate,shovel,16,upgraded_netherite_ultimate,netherite,,"single/basic_handle basic_handle/soot 0, single/head upgradednetherite/ultimate 0"
+ultimate_upgraded_netherite_bow,TeUpNePa,upgradednetherite_ultimate,bow,16,upgraded_netherite_ultimate,netherite,,bow/stave upgradednetherite/ultimate 0
+ultimate_upgraded_netherite_crossbow,TeUpNePa,upgradednetherite_ultimate,crossbow,16,upgraded_netherite_ultimate,netherite,,"crossbow/stock upgradednetherite/ultimate 0, crossbow/stock trigger/simple 1"
+ultimate_upgraded_netherite_shield,TeUpNePa,upgradednetherite_ultimate,shield,16,upgraded_netherite_ultimate,netherite,,shield/plate upgradednetherite/ultimate 0
+netherite_bow,TeUpNePa,upgradednetherite,bow,16,upgraded_netherite,netherite,,
+netherite_crossbow,TeUpNePa,upgradednetherite,crossbow,16,upgraded_netherite,netherite,,crossbow/stock trigger/simple 1
+netherite_shield,TeUpNePa,upgradednetherite,shield,16,upgraded_netherite,netherite,,

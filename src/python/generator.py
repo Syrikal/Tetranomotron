@@ -3,6 +3,8 @@ import os
 import time
 import traceback
 import json
+import requests
+import sys
 
 from classes.material import Material
 from classes.mc_version import MinecraftVersion
@@ -12,35 +14,56 @@ from classes.socket import Socket, generate_sockets_json, generate_schematics_js
 
 def main():
     # Create the output folder
-    # generation_name = "tetranomicon"
+    generation_name = "tetranomicon"
     # generation_name = "aetheric_tetranomicon"
     # generation_name = "undergarden"
-    generation_name = "toolbooster"
+    # generation_name = "toolbooster"
+    # generation_name = "upgraded netherite"
 
     output_subfolder = os.path.join("outputs", f"{generation_name}_{time.strftime('%Y%m%d-%H%M%S')}")
     if not os.path.isdir(output_subfolder):
         os.makedirs(output_subfolder)
 
     if generation_name == "tetranomicon":
-        materials_csv = "inputs/Tetranomicon Export - Materials.csv"
-        replacements_csv = "inputs/Tetranomicon Export - Replacements.csv"
-        sockets_csv = "inputs/Tetranomicon Export - Sockets.csv"
+
+        materials_url = 'https://docs.google.com/spreadsheets/d/1FSoWhpdRc0QVefqWkJd8Z9s25QUKqp1XGZIi5TyljJ4/export?format=csv'
+        sockets_url = 'https://docs.google.com/spreadsheets/d/1pLnYjArFpUox5dQ2YYy3_ZR8pIaD679-uYTnAGb9qpo/export?format=csv'
+        replacements_url = 'https://docs.google.com/spreadsheets/d/1bLq3efx2RXSsxelvIUegBZkoDdE6FfSFrJ0sh9uzcPA/export?format=csv'
+
+        materials_csv, sockets_csv, replacements_csv = download_csvs("Tetranomicon", materials_url, sockets_url, replacements_url)
+
     elif generation_name == "aetheric_tetranomicon":
-        materials_csv = "inputs/Aetheric Tetranomicon Export - Materials.csv"
-        replacements_csv = "inputs/Aetheric Tetranomicon Export - Replacements.csv"
-        sockets_csv = "inputs/Aetheric Tetranomicon Export - Sockets.csv"
+
+        materials_url = 'https://docs.google.com/spreadsheets/d/1kbinIqoOmmgaEUgu2eFNQymHJrz_zHi-58KQJeBTpig/export?format=csv'
+        sockets_url = 'https://docs.google.com/spreadsheets/d/1t_ckuFGq22A5SEFn5NoHFMGdcyIszNa9_1FEPS_eL_s/export?format=csv'
+        replacements_url = 'https://docs.google.com/spreadsheets/d/1iKyaWeBO4Ij5fnXv2dkVF-T504HKEt3MhGgOF_JQgIU/export?format=csv'
+
+        materials_csv, sockets_csv, replacements_csv = download_csvs("Aetheric Tetranomicon", materials_url, sockets_url, replacements_url)
+
     elif generation_name == "undergarden":
-        materials_csv = "inputs/Undergarden Tetranomicon Export - Materials.csv"
-        replacements_csv = "inputs/Undergarden Tetranomicon Export - Replacements.csv"
-        sockets_csv = "inputs/Undergarden Tetranomicon Export - Sockets.csv"
+
+        materials_url = 'https://docs.google.com/spreadsheets/d/1BcpAVNItwu8o4Hl0RrAdbcDwyS5gs1mGRZEHLuG3a_E/export?format=csv'
+        sockets_url = 'https://docs.google.com/spreadsheets/d/1g17Utd3usm_-NFbARCdBo2QZpuo0W8ARf6Xd-XJwS4o/export?format=csv'
+        replacements_url = 'https://docs.google.com/spreadsheets/d/1qgya_I_zieDcPT6yihrAPOdABU8IkhKe0ZUvlRVtKZY/export?format=csv'
+
+        materials_csv, sockets_csv, replacements_csv = download_csvs("Undergarden Tetranomicon", materials_url, sockets_url, replacements_url)
+
     elif generation_name == "toolbooster":
-        sockets_csv = "inputs/Toolbooster Export - Sockets.csv"
-        materials_csv = ""
-        replacements_csv = ""
+
+        sockets_url = 'https://docs.google.com/spreadsheets/d/1WJT3KBI2gmV4AzD7BoXMAHh_RkGIu3QFzvbOn9Kd0Z4/export?format=csv'
+
+        materials_csv, sockets_csv, replacements_csv = download_csvs("Toolbooster", "", sockets_url, "")
+
+    elif generation_name == "upgraded netherite":
+
+        replacements_url = 'https://docs.google.com/spreadsheets/d/15WCR6lfL6rS1ARb2vrthio0ujUKxbrFpr7hIZIwd_OI/export?format=csv'
+
+        materials_csv, sockets_csv, replacements_csv = download_csvs("Upgraded Netherite", "", "", replacements_url)
+
     else:
         materials_csv = ""
-        replacements_csv = ""
         sockets_csv = ""
+        replacements_csv = ""
 
     try:
         materials, replacements, sockets = "", "", ""
@@ -366,6 +389,54 @@ def generate_lang(output_folder_path, materials, sockets):
         filepath = os.path.join(lang_folder, "en_us.json")
         with open(filepath, 'w', encoding="utf-8-sig") as jsonfile:
             jsonfile.write(lang_file_content)
+
+
+def download_csvs(name, mats_url, sockets_url, replacements_url):
+    outputs = []
+    if mats_url:
+        materials_response = requests.get(mats_url)
+
+        if materials_response.status_code == 200:
+            filepath = os.path.join("inputs", f"{name} - Materials.csv")
+            with open(filepath, 'wb') as f:
+                f.write(materials_response.content)
+                print('CSV file saved to: {}'.format(filepath))
+            outputs.append(filepath)
+        else:
+            print(f'Error downloading Google Sheet: {materials_response.status_code}')
+            sys.exit(1)
+    else:
+        outputs.append("")
+
+    if sockets_url:
+        sockets_response = requests.get(sockets_url)
+        if sockets_response.status_code == 200:
+            filepath = os.path.join("inputs", f"{name} - Sockets.csv")
+            with open(filepath, 'wb') as f:
+                f.write(sockets_response.content)
+                print('CSV file saved to: {}'.format(filepath))
+            outputs.append(filepath)
+        else:
+            print(f'Error downloading Google Sheet: {sockets_response.status_code}')
+            sys.exit(1)
+    else:
+        outputs.append("")
+
+    if replacements_url:
+        replacements_response = requests.get(replacements_url)
+        if replacements_response.status_code == 200:
+            filepath = os.path.join("inputs", f"{name} - Replacements.csv")
+            with open(filepath, 'wb') as f:
+                f.write(replacements_response.content)
+                print('CSV file saved to: {}'.format(filepath))
+            outputs.append(filepath)
+        else:
+            print(f'Error downloading Google Sheet: {replacements_response.status_code}')
+            sys.exit(1)
+    else:
+        outputs.append("")
+
+    return outputs
 
 
 if __name__ == "__main__":

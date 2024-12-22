@@ -246,6 +246,15 @@ class Replacement:
             case ReplacementType.BOW:
                 modules["bow/stave"] = ["bow/straight_stave", f"straight_stave/{material_key}"]
                 modules["bow/string"] = ["bow/basic_string", f"basic_string/{handle_material}"]
+            case ReplacementType.CROSSBOW:
+                modules["crossbow/stave"] = ["crossbow/basic_stave", f"basic_stave/{material_key}"]
+                modules["crossbow/stock"] = ["crossbow/basic_stock", f"basic_stock/{material_key}"]
+                modules["crossbow/string"] = ["crossbow/basic_string", f"basic_string/{handle_material}"]
+                modules["crossbow/attachment_1"] = ["crossbow/stirrup", f"stirrup/iron"]
+            case ReplacementType.SHIELD:
+                modules["shield/plate"] = ["shield/tower", f"tower/{material_key}"]
+                modules["shield/grip"] = ["shield/basic_grip", f"basic_grip/{handle_material}"]
+
         output["modules"] = modules
 
         if self.improvements:
@@ -333,6 +342,8 @@ class ReplacementType(Enum):
     KNIFE = "knife"
     SPEAR = "spear"
     BOW = "bow"
+    CROSSBOW = "crossbow"
+    SHIELD = "shield"
 
     def second_module(self):
         if self in [ReplacementType.AXE, ReplacementType.HOE]:
@@ -347,6 +358,10 @@ class ReplacementType(Enum):
             return "basic_hilt"
         elif self in [ReplacementType.BOW]:
             return "basic_string"
+        elif self in [ReplacementType.CROSSBOW]:
+            return "basic_stock"
+        elif self in [ReplacementType.SHIELD]:
+            return "basic_grip"
 
     def get_modular_type(self):
         if self in [ReplacementType.AXE, ReplacementType.DOUBLE_AXE, ReplacementType.PICK, ReplacementType.HOE]:
@@ -357,6 +372,10 @@ class ReplacementType(Enum):
             return ModularType.SWORD
         elif self in [ReplacementType.BOW]:
             return ModularType.BOW
+        elif self in [ReplacementType.CROSSBOW]:
+            return ModularType.CROSSBOW
+        elif self in [ReplacementType.SHIELD]:
+            return ModularType.SHIELD
 
 
 def test():

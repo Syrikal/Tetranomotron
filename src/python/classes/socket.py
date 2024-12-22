@@ -541,6 +541,8 @@ class ModularType(Enum):
     SINGLE = "single"
     SWORD = "sword"
     BOW = "bow"
+    CROSSBOW = "crossbow"
+    SHIELD = "shield"
 
 
 def test():
